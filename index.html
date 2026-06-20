@@ -79,8 +79,16 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
 /* ═══════════════════════════════════════════════
    DESKTOP ICONS
 ═══════════════════════════════════════════════ */
-#desktop-icons{position:fixed;top:16px;right:16px;z-index:10;display:flex;flex-direction:column;gap:2px;padding:4px}
-.icon{display:flex;flex-direction:column;align-items:center;width:78px;padding:5px 3px 6px;cursor:pointer;border-radius:4px;position:relative;transition:background 0.1s}
+#desktop-icons{position:fixed;inset:0;z-index:10;pointer-events:none}
+.icon{position:absolute;display:flex;flex-direction:column;align-items:center;width:78px;padding:5px 3px 6px;cursor:pointer;border-radius:4px;transition:background 0.1s;pointer-events:all}
+.icon.size-sm{width:58px}
+.icon.size-sm .icon-img{width:30px;height:30px;margin-bottom:3px}
+.icon.size-sm .icon-img svg{width:30px;height:30px}
+.icon.size-sm .icon-label{font-size:10px}
+.icon.size-lg{width:100px}
+.icon.size-lg .icon-img{width:66px;height:66px}
+.icon.size-lg .icon-img svg{width:66px;height:66px}
+.icon.size-lg .icon-label{font-size:13px}
 .icon:hover{background:rgba(49,130,220,0.25)}
 .icon.selected{background:rgba(49,130,220,0.35);outline:1px dotted rgba(255,255,255,0.7)}
 .icon:active .icon-img{animation:iconPop 200ms ease-out}
@@ -207,9 +215,38 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
 .sol-card-top{font-size:11px;line-height:1}
 .sol-card-suit{font-size:20px;text-align:center;line-height:1;flex:1;display:flex;align-items:center;justify-content:center}
 .sol-card-bot{font-size:11px;line-height:1;text-align:right;transform:rotate(180deg)}
-.sol-placeholder{width:56px;height:78px;border-radius:5px;border:2px dashed rgba(255,255,255,0.25)}
+.sol-placeholder{width:56px;height:78px;border-radius:5px;border:2px dashed rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,0.25)}
 .sol-stacked{margin-top:-62px}
+.sol-stacked.sol-faceup-gap{margin-top:-58px}
 .sol-btn{padding:4px 12px;background:linear-gradient(180deg,#ECE9D8,#D4D0C8);border:1px solid;border-color:#fff #808080 #808080 #fff;font-size:11px;font-family:Tahoma,sans-serif;cursor:pointer;margin-bottom:8px}
+.sol-btn:active{border-color:#808080 #fff #fff #808080}
+.sol-btn:disabled{opacity:0.5;cursor:default}
+.sol-bar{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.sol-stat{background:rgba(0,0,0,0.35);color:#fff;font-family:Tahoma,sans-serif;font-size:11px;padding:3px 10px;border-radius:3px;border:1px solid rgba(255,255,255,0.2)}
+.sol-row{display:flex;gap:16px;align-items:flex-start;flex-shrink:0}
+.sol-spacer{flex:1}
+.sol-stockwaste{display:flex;gap:10px}
+.sol-card{position:relative;transition:box-shadow .1s}
+.sol-card.dragging{opacity:0.35}
+.sol-card.draggable:hover{box-shadow:0 0 0 2px #FFD700,1px 2px 4px rgba(0,0,0,0.3)}
+.sol-column.drag-over,.sol-found.drag-over{outline:2px solid #FFD700;border-radius:6px}
+.sol-found{width:56px;height:78px;border-radius:5px;border:2px dashed rgba(255,255,255,0.35);position:relative;flex-shrink:0}
+.sol-found .sol-card{position:absolute;top:0;left:0}
+.sol-ghost-suit{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:26px;color:rgba(255,255,255,0.25);pointer-events:none}
+#sol-win-overlay{position:absolute;inset:0;display:none;align-items:center;justify-content:center;z-index:50;pointer-events:none;overflow:hidden}
+#sol-win-overlay.show{display:flex}
+.sol-win-msg{background:rgba(0,0,0,0.6);color:#FFD700;font-family:'Tajawal',Tahoma,sans-serif;font-size:22px;font-weight:900;padding:14px 28px;border-radius:8px;border:2px solid #FFD700;text-shadow:0 2px 6px rgba(0,0,0,0.6);pointer-events:all}
+.sol-confetti{position:absolute;top:-10px;width:8px;height:14px;opacity:0.95;animation:solConfetti linear forwards}
+@keyframes solConfetti{to{transform:translateY(420px) rotate(540deg);opacity:0.2}}
+
+/* ═══════════════════════════════════════════════
+   SNAKE
+═══════════════════════════════════════════════ */
+.snake-body{background:#0d0d0d;height:100%;padding:10px;display:flex;flex-direction:column;gap:8px;align-items:center}
+.snake-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+#snake-canvas{background:#0a2a0a;border:2px solid #2a6e2a;border-radius:3px}
+.snake-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Tajawal',Tahoma;font-size:13px;background:rgba(0,0,0,0.6);text-align:center;padding:14px;line-height:1.6;border-radius:3px}
+.snake-overlay.hide{display:none}
 
 /* ═══════════════════════════════════════════════
    RECYCLE BIN WINDOW
@@ -470,8 +507,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
 
 <!-- ── CONTEXT MENU ──────────────────────── -->
 <div id="ctx-menu">
-  <div class="ctx-item" data-action="arrange"><span class="ctx-icon">🗂️</span>ترتيب الأيقونات</div>
+  <div class="ctx-item" data-action="arrange"><span class="ctx-icon">🗂️</span>ترتيب تلقائي</div>
   <div class="ctx-item" data-action="refresh"><span class="ctx-icon">🔄</span>تحديث</div>
+  <div class="ctx-sep"></div>
+  <div class="ctx-item" data-action="size-sm"><span class="ctx-icon">🔹</span>أيقونات صغيرة</div>
+  <div class="ctx-item" data-action="size-md"><span class="ctx-icon">🔸</span>أيقونات متوسطة</div>
+  <div class="ctx-item" data-action="size-lg"><span class="ctx-icon">🔶</span>أيقونات كبيرة</div>
   <div class="ctx-sep"></div>
   <div class="ctx-item" data-action="wallpaper"><span class="ctx-icon">🖼️</span>خصائص الشاشة</div>
   <div class="ctx-sep"></div>
@@ -550,6 +591,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
     <div class="wp-body">
       <div style="font-size:11px;font-family:'Tajawal',Tahoma;color:#444;margin-bottom:10px">اختر خلفية:</div>
       <div class="wp-grid" id="wp-grid"></div>
+      <div id="wp-color-row" style="display:none;align-items:center;gap:8px;margin-bottom:10px;font-family:Tahoma,'Tajawal';font-size:11px;color:#444">
+        <span>اختر اللون:</span><input type="color" id="wp-color" value="#2A66DF">
+      </div>
       <div class="wp-buttons">
         <button class="wp-btn" id="wp-apply">تطبيق</button>
         <button class="wp-btn" id="wp-cancel">إلغاء</button>
@@ -585,6 +629,7 @@ const ICONS = {
   run: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="28" width="32" height="14" rx="2" fill="#D4D0C8" stroke="#888" stroke-width="1"/><rect x="10" y="30" width="20" height="10" rx="1" fill="#fff" stroke="#aaa" stroke-width="1"/><polygon points="22,10 38,18 22,26" fill="#1E90FF"/></svg>`,
   controlpanel: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="8" fill="#FF6B6B" opacity="0.9"/><circle cx="33" cy="15" r="8" fill="#4ECDC4" opacity="0.9"/><circle cx="15" cy="33" r="8" fill="#FFE66D" opacity="0.9"/><circle cx="33" cy="33" r="8" fill="#6BCB77" opacity="0.9"/></svg>`,
   globe:`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="none" stroke="#1E90FF" stroke-width="2"/><ellipse cx="12" cy="12" rx="4" ry="10" fill="none" stroke="#1E90FF" stroke-width="1.5"/><line x1="2" y1="9" x2="22" y2="9" stroke="#1E90FF" stroke-width="1.5"/><line x1="2" y1="15" x2="22" y2="15" stroke="#1E90FF" stroke-width="1.5"/></svg>`,
+  snake: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="8" fill="#0A2A0A"/><path d="M10 36c0-6 8-4 8-10s-8-4-8-10 8-4 8-10" fill="none" stroke="#3CB043" stroke-width="6" stroke-linecap="round"/><circle cx="10" cy="36" r="4" fill="#7CFC00"/><circle cx="36" cy="14" r="3.5" fill="#FF4040"/></svg>`,
 };
 
 /* ═══════════════════════════════════════════════
@@ -601,9 +646,10 @@ const APPS = [
   { id:'calc',      label:'الآلة الحاسبة',icon:'calculator', type:'calc',   title:'الآلة الحاسبة',          desc:'', url:'', w:240, h:310, tooltip:'Calculator' },
   { id:'paint',     label:'الرسام',      icon:'paint',       type:'paint',  title:'الرسام — بدون عنوان',    desc:'', url:'', w:640, h:480, tooltip:'Paint' },
   { id:'minesweeper',label:'ألغام',      icon:'minesweeper', type:'minesweeper',title:'ألغام',              desc:'', url:'', w:250, h:320, tooltip:'Minesweeper' },
-  { id:'solitaire', label:'سوليتير',     icon:'solitaire',   type:'solitaire',title:'سوليتير',              desc:'', url:'', w:660, h:420, tooltip:'Solitaire' },
+  { id:'solitaire', label:'سوليتير',     icon:'solitaire',   type:'solitaire',title:'سوليتير',              desc:'', url:'', w:700, h:520, tooltip:'Solitaire' },
   { id:'recycle',   label:'سلة المهملات',icon:'recycle',     type:'recycle',title:'سلة المهملات',           desc:'', url:'', w:420, h:300, tooltip:'Recycle Bin' },
   { id:'mediaplayer',label:'ميديا بلاير',icon:'mediaplayer', type:'mediaplayer',title:'Windows Media Player',desc:'', url:'', w:360, h:320, tooltip:'Media Player' },
+  { id:'snake',     label:'Snake',       icon:'snake',       type:'snake',  title:'🐍 Snake',                desc:'', url:'', w:420, h:500, tooltip:'Snake' },
 ];
 
 /* start menu items */
@@ -614,6 +660,7 @@ const SM_LEFT = [
   { id:'calc',  name:'الآلة الحاسبة',    sub:'حسابات سريعة',    icon:'calculator' },
   { id:'minesweeper',name:'ألغام',        sub:'لعبة الألغام',    icon:'minesweeper' },
   { id:'solitaire',name:'سوليتير',       sub:'لعبة الورق',       icon:'solitaire' },
+  { id:'snake',name:'Snake',            sub:'لعبة الثعبان',      icon:'snake' },
 ];
 const SM_RIGHT = [
   { id:'mycomp', name:'My Computer',    icon:'mycomp' },
@@ -640,7 +687,8 @@ let mpPlaying = true;
 let mpProgress = 35;
 let mpTimer;
 let desktopIconOrder = null;
-const DESKTOP_APP_IDS = ['facebook','instagram','tiktok','spotify','steam','about','mycomp','calc','paint','minesweeper','solitaire','recycle','mediaplayer'];
+let iconSizePref = localStorage.getItem('xp_icon_size')||'md';
+const DESKTOP_APP_IDS = ['facebook','instagram','tiktok','spotify','steam','about','mycomp','calc','paint','minesweeper','solitaire','snake','recycle','mediaplayer'];
 
 /* ═══════════════════════════════════════════════
    LOADING & WELCOME
@@ -672,22 +720,65 @@ function startDesktop(){
 /* ═══════════════════════════════════════════════
    BUILD DESKTOP ICONS
 ═══════════════════════════════════════════════ */
+function loadIconPositions(){ try{ return JSON.parse(localStorage.getItem('xp_icon_positions')||'{}'); }catch(e){ return {}; } }
+function saveIconPosition(id,left,top){ const all=loadIconPositions(); all[id]={left,top}; localStorage.setItem('xp_icon_positions',JSON.stringify(all)); }
+function clearIconPositions(){ localStorage.removeItem('xp_icon_positions'); }
+function defaultIconPos(index){
+  const maxRows=Math.max(1,Math.floor((window.innerHeight-140)/84));
+  const col=Math.floor(index/maxRows), row=index%maxRows;
+  const left=window.innerWidth-16-86-col*86;
+  const top=16+row*84;
+  return {left,top};
+}
+function makeIconDraggable(el,id){
+  el.addEventListener('mousedown',e=>{
+    if(e.button!==0) return;
+    const startX=e.clientX, startY=e.clientY;
+    const origLeft=parseInt(el.style.left)||0, origTop=parseInt(el.style.top)||0;
+    let moved=false;
+    function onMove(ev){
+      const dx=ev.clientX-startX, dy=ev.clientY-startY;
+      if(Math.abs(dx)>3||Math.abs(dy)>3) moved=true;
+      if(moved){
+        el.style.left=Math.max(0,Math.min(window.innerWidth-30,origLeft+dx))+'px';
+        el.style.top=Math.max(0,Math.min(window.innerHeight-78,origTop+dy))+'px';
+      }
+    }
+    function onUp(){
+      document.removeEventListener('mousemove',onMove);
+      document.removeEventListener('mouseup',onUp);
+      if(moved){
+        saveIconPosition(id,parseInt(el.style.left),parseInt(el.style.top));
+        el.dataset.justDragged='1';
+        setTimeout(()=>{ delete el.dataset.justDragged; },50);
+      }
+    }
+    document.addEventListener('mousemove',onMove);
+    document.addEventListener('mouseup',onUp);
+  });
+}
+function setIconSize(sz){ iconSizePref=sz; localStorage.setItem('xp_icon_size',sz); buildDesktop(); }
 function buildDesktop(){
   const c=document.getElementById('desktop-icons');
   c.innerHTML='';
   const ids = DESKTOP_APP_IDS;
-  ids.forEach(id=>{
+  const positions=loadIconPositions();
+  ids.forEach((id,i)=>{
     const app=APPS.find(a=>a.id===id);
     if(!app)return;
     const el=document.createElement('div');
-    el.className='icon';
+    el.className='icon size-'+iconSizePref;
     el.dataset.id=id;
     el.innerHTML=`<div class="icon-img">${ICONS[app.icon]||ICONS.notepad}</div><div class="icon-label">${app.label}</div>`;
-    el.addEventListener('click', e=>{ e.stopPropagation(); selectIcon(id); SFX.play('click'); });
+    const pos=positions[id]||defaultIconPos(i);
+    el.style.left=pos.left+'px';
+    el.style.top=pos.top+'px';
+    el.addEventListener('click', e=>{ e.stopPropagation(); if(el.dataset.justDragged) return; selectIcon(id); SFX.play('click'); });
     el.addEventListener('dblclick', e=>{ e.preventDefault(); e.stopPropagation(); openApp(id); deselectAll(); });
     el.addEventListener('contextmenu', e=>{ e.preventDefault(); e.stopPropagation(); selectIcon(id); showIconCtxMenu(e.clientX, e.clientY, id); });
     el.addEventListener('mouseenter',()=>showTooltip(app.tooltip||app.label, el));
     el.addEventListener('mouseleave',hideTooltip);
+    makeIconDraggable(el,id);
     c.appendChild(el);
   });
 }
@@ -790,6 +881,7 @@ function openApp(id){
     else if(app.type==='solitaire') content=buildSolitaireContent();
     else if(app.type==='recycle') content=buildRecycleContent();
     else if(app.type==='mediaplayer') content=buildMPContent();
+    else if(app.type==='snake') content=buildSnakeContent();
     createWindow({id:winId,title:app.title,icon:app.icon,w:app.w,h:app.h,content});
     /* post-init */
     if(app.type==='calc') initCalc(winId);
@@ -798,6 +890,7 @@ function openApp(id){
     if(app.type==='minesweeper') initMinesweeper(winId);
     if(app.type==='solitaire') initSolitaire(winId);
     if(app.type==='mediaplayer') initMediaPlayer(winId);
+    if(app.type==='snake') initSnake(winId);
     /* visit btn */
     const vb=document.getElementById(winId)&&document.getElementById(winId).querySelector('.btn-visit');
     if(vb) vb.addEventListener('click',e=>{e.stopPropagation();window.open(app.url,'_blank')});
@@ -893,6 +986,7 @@ function bringToFront(id){
 function initDragResize(win){
   const titlebar=win.querySelector('.win-titlebar');
   titlebar.addEventListener('mousedown',onDragStart);
+  titlebar.addEventListener('dblclick',e=>{ if(e.target.closest('.win-controls')) return; maximizeWindow(win.id); });
   win.querySelectorAll('.win-resize').forEach(r=>r.addEventListener('mousedown',onResizeStart));
 }
 function onDragStart(e){
@@ -914,8 +1008,15 @@ function onDragMove(e){
   const maxT=window.innerHeight-40-10;
   win.style.left=Math.max(-win.offsetWidth+50,Math.min(maxL,nl))+'px';
   win.style.top=Math.max(0,Math.min(maxT,nt))+'px';
+  let hint=document.getElementById('snap-hint');
+  if(e.clientY<=4){
+    if(!hint){ hint=document.createElement('div'); hint.id='snap-hint'; hint.style.cssText='position:fixed;inset:6px 6px 46px 6px;border:2px solid #3A82FF;background:rgba(58,130,255,0.18);border-radius:6px;z-index:9999;pointer-events:none'; document.body.appendChild(hint); }
+    dragState.snapPending=true;
+  } else if(hint){ hint.remove(); dragState.snapPending=false; }
 }
 function onDragEnd(){
+  const hint=document.getElementById('snap-hint'); if(hint) hint.remove();
+  if(dragState&&dragState.snapPending){ maximizeWindow(dragState.win.id); }
   dragState=null;
   document.removeEventListener('mousemove',onDragMove);
   document.removeEventListener('mouseup',onDragEnd);
@@ -1075,6 +1176,10 @@ document.querySelectorAll('.ctx-item').forEach(item=>{
     if(a==='refresh') buildDesktop();
     if(a==='about') openApp('about');
     if(a==='wallpaper') openWallpaperPicker();
+    if(a==='arrange'){ clearIconPositions(); buildDesktop(); SFX.play('click'); }
+    if(a==='size-sm') setIconSize('sm');
+    if(a==='size-md') setIconSize('md');
+    if(a==='size-lg') setIconSize('lg');
   });
 });
 
@@ -1241,10 +1346,26 @@ function buildMSContent(){
   </div>`;
 }
 function buildSolitaireContent(){
-  return `<div class="sol-body" id="sol-body">
-    <div style="text-align:center;color:rgba(255,255,255,0.9);font-family:Tajawal,Tahoma;font-size:13px;margin-bottom:4px">🃏 سوليتير — انقر بطاقة للتحريك</div>
-    <button class="sol-btn" id="sol-new" style="display:block;margin:0 auto 8px">🔄 لعبة جديدة</button>
-    <div id="sol-area"></div>
+  return `<div class="sol-body" id="sol-body" style="position:relative">
+    <div class="sol-bar">
+      <button class="sol-btn" id="sol-new">🔄 لعبة جديدة</button>
+      <button class="sol-btn" id="sol-undo">↩️ تراجع</button>
+      <div class="sol-stat">النقاط: <span id="sol-score">0</span></div>
+      <div class="sol-stat">الوقت: <span id="sol-time">00:00</span></div>
+    </div>
+    <div class="sol-row">
+      <div class="sol-stockwaste">
+        <div class="sol-found" id="sol-stock"><div class="sol-ghost-suit">🔄</div></div>
+        <div class="sol-found" id="sol-waste"></div>
+      </div>
+      <div class="sol-spacer"></div>
+      <div class="sol-found" id="sol-f-0" data-f="0"><div class="sol-ghost-suit">♥</div></div>
+      <div class="sol-found" id="sol-f-1" data-f="1"><div class="sol-ghost-suit">♦</div></div>
+      <div class="sol-found" id="sol-f-2" data-f="2"><div class="sol-ghost-suit">♠</div></div>
+      <div class="sol-found" id="sol-f-3" data-f="3"><div class="sol-ghost-suit">♣</div></div>
+    </div>
+    <div id="sol-area" style="display:flex;gap:10px;flex:1;overflow:auto"></div>
+    <div id="sol-win-overlay"><div class="sol-win-msg">🎉 لقد فزت! 🎉</div></div>
   </div>`;
 }
 function buildRecycleContent(){
@@ -1257,6 +1378,19 @@ function buildRecycleContent(){
       <div style="font-size:48px">🗑️</div>
       <div>سلة المهملات فارغة</div>
       <div style="font-size:11px;color:#aaa">لا توجد عناصر محذوفة</div>
+    </div>
+  </div>`;
+}
+function buildSnakeContent(){
+  return `<div class="snake-body">
+    <div class="snake-bar">
+      <div class="sol-stat">النقاط: <span id="snake-score">0</span></div>
+      <div class="sol-stat">أعلى نتيجة: <span id="snake-high">0</span></div>
+      <button class="sol-btn" id="snake-restart" style="margin:0">🔄 إعادة</button>
+    </div>
+    <div style="position:relative">
+      <canvas id="snake-canvas" width="360" height="360"></canvas>
+      <div id="snake-overlay" class="snake-overlay">استخدم الأسهم أو WASD للبدء</div>
     </div>
   </div>`;
 }
@@ -1597,7 +1731,7 @@ function initMinesweeper(winId){
 }
 
 /* ═══════════════════════════════════════════════
-   SOLITAIRE (DEMO)
+   SOLITAIRE — FULL KLONDIKE ENGINE
 ═══════════════════════════════════════════════ */
 function initSolitaire(winId){
   const w=document.getElementById(winId);
@@ -1605,48 +1739,344 @@ function initSolitaire(winId){
   const SUITS=['♥','♦','♠','♣'];
   const VALUES=['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
   const RED=['♥','♦'];
-  function makeDeck(){ const d=[]; SUITS.forEach(s=>VALUES.forEach(v=>d.push({s,v,red:RED.includes(s)}))); return d; }
+  function makeDeck(){
+    const d=[];
+    SUITS.forEach((s,si)=>VALUES.forEach((v,vi)=>d.push({s,v,si,rank:vi+1,red:RED.includes(s)})));
+    return d;
+  }
   function shuffle(d){ for(let i=d.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1));[d[i],d[j]]=[d[j],d[i]]; } return d; }
-  function cardHtml(card,faceDown,stacked){
-    if(faceDown) return `<div class="sol-card face-down${stacked?' sol-stacked':''}"></div>`;
-    return `<div class="sol-card${card.red?' red':' black'}${stacked?' sol-stacked':''}">
+
+  let tableau=[], foundations=[[],[],[],[]], stock=[], waste=[];
+  let score=0, seconds=0, timerIv=null, gameWon=false, history=[];
+
+  function snapshot(){
+    return JSON.stringify({tableau,foundations,stock,waste,score});
+  }
+  function pushHistory(){
+    history.push(snapshot());
+    if(history.length>60) history.shift();
+  }
+  function restore(snap){
+    const s=JSON.parse(snap);
+    tableau=s.tableau; foundations=s.foundations; stock=s.stock; waste=s.waste; score=s.score;
+  }
+
+  function newGame(){
+    const deck=shuffle(makeDeck());
+    tableau=[]; let idx=0;
+    for(let c=0;c<7;c++){
+      const col=[];
+      for(let r=0;r<=c;r++) col.push({card:deck[idx++],face:r===c});
+      tableau.push(col);
+    }
+    stock=deck.slice(idx).map(card=>({card,face:false}));
+    waste=[]; foundations=[[],[],[],[]];
+    score=0; seconds=0; gameWon=false; history=[];
+    document.getElementById('sol-win-overlay-'+winId)&&0;
+    const overlay=w.querySelector('#sol-win-overlay'); if(overlay) overlay.classList.remove('show');
+    clearInterval(timerIv);
+    timerIv=setInterval(()=>{ if(!gameWon){ seconds++; updateStats(); } },1000);
+    render();
+    updateStats();
+  }
+
+  function fmtTime(t){ const m=Math.floor(t/60),s=t%60; return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0'); }
+  function updateStats(){
+    const scoreEl=w.querySelector('#sol-score'); if(scoreEl) scoreEl.textContent=score;
+    const timeEl=w.querySelector('#sol-time'); if(timeEl) timeEl.textContent=fmtTime(seconds);
+    const undoBtn=w.querySelector('#sol-undo'); if(undoBtn) undoBtn.disabled=history.length===0;
+  }
+
+  function cardHtml(card,faceDown){
+    if(faceDown) return `<div class="sol-card face-down"></div>`;
+    return `<div class="sol-card${card.red?' red':' black'}">
       <div class="sol-card-top">${card.v}${card.s}</div>
       <div class="sol-card-suit">${card.s}</div>
       <div class="sol-card-bot">${card.v}${card.s}</div>
     </div>`;
   }
-  let cols7=[];
-  function deal(){
-    const deck=shuffle(makeDeck());
-    cols7=[];
-    let idx=0;
-    for(let c=0;c<7;c++){
-      const col=[];
-      for(let r=0;r<=c;r++){ col.push({card:deck[idx++],face:r===c}); }
-      cols7.push(col);
-    }
-    render();
+
+  function canPlaceOnTableau(col,card){
+    if(col.length===0) return card.rank===13;
+    const top=col[col.length-1];
+    if(!top.face) return false;
+    return top.card.red!==card.red && top.card.rank===card.rank+1;
   }
+  function canPlaceOnFoundation(fi,card){
+    const pile=foundations[fi];
+    if(card.si!==fi) return false;
+    if(pile.length===0) return card.rank===1;
+    return pile[pile.length-1].rank===card.rank-1;
+  }
+
   function render(){
+    /* tableau */
     const area=w.querySelector('#sol-area');
-    area.style.cssText='display:flex;gap:10px;overflow:auto;flex:1';
     area.innerHTML='';
-    cols7.forEach((col,ci)=>{
+    tableau.forEach((col,ci)=>{
       const colEl=document.createElement('div');
       colEl.className='sol-column';
-      if(col.length===0){ colEl.innerHTML='<div class="sol-placeholder"></div>'; }
+      colEl.dataset.col=ci;
+      if(col.length===0){ colEl.innerHTML='<div class="sol-placeholder">K</div>'; }
       col.forEach((item,ri)=>{
-        colEl.innerHTML+=cardHtml(item.card,!item.face,ri>0);
+        const cardWrap=document.createElement('div');
+        cardWrap.className='sol-card-wrap'+(ri>0?' sol-stacked':'');
+        cardWrap.innerHTML=cardHtml(item.card,!item.face);
+        const cardEl=cardWrap.firstElementChild;
+        cardEl.dataset.col=ci; cardEl.dataset.idx=ri;
+        if(item.face){
+          cardEl.classList.add('draggable');
+          cardEl.draggable=true;
+          cardEl.addEventListener('dragstart',e=>onDragStart(e,'tableau',ci,ri));
+          cardEl.addEventListener('dblclick',()=>tryAutoFoundation('tableau',ci,ri));
+        }
+        if(ri===col.length-1 && !item.face){
+          cardEl.style.cursor='pointer';
+          cardEl.addEventListener('click',()=>{ pushHistory(); item.face=true; score+=5; render(); updateStats(); SFX.play('click'); });
+        }
+        colEl.appendChild(cardWrap);
       });
-      colEl.addEventListener('click',()=>{
-        const last=col[col.length-1];
-        if(last&&!last.face){ last.face=true; render(); }
-      });
+      colEl.addEventListener('dragover',e=>{ e.preventDefault(); colEl.classList.add('drag-over'); });
+      colEl.addEventListener('dragleave',()=>colEl.classList.remove('drag-over'));
+      colEl.addEventListener('drop',e=>{ e.preventDefault(); colEl.classList.remove('drag-over'); onDrop('tableau',ci); });
       area.appendChild(colEl);
     });
+
+    /* stock */
+    const stockEl=w.querySelector('#sol-stock');
+    stockEl.innerHTML = stock.length ? cardHtml(null,true) : '<div class="sol-ghost-suit">🔄</div>';
+    stockEl.onclick=()=>{
+      pushHistory();
+      if(stock.length===0){
+        if(waste.length===0) { history.pop(); return; }
+        stock=waste.reverse().map(card=>({card,face:false}));
+        waste=[];
+      } else {
+        const d=stock.pop();
+        waste.push(d.card);
+      }
+      SFX.play('click');
+      render(); updateStats();
+    };
+
+    /* waste */
+    const wasteEl=w.querySelector('#sol-waste');
+    wasteEl.innerHTML='';
+    if(waste.length){
+      const top=waste[waste.length-1];
+      const wrap=document.createElement('div');
+      wrap.innerHTML=cardHtml(top,false);
+      const cardEl=wrap.firstElementChild;
+      cardEl.classList.add('draggable');
+      cardEl.draggable=true;
+      cardEl.addEventListener('dragstart',e=>onDragStart(e,'waste',0,waste.length-1));
+      cardEl.addEventListener('dblclick',()=>tryAutoFoundation('waste',0,waste.length-1));
+      wasteEl.appendChild(cardEl);
+    }
+
+    /* foundations */
+    for(let fi=0;fi<4;fi++){
+      const fEl=w.querySelector('#sol-f-'+fi);
+      const pile=foundations[fi];
+      const ghost=fEl.querySelector('.sol-ghost-suit');
+      fEl.innerHTML = pile.length ? cardHtml(pile[pile.length-1],false) : (ghost?ghost.outerHTML:`<div class="sol-ghost-suit">${SUITS[fi]}</div>`);
+      fEl.addEventListener('dragover',e=>{ e.preventDefault(); fEl.classList.add('drag-over'); });
+      fEl.addEventListener('dragleave',()=>fEl.classList.remove('drag-over'));
+      fEl.addEventListener('drop',e=>{ e.preventDefault(); fEl.classList.remove('drag-over'); onDrop('foundation',fi); });
+    }
+    checkWin();
   }
-  w.querySelector('#sol-new').addEventListener('click',deal);
-  deal();
+
+  let dragInfo=null;
+  function onDragStart(e,zone,col,idx){
+    dragInfo={zone,col,idx};
+    e.dataTransfer.setData('text/plain','sol');
+    setTimeout(()=>{ e.target.classList.add('dragging'); },0);
+  }
+  function getDragCard(){
+    if(!dragInfo) return null;
+    if(dragInfo.zone==='waste') return waste[waste.length-1];
+    if(dragInfo.zone==='tableau') return tableau[dragInfo.col][dragInfo.idx].card;
+    return null;
+  }
+  function onDrop(targetZone,targetIdx){
+    if(!dragInfo) return;
+    const movingCard=getDragCard();
+    if(!movingCard){ dragInfo=null; return; }
+    let ok=false;
+    if(targetZone==='tableau'){
+      ok=canPlaceOnTableau(tableau[targetIdx],movingCard);
+      if(ok){
+        pushHistory();
+        let movedStack;
+        if(dragInfo.zone==='waste'){ movedStack=[{card:waste.pop(),face:true}]; score+=10; }
+        else { movedStack=tableau[dragInfo.col].splice(dragInfo.idx); score+=5; if(tableau[dragInfo.col].length){ const t=tableau[dragInfo.col][tableau[dragInfo.col].length-1]; if(!t.face){ t.face=true; score+=5; } } }
+        tableau[targetIdx].push(...movedStack);
+        SFX.play('click');
+      }
+    } else if(targetZone==='foundation'){
+      const isStackTop = dragInfo.zone==='waste' || dragInfo.idx===tableau[dragInfo.col].length-1;
+      if(isStackTop && canPlaceOnFoundation(targetIdx,movingCard)){
+        pushHistory();
+        if(dragInfo.zone==='waste'){ waste.pop(); score+=10; }
+        else { tableau[dragInfo.col].pop(); score+=10; if(tableau[dragInfo.col].length){ const t=tableau[dragInfo.col][tableau[dragInfo.col].length-1]; if(!t.face){ t.face=true; score+=5; } } }
+        foundations[targetIdx].push(movingCard);
+        ok=true;
+        SFX.play('open');
+      }
+    }
+    dragInfo=null;
+    render(); updateStats();
+  }
+  function tryAutoFoundation(zone,col,idx){
+    const card = zone==='waste'? waste[waste.length-1] : tableau[col][idx];
+    const c = zone==='waste'? card : card.card;
+    const isTop = zone==='waste' || idx===tableau[col].length-1;
+    if(!isTop) return;
+    if(canPlaceOnFoundation(c.si,c)){
+      pushHistory();
+      if(zone==='waste'){ waste.pop(); score+=10; }
+      else { tableau[col].pop(); score+=10; if(tableau[col].length){ const t=tableau[col][tableau[col].length-1]; if(!t.face){ t.face=true; score+=5; } } }
+      foundations[c.si].push(c);
+      SFX.play('open');
+      render(); updateStats();
+    }
+  }
+  function checkWin(){
+    if(gameWon) return;
+    const total=foundations.reduce((a,p)=>a+p.length,0);
+    if(total===52){
+      gameWon=true;
+      clearInterval(timerIv);
+      score+=200;
+      updateStats();
+      showConfetti();
+      SFX.play('startup');
+    }
+  }
+  function showConfetti(){
+    const overlay=w.querySelector('#sol-win-overlay');
+    if(!overlay) return;
+    overlay.classList.add('show');
+    overlay.innerHTML='<div class="sol-win-msg">🎉 لقد فزت! 🎉</div>';
+    const colors=['#FFD700','#FF4040','#40C0FF','#40FF80','#FF40C0','#FFA040'];
+    const W=overlay.clientWidth||600;
+    for(let i=0;i<90;i++){
+      const c=document.createElement('div');
+      c.className='sol-confetti';
+      c.style.left=Math.random()*W+'px';
+      c.style.background=colors[i%colors.length];
+      c.style.animationDuration=(1.5+Math.random()*1.5)+'s';
+      c.style.animationDelay=(Math.random()*0.6)+'s';
+      overlay.appendChild(c);
+    }
+  }
+  function undo(){
+    if(!history.length) return;
+    const snap=history.pop();
+    restore(snap);
+    render(); updateStats();
+    SFX.play('click');
+  }
+
+  w.querySelector('#sol-new').addEventListener('click',newGame);
+  w.querySelector('#sol-undo').addEventListener('click',undo);
+  w.querySelector('.win-btn-close').addEventListener('click',()=>clearInterval(timerIv),{once:true});
+  newGame();
+}
+
+/* ═══════════════════════════════════════════════
+   SNAKE — FULL GAME
+═══════════════════════════════════════════════ */
+function initSnake(winId){
+  const w=document.getElementById(winId);
+  if(!w) return;
+  const canvas=w.querySelector('#snake-canvas');
+  const ctx=canvas.getContext('2d');
+  const cell=20, cols=18, rows=18;
+  const scoreEl=w.querySelector('#snake-score');
+  const highEl=w.querySelector('#snake-high');
+  const overlay=w.querySelector('#snake-overlay');
+  let high=parseInt(localStorage.getItem('xp_snake_high'))||0;
+  highEl.textContent=high;
+  let snake,dir,nextDir,food,score,speed,loopIv,running=false,gameOver=false;
+
+  function placeFood(){
+    let pos;
+    do{ pos={x:Math.floor(Math.random()*cols),y:Math.floor(Math.random()*rows)}; }
+    while(snake.some(s=>s.x===pos.x&&s.y===pos.y));
+    food=pos;
+  }
+  function reset(){
+    snake=[{x:9,y:9},{x:8,y:9},{x:7,y:9}];
+    dir={x:1,y:0}; nextDir={x:1,y:0};
+    score=0; speed=120; gameOver=false; running=false;
+    placeFood();
+    scoreEl.textContent=score;
+    draw();
+    clearInterval(loopIv);
+    overlay.classList.remove('hide');
+    overlay.textContent='استخدم الأسهم أو WASD للبدء';
+  }
+  function start(){
+    if(running) return;
+    running=true;
+    overlay.classList.add('hide');
+    clearInterval(loopIv);
+    loopIv=setInterval(tick,speed);
+  }
+  function tick(){
+    dir=nextDir;
+    const head={x:snake[0].x+dir.x,y:snake[0].y+dir.y};
+    if(head.x<0||head.x>=cols||head.y<0||head.y>=rows||snake.some(s=>s.x===head.x&&s.y===head.y)){
+      endGame(); return;
+    }
+    snake.unshift(head);
+    if(head.x===food.x&&head.y===food.y){
+      score+=10; scoreEl.textContent=score;
+      SFX.play('click');
+      placeFood();
+      if(speed>60 && score%50===0){ speed-=8; clearInterval(loopIv); loopIv=setInterval(tick,speed); }
+    } else { snake.pop(); }
+    draw();
+  }
+  function endGame(){
+    running=false; gameOver=true; clearInterval(loopIv);
+    SFX.play('error');
+    if(score>high){ high=score; localStorage.setItem('xp_snake_high',high); highEl.textContent=high; }
+    overlay.classList.remove('hide');
+    overlay.innerHTML='💀 انتهت اللعبة — النقاط: '+score+'<br>(اضغط أي سهم لإعادة المحاولة)';
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='#FF4040';
+    ctx.fillRect(food.x*cell+2,food.y*cell+2,cell-4,cell-4);
+    snake.forEach((s,i)=>{
+      ctx.fillStyle = i===0 ? '#9CFF50' : '#3CB043';
+      ctx.fillRect(s.x*cell+1,s.y*cell+1,cell-2,cell-2);
+    });
+  }
+  const KEYMAP={ArrowUp:{x:0,y:-1},ArrowDown:{x:0,y:1},ArrowLeft:{x:-1,y:0},ArrowRight:{x:1,y:0},
+    w:{x:0,y:-1},W:{x:0,y:-1},s:{x:0,y:1},S:{x:0,y:1},a:{x:-1,y:0},A:{x:-1,y:0},d:{x:1,y:0},D:{x:1,y:0}};
+  function onKey(e){
+    if(!w.classList.contains('active-window')) return;
+    if(e.key===' '){
+      e.preventDefault();
+      if(!running && !gameOver) start();
+      else if(gameOver){ reset(); start(); }
+      return;
+    }
+    const nd=KEYMAP[e.key];
+    if(!nd) return;
+    e.preventDefault();
+    if(gameOver){ reset(); start(); return; }
+    if(!(snake.length>1 && nd.x===-dir.x && nd.y===-dir.y)) nextDir=nd;
+    if(!running) start();
+  }
+  document.addEventListener('keydown',onKey);
+  w.querySelector('#snake-restart').addEventListener('click',()=>{ reset(); });
+  w.querySelector('.win-btn-close').addEventListener('click',()=>{ clearInterval(loopIv); document.removeEventListener('keydown',onKey); },{once:true});
+  reset();
 }
 
 /* ═══════════════════════════════════════════════
@@ -1802,15 +2232,27 @@ const WALLPAPERS = [
     },
     thumb:'radial-gradient(ellipse at 50% 50%,#1A0A40,#000010)'
   },
+  {
+    name:'لون خالص',
+    solid:true,
+    render(sky){ sky.innerHTML=''; sky.style.background=customSolidColor; },
+    get thumb(){ return customSolidColor; }
+  },
 ];
-let currentWP = 0;
+let customSolidColor = localStorage.getItem('xp_solid_color')||'#2A66DF';
+let currentWP = parseInt(localStorage.getItem('xp_wallpaper_idx'));
+if(isNaN(currentWP)||!WALLPAPERS[currentWP]) currentWP=0;
 function applyWallpaper(idx){
   currentWP=idx;
+  localStorage.setItem('xp_wallpaper_idx',idx);
   const sky=document.getElementById('wallpaper');
   WALLPAPERS[idx].render(sky);
 }
 function buildWallpaperPicker(){
   const grid=document.getElementById('wp-grid');
+  const colorRow=document.getElementById('wp-color-row');
+  const colorInput=document.getElementById('wp-color');
+  colorInput.value=customSolidColor;
   grid.innerHTML='';
   WALLPAPERS.forEach((wp,i)=>{
     const el=document.createElement('div');
@@ -1820,10 +2262,20 @@ function buildWallpaperPicker(){
     el.addEventListener('click',()=>{
       grid.querySelectorAll('.wp-thumb').forEach(t=>t.classList.remove('selected'));
       el.classList.add('selected');
+      colorRow.style.display = wp.solid ? 'flex' : 'none';
     });
     grid.appendChild(el);
   });
+  colorRow.style.display = WALLPAPERS[currentWP].solid ? 'flex' : 'none';
 }
+document.getElementById('wp-color').addEventListener('input',e=>{
+  customSolidColor=e.target.value;
+  localStorage.setItem('xp_solid_color',customSolidColor);
+  const grid=document.getElementById('wp-grid');
+  const solidThumb=[...grid.querySelectorAll('.wp-thumb')].find((t,i)=>WALLPAPERS[i].solid);
+  if(solidThumb) solidThumb.style.background=customSolidColor;
+  if(currentWP===WALLPAPERS.findIndex(w=>w.solid)) applyWallpaper(currentWP);
+});
 let wpSelected=currentWP;
 document.getElementById('wp-apply').addEventListener('click',()=>{
   const idx=[...document.querySelectorAll('.wp-thumb')].findIndex(t=>t.classList.contains('selected'));
@@ -1837,6 +2289,7 @@ function openWallpaperPicker(){ buildWallpaperPicker(); document.getElementById(
 
 buildDesktop();
 buildStartMenu();
+if(currentWP!==0) applyWallpaper(currentWP);
 </script>
 </body>
 </html>
