@@ -313,6 +313,72 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
 .chess-history{flex:1;background:#111;border:1px solid #444;border-radius:3px;padding:6px;overflow:auto;font-size:11px;max-height:260px;direction:ltr;text-align:left}
 .chess-history div{padding:2px 0;border-bottom:1px solid #2a2a2a}
 .chess-diff-select{font-family:Tahoma;font-size:11px;padding:3px;width:100%}
+@keyframes matrixFall{from{transform:translateY(0)}to{transform:translateY(420px)}}
+.app-loading-spinner{width:36px;height:36px;border:4px solid #B8D8F8;border-top-color:#1E50A0;border-radius:50%;margin:0 auto;animation:appLoadingSpin .8s linear infinite}
+@keyframes appLoadingSpin{to{transform:rotate(360deg)}}
+
+/* ═══════════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════ */
+.services-body{padding:12px;font-family:Tahoma,'Tajawal',sans-serif;height:100%;overflow:auto;background:#fff}
+.service-card{border:1px solid #ddd;border-radius:6px;padding:12px;margin-bottom:10px;background:#FAFAF6;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.service-card-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.service-emoji{font-size:24px}
+.service-name{font-size:13px;font-weight:700;color:#1E50A0}
+.service-desc{font-size:11px;color:#444;line-height:1.6;margin-bottom:8px}
+.service-examples{font-size:10px;color:#666;margin-bottom:8px}
+.service-examples ul{margin:4px 0 0;padding-inline-start:18px}
+.service-examples li{margin-bottom:2px}
+.service-order-btn{padding:5px 14px;background:linear-gradient(180deg,#5CC85C,#2E9E2E);color:#fff;border:1px solid #1E7A1E;border-radius:3px;font-size:11px;font-family:Tahoma,'Tajawal';cursor:pointer}
+.service-order-btn:active{background:linear-gradient(180deg,#2E9E2E,#5CC85C)}
+.order-form-body{padding:14px;font-family:Tahoma,'Tajawal',sans-serif;height:100%;overflow:auto;background:#fff;display:flex;flex-direction:column;gap:8px}
+.order-form-body label{font-size:11px;color:#444;display:block;margin-bottom:2px}
+.order-form-body input,.order-form-body textarea{width:100%;box-sizing:border-box;font-family:Tahoma;font-size:12px;padding:5px 6px;border:1px solid #888;border-radius:2px}
+.order-form-body textarea{resize:vertical;min-height:70px}
+
+/* ═══════════════════════════════════════════════
+   PROJECTS / GALLERY (Explorer-style)
+═══════════════════════════════════════════════ */
+.proj-body{display:flex;height:100%;background:#fff;font-family:Tahoma,'Tajawal',sans-serif}
+.proj-list{width:160px;background:#ECE9D8;border-left:1px solid #b8b4a8;overflow:auto;flex-shrink:0;padding:6px}
+.proj-folder-item{display:flex;align-items:center;gap:6px;padding:7px 8px;cursor:pointer;border-radius:3px;font-size:12px}
+.proj-folder-item:hover{background:#D8E8FA}
+.proj-folder-item.active{background:#B8D8F8}
+.proj-folder-icon{font-size:18px}
+.proj-detail{flex:1;overflow:auto;padding:14px}
+.proj-detail-title{font-size:15px;font-weight:700;color:#222;margin-bottom:4px}
+.proj-detail-shot{width:100%;max-width:420px;height:180px;border-radius:4px;border:1px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:40px;margin:10px 0;background:linear-gradient(135deg,#EEF3FA,#DCE8F8)}
+.proj-detail-desc{font-size:12px;color:#444;line-height:1.7;margin-bottom:10px}
+.proj-tech-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.proj-tech-tag{background:#EEF3FA;border:1px solid #BFD4EE;color:#1E50A0;font-size:10px;padding:3px 8px;border-radius:10px}
+.proj-links{display:flex;gap:8px}
+.proj-link-btn{padding:6px 14px;border-radius:3px;font-size:11px;text-decoration:none;display:inline-block;cursor:pointer}
+.proj-link-demo{background:linear-gradient(180deg,#5CA8E8,#1E6BC0);color:#fff;border:1px solid #14508E}
+.proj-link-github{background:linear-gradient(180deg,#444,#222);color:#fff;border:1px solid #000}
+.gallery-grid{flex:1;padding:14px;display:flex;flex-wrap:wrap;gap:14px;align-content:flex-start;overflow:auto}
+.gallery-thumb{width:110px;display:flex;flex-direction:column;align-items:center;cursor:pointer;padding:8px;border-radius:5px}
+.gallery-thumb:hover{background:#D8E8FA}
+.gallery-thumb-img{width:96px;height:72px;border-radius:3px;border:1px solid #ccc;background:linear-gradient(135deg,#EEF3FA,#DCE8F8);display:flex;align-items:center;justify-content:center;font-size:28px}
+.gallery-thumb-label{font-size:10px;text-align:center;margin-top:5px;color:#333}
+.gallery-viewer{position:absolute;inset:0;background:rgba(0,0,0,0.82);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:60}
+.gallery-viewer.show{display:flex}
+.gallery-viewer-img{width:280px;height:200px;border-radius:4px;background:linear-gradient(135deg,#EEF3FA,#DCE8F8);display:flex;align-items:center;justify-content:center;font-size:60px;margin-bottom:14px}
+.gallery-viewer-label{color:#fff;font-size:13px;margin-bottom:14px}
+.gallery-viewer-close{padding:6px 18px;background:#ECE9D8;border:1px solid #888;border-radius:3px;cursor:pointer;font-size:11px}
+
+/* ═══════════════════════════════════════════════
+   RESUME / CV
+═══════════════════════════════════════════════ */
+.resume-body{display:flex;flex-direction:column;height:100%;background:#525252}
+.resume-toolbar{display:flex;gap:8px;padding:6px 10px;background:#ECE9D8;border-bottom:1px solid #999;align-items:center}
+.resume-doc-wrap{flex:1;overflow:auto;padding:18px;display:flex;justify-content:center}
+.resume-doc{width:100%;max-width:560px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.4);padding:30px 34px;font-family:Tahoma,'Tajawal',sans-serif;color:#222}
+.resume-doc h1{font-size:20px;margin:0 0 2px;color:#1E3A6E}
+.resume-doc h2{font-size:13px;color:#666;margin:0 0 14px;font-weight:400}
+.resume-doc-section{margin-bottom:14px}
+.resume-doc-section-title{font-size:12px;font-weight:700;color:#1E50A0;border-bottom:2px solid #1E50A0;padding-bottom:2px;margin-bottom:6px}
+.resume-doc-item{font-size:11.5px;margin-bottom:5px;line-height:1.6}
+.resume-doc-item b{color:#222}
 
 /* ═══════════════════════════════════════════════
    RECYCLE BIN WINDOW
@@ -721,6 +787,28 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
   </div>
 </div>
 
+<!-- ── GENERIC XP SUCCESS/ALERT DIALOG ────── -->
+<div class="wp-picker" id="xp-alert-picker">
+  <div class="wp-box" style="width:320px">
+    <div class="wp-titlebar" id="xp-alert-title">✅ تم</div>
+    <div class="wp-body" id="xp-alert-body" style="text-align:center;font-family:Tahoma,'Tajawal',sans-serif;font-size:12px;line-height:1.7"></div>
+    <div class="wp-buttons" style="padding:0 14px 14px">
+      <button class="wp-btn" id="xp-alert-ok">موافق</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── APP LOADING SPINNER ────────────────── -->
+<div class="wp-picker" id="app-loading-picker">
+  <div class="wp-box" style="width:280px;text-align:center;padding:6px 0">
+    <div style="padding:24px 20px 18px">
+      <div class="app-loading-spinner"></div>
+      <div id="app-loading-title" style="font-family:Tahoma,'Tajawal',sans-serif;font-size:13px;font-weight:700;color:#222;margin-top:14px">جاري التحميل...</div>
+      <div id="app-loading-body" style="font-family:Tahoma,'Tajawal',sans-serif;font-size:11px;color:#666;margin-top:4px">يرجى الانتظار من فضلك...</div>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ═══════════════════════════════════════════════
    SOUND ENGINE (defined first — used everywhere below)
@@ -788,6 +876,10 @@ const ICONS = {
   rating: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><polygon points="24,4 30,18 45,19 33,29 37,44 24,35 11,44 15,29 3,19 18,18" fill="#FFD700" stroke="#C8A000" stroke-width="1.2"/></svg>`,
   contact: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="10" width="40" height="28" rx="3" fill="#fff" stroke="#3C5CE8" stroke-width="2"/><path d="M5 12l19 15 19-15" fill="none" stroke="#3C5CE8" stroke-width="2"/></svg>`,
   chess: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="8" fill="#3a2a18"/><rect x="6" y="30" width="9" height="9" fill="#EEDFC0"/><rect x="15" y="21" width="9" height="9" fill="#7C5A3A"/><rect x="24" y="30" width="9" height="9" fill="#EEDFC0"/><rect x="33" y="21" width="9" height="9" fill="#7C5A3A"/><text x="24" y="18" font-size="14" text-anchor="middle" fill="#fff">♞</text></svg>`,
+  services: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="40" height="36" rx="4" fill="#F4F0E4" stroke="#B89B5E" stroke-width="1.5"/><path d="M14 16h20M14 24h20M14 32h12" stroke="#8A6D2F" stroke-width="2.4" stroke-linecap="round"/><circle cx="36" cy="33" r="6" fill="#3CB043"/><path d="M33 33l2 2 4-4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  projects: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M4 14a3 3 0 0 1 3-3h10l4 4h20a3 3 0 0 1 3 3v3H4z" fill="#FFD25C"/><path d="M4 17h40v20a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="#FFCA3A"/></svg>`,
+  gallery: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="40" height="32" rx="3" fill="#fff" stroke="#888" stroke-width="1.5"/><circle cx="14" cy="18" r="4" fill="#FFC93C"/><path d="M6 36l10-12 8 8 6-7 12 11z" fill="#5AA9E6"/></svg>`,
+  resume: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="4" width="32" height="40" rx="2" fill="#fff" stroke="#3C5CE8" stroke-width="1.5"/><rect x="14" y="10" width="20" height="4" fill="#3C5CE8"/><rect x="14" y="18" width="20" height="2.5" fill="#aaa"/><rect x="14" y="24" width="20" height="2.5" fill="#aaa"/><rect x="14" y="30" width="14" height="2.5" fill="#aaa"/><rect x="14" y="36" width="16" height="2.5" fill="#aaa"/></svg>`,
 };
 
 /* ═══════════════════════════════════════════════
@@ -814,6 +906,10 @@ const APPS = [
   { id:'rating',    label:'تقييم الموقع', icon:'rating',     type:'rating', title:'Rate My Portfolio',        desc:'', url:'', w:340, h:300, tooltip:'قيّم البورتفوليو' },
   { id:'contact',   label:'التواصل',     icon:'contact',     type:'contact',title:'Send Feedback',            desc:'', url:'', w:380, h:440, tooltip:'تواصل معي' },
   { id:'chess',     label:'الشطرنج',     icon:'chess',       type:'chess',  title:'♞ شطرنج XP',               desc:'', url:'', w:560, h:480, tooltip:'لعب الشطرنج ضد الكمبيوتر' },
+  { id:'services',  label:'Services',    icon:'services',    type:'services',title:'Services',                desc:'', url:'', w:480, h:520, tooltip:'خدماتي الاحترافية' },
+  { id:'projects',  label:'المشاريع',    icon:'projects',     type:'projects',title:'Projects',                desc:'', url:'', w:540, h:440, tooltip:'معرض مشاريعي' },
+  { id:'gallery',   label:'معرض الأعمال',icon:'gallery',      type:'gallery', title:'Gallery',                 desc:'', url:'', w:540, h:440, tooltip:'معرض أعمالي' },
+  { id:'resume',    label:'السيرة الذاتية',icon:'resume',     type:'resume',  title:'Resume / CV',             desc:'', url:'', w:480, h:560, tooltip:'سيرتي الذاتية' },
 ];
 
 /* start menu items */
@@ -827,6 +923,10 @@ const SM_LEFT = [
   { id:'snake',name:'Snake',            sub:'لعبة الثعبان',      icon:'snake' },
   { id:'tetris',name:'Tetris',          sub:'لعبة تيتريس',       icon:'tetris' },
   { id:'chess',name:'الشطرنج',          sub:'العب ضد الكمبيوتر',  icon:'chess' },
+  { id:'services',name:'Services',      sub:'خدماتي الاحترافية',  icon:'services' },
+  { id:'projects',name:'المشاريع',      sub:'معرض مشاريعي',      icon:'projects' },
+  { id:'gallery',name:'معرض الأعمال',   sub:'صور وتصاميم',       icon:'gallery' },
+  { id:'resume',name:'السيرة الذاتية',  sub:'Resume / CV',        icon:'resume' },
   { id:'skills',name:'Software Skills', sub:'مهاراتي البرمجية',   icon:'skills' },
   { id:'counter',name:'عداد الزوار',    sub:'Visitor Statistics', icon:'counter' },
   { id:'rating',name:'تقييم الموقع',    sub:'Rate My Portfolio',  icon:'rating' },
@@ -858,7 +958,7 @@ let mpProgress = 35;
 let mpTimer;
 let desktopIconOrder = null;
 let iconSizePref = localStorage.getItem('xp_icon_size')||'md';
-const DESKTOP_APP_IDS = ['facebook','instagram','tiktok','spotify','steam','about','mycomp','calc','paint','minesweeper','solitaire','snake','tetris','chess','skills','counter','rating','contact','recycle','mediaplayer'];
+const DESKTOP_APP_IDS = ['facebook','instagram','tiktok','spotify','steam','about','mycomp','calc','paint','minesweeper','solitaire','snake','tetris','chess','services','projects','gallery','resume','skills','counter','rating','contact','recycle','mediaplayer'];
 
 /* ═══════════════════════════════════════════════
    i18n — MULTI-LANGUAGE SYSTEM
@@ -867,15 +967,18 @@ const APP_I18N = {
   ar:{ facebook:'فيسبوك', instagram:'إنستغرام', tiktok:'تيك توك', spotify:'Spotify', steam:'Steam',
        about:'نبذة عني.txt', mycomp:'My Computer', calc:'الآلة الحاسبة', paint:'الرسام', minesweeper:'ألغام',
        solitaire:'سوليتير', recycle:'سلة المهملات', mediaplayer:'ميديا بلاير', snake:'Snake', tetris:'Tetris',
-       skills:'Software Skills', counter:'عداد الزوار', rating:'تقييم الموقع', contact:'التواصل', chess:'الشطرنج' },
+       skills:'Software Skills', counter:'عداد الزوار', rating:'تقييم الموقع', contact:'التواصل', chess:'الشطرنج',
+       services:'Services', projects:'المشاريع', gallery:'معرض الأعمال', resume:'السيرة الذاتية' },
   en:{ facebook:'Facebook', instagram:'Instagram', tiktok:'TikTok', spotify:'Spotify', steam:'Steam',
        about:'About Me.txt', mycomp:'My Computer', calc:'Calculator', paint:'Paint', minesweeper:'Minesweeper',
        solitaire:'Solitaire', recycle:'Recycle Bin', mediaplayer:'Media Player', snake:'Snake', tetris:'Tetris',
-       skills:'Software Skills', counter:'Visitor Counter', rating:'Rate My Site', contact:'Contact', chess:'Chess' },
+       skills:'Software Skills', counter:'Visitor Counter', rating:'Rate My Site', contact:'Contact', chess:'Chess',
+       services:'Services', projects:'Projects', gallery:'Gallery', resume:'Resume / CV' },
   fr:{ facebook:'Facebook', instagram:'Instagram', tiktok:'TikTok', spotify:'Spotify', steam:'Steam',
        about:'À propos.txt', mycomp:'Poste de travail', calc:'Calculatrice', paint:'Paint', minesweeper:'Démineur',
        solitaire:'Solitaire', recycle:'Corbeille', mediaplayer:'Lecteur multimédia', snake:'Snake', tetris:'Tetris',
-       skills:'Software Skills', counter:'Compteur de visites', rating:'Noter mon site', contact:'Contact', chess:'Échecs' },
+       skills:'Software Skills', counter:'Compteur de visites', rating:'Noter mon site', contact:'Contact', chess:'Échecs',
+       services:'Services', projects:'Projets', gallery:'Galerie', resume:'CV' },
 };
 const UI_I18N = {
   ar:{ start:'أبدأ', arrange:'ترتيب تلقائي', refresh:'تحديث', sizeSm:'أيقونات صغيرة', sizeMd:'أيقونات متوسطة', sizeLg:'أيقونات كبيرة',
@@ -883,23 +986,212 @@ const UI_I18N = {
        wpApply:'تطبيق', wpCancel:'إلغاء', wpColor:'اختر اللون:', welcomeTitle:'مرحباً بك', welcomeHint:'انقر في أي مكان للمتابعة',
        loadCopy:'Microsoft Corporation', notifyWelcomeTitle:'🖥️ مرحباً بك Midou!', notifyWelcomeBody:'سطح المكتب جاهز — انقر مرتين على الأيقونات لفتحها',
        notifyTenSecTitle:'💬 New Message', notifyTenSecBody:'مرحباً بك في بورتفوليو Midou — Welcome to my Portfolio',
-       changeLang:'🌐 تغيير اللغة', propsOk:'موافق' },
+       changeLang:'🌐 تغيير اللغة', propsOk:'موافق', ictxOpen:'فتح', ictxProps:'خصائص',
+       propsType:'النوع', propsSize:'الحجم', propsLoc:'الموقع', propsDate:'تاريخ الإنشاء', propsDesc:'الوصف',
+       servicesTitle:'Services — خدماتي', orderNow:'🛒 اطلب الآن', examplesLabel:'أمثلة على الاستخدام:',
+       orderFormTitle:'نموذج الطلب', orderSubtitle:'الخدمة المطلوبة:', orderSend:'📨 إرسال الطلب',
+       xpAlertOk:'موافق', orderSuccessTitle:'✅ تم إرسال الطلب', orderSuccessBody:'تم تحضير طلبك للإرسال عبر بريدك. سنتواصل معك في أقرب وقت ممكن!',
+       loadingTitle:'جاري التحميل...', loadingBody:'يرجى الانتظار من فضلك...',
+       projSelectHint:'اختر مشروعاً من القائمة لعرض تفاصيله', projDemo:'🔗 عرض تجريبي', projGithub:'💻 GitHub',
+       galleryHint:'انقر على أي صورة لتكبيرها', galleryClose:'إغلاق',
+       resumePrint:'🖨️ طباعة', resumeDownload:'⬇️ تحميل PDF', resumeDisclaimer:'* تُستخدم ميزة الطباعة لحفظ السيرة كـ PDF مباشرة دون فتح أي صفحة خارجية.' },
   en:{ start:'Start', arrange:'Auto Arrange', refresh:'Refresh', sizeSm:'Small Icons', sizeMd:'Medium Icons', sizeLg:'Large Icons',
        wallpaper:'Display Properties', aboutComp:'About This Computer', wpTitle:'Display Properties — Desktop Background', wpChoose:'Choose a background:',
        wpApply:'Apply', wpCancel:'Cancel', wpColor:'Pick a color:', welcomeTitle:'Welcome', welcomeHint:'Click anywhere to continue',
        loadCopy:'Microsoft Corporation', notifyWelcomeTitle:'🖥️ Welcome, Midou!', notifyWelcomeBody:'Desktop ready — double-click icons to open them',
        notifyTenSecTitle:'💬 New Message', notifyTenSecBody:'Welcome to my Portfolio',
-       changeLang:'🌐 Change Language', propsOk:'OK' },
+       changeLang:'🌐 Change Language', propsOk:'OK', ictxOpen:'Open', ictxProps:'Properties',
+       propsType:'Type', propsSize:'Size', propsLoc:'Location', propsDate:'Created', propsDesc:'Description',
+       servicesTitle:'Services — What I Offer', orderNow:'🛒 Order Now', examplesLabel:'Example use cases:',
+       orderFormTitle:'Order Form', orderSubtitle:'Requested service:', orderSend:'📨 Send Order',
+       xpAlertOk:'OK', orderSuccessTitle:'✅ Order Sent', orderSuccessBody:'Your order has been prepared for sending via email. I\'ll get back to you as soon as possible!',
+       loadingTitle:'Loading Application...', loadingBody:'Please wait...',
+       projSelectHint:'Select a project from the list to view its details', projDemo:'🔗 Live Demo', projGithub:'💻 GitHub',
+       galleryHint:'Click any image to enlarge it', galleryClose:'Close',
+       resumePrint:'🖨️ Print', resumeDownload:'⬇️ Download PDF', resumeDisclaimer:'* The print feature lets you save this resume as a PDF directly, without opening any external page.' },
   fr:{ start:'Démarrer', arrange:'Réorganiser auto', refresh:'Actualiser', sizeSm:'Petites icônes', sizeMd:'Icônes moyennes', sizeLg:'Grandes icônes',
        wallpaper:'Propriétés d\'affichage', aboutComp:'À propos de cet ordinateur', wpTitle:'Propriétés d\'affichage — Arrière-plan', wpChoose:'Choisissez un fond :',
        wpApply:'Appliquer', wpCancel:'Annuler', wpColor:'Choisir la couleur :', welcomeTitle:'Bienvenue', welcomeHint:'Cliquez n\'importe où pour continuer',
        loadCopy:'Microsoft Corporation', notifyWelcomeTitle:'🖥️ Bienvenue, Midou !', notifyWelcomeBody:'Bureau prêt — double-cliquez sur les icônes pour les ouvrir',
        notifyTenSecTitle:'💬 Nouveau message', notifyTenSecBody:'Bienvenue sur mon Portfolio',
-       changeLang:'🌐 Changer de langue', propsOk:'OK' },
+       changeLang:'🌐 Changer de langue', propsOk:'OK', ictxOpen:'Ouvrir', ictxProps:'Propriétés',
+       propsType:'Type', propsSize:'Taille', propsLoc:'Emplacement', propsDate:'Date de création', propsDesc:'Description',
+       servicesTitle:'Services — Ce que je propose', orderNow:'🛒 Commander', examplesLabel:'Exemples d\'utilisation :',
+       orderFormTitle:'Formulaire de commande', orderSubtitle:'Service demandé :', orderSend:'📨 Envoyer la commande',
+       xpAlertOk:'OK', orderSuccessTitle:'✅ Commande envoyée', orderSuccessBody:'Votre commande a été préparée pour l\'envoi par e-mail. Je vous répondrai dès que possible !',
+       loadingTitle:'Chargement de l\'application...', loadingBody:'Veuillez patienter...',
+       projSelectHint:'Sélectionnez un projet dans la liste pour voir ses détails', projDemo:'🔗 Démo en ligne', projGithub:'💻 GitHub',
+       galleryHint:'Cliquez sur une image pour l\'agrandir', galleryClose:'Fermer',
+       resumePrint:'🖨️ Imprimer', resumeDownload:'⬇️ Télécharger PDF', resumeDisclaimer:'* La fonction d\'impression permet d\'enregistrer ce CV en PDF directement, sans ouvrir de page externe.' },
 };
 let currentLang = localStorage.getItem('xp_lang') || null;
 function t(key){ return (UI_I18N[currentLang||'ar']||UI_I18N.ar)[key] || key; }
 function appLabel(id){ return (APP_I18N[currentLang||'ar']||APP_I18N.ar)[id]; }
+const CONTENT_I18N = {
+  ar:{
+    about_who:'👤 من أنا؟',
+    about_bio:'مرحباً! أنا محمد، طالب إعلام آلي من الجزائر، شغوف بالألعاب والموسيقى والإبداع الرقمي. أحب بناء أشياء جديدة — من الألعاب إلى المشاريع التقنية.',
+    about_skills:'🛠️ المهارات والاهتمامات',
+    about_contact:'🔗 تواصل معي',
+    skills_title:'🎨 Software Skills',
+    skill_photoshop_desc:'تصميم وتعديل الصور والرسومات الاحترافية',
+    skill_word_desc:'تحرير وتنسيق المستندات النصية',
+    skill_excel_desc:'الجداول الحسابية والتحليل الإحصائي',
+    skill_ppt_desc:'تصميم العروض التقديمية الاحترافية',
+    skill_spss_desc:'التحليل الإحصائي للبيانات',
+    chess_turnWhite:'دورك (الأبيض)', chess_computerThinking:'الكمبيوتر يفكر...',
+    chess_checkYourTurn:'⚠️ كش! دورك', chess_checkComputer:'⚠️ كش على الكمبيوتر',
+    chess_winComputer:'🏆 كش ملك! فاز الأسود (الكمبيوتر)', chess_winYou:'🏆 كش ملك! فاز الأبيض (أنت) 🎉',
+    chess_stalemate:'🤝 تعادل (Stalemate)',
+    chess_difficulty:'مستوى الصعوبة:', chess_easy:'سهل', chess_medium:'متوسط', chess_hard:'صعب (أقوى)',
+    chess_undo:'↩️ تراجع عن الحركة', chess_restart:'🔄 إعادة اللعب', chess_history:'سجل النقلات',
+    chess_hint:'اضغط على قطعة لتحريكها<br>الأسهم لا تظهر؛ انقر بالماوس فقط',
+    contact_title:'📧 Send Feedback', contact_name:'الاسم', contact_email:'البريد الإلكتروني',
+    contact_subject:'الموضوع', contact_message:'الرسالة', contact_namePh:'اسمك',
+    contact_subjectPh:'موضوع الرسالة', contact_messagePh:'اكتب رسالتك هنا...',
+    contact_send:'📨 إرسال', contact_errorRequired:'⚠️ الرجاء تعبئة الاسم والبريد والرسالة على الأقل.',
+    contact_success:'✅ تم فتح تطبيق البريد لإرسال رسالتك بأسلوب Windows XP.',
+    contact_disclaimer:'* يفتح هذا الزر تطبيق البريد الافتراضي على جهازك (لا يوجد خادم بريد حقيقي متصل بهذا الملف الثابت).',
+    contact_notifyTitle:'📧 Send Feedback', contact_notifyBody:'تم تحضير رسالتك للإرسال عبر بريدك الإلكتروني',
+    rating_title:'⭐ Rate My Portfolio', rating_avg:'متوسط التقييم', rating_count:'عدد المقيّمين',
+    rating_already:'لقد قيّمت هذا الموقع مسبقاً بـ', rating_alreadyTail:'نجوم. شكراً لك! 🌟',
+    rating_thanks:'شكراً لتقييمك! ⭐', rating_errorAlready:'⚠️ لقد قيّمت هذا الموقع مسبقاً، لا يمكن التصويت مرتين.',
+    counter_title:'📊 Visitor Statistics', counter_total:'إجمالي الزوار', counter_today:'زوار اليوم',
+    counter_last:'آخر زيارة', counter_disclaimer:'* عداد محلي يعتمد على متصفحك (لا يوجد خادم حقيقي متصل بهذا الملف).',
+    err_required:'⚠️ يرجى تعبئة جميع الحقول المطلوبة.',
+    success_generic:'✅ تم تنفيذ العملية بنجاح.',
+    loading_app:'جاري التحميل...', loading_wait:'يرجى الانتظار من فضلك...',
+    explorer_empty:'المجلد فارغ', explorer_disk:'القرص المحلي (C:)',
+  },
+  en:{
+    about_who:'👤 Who Am I?',
+    about_bio:'Hi! I\'m Mohamed, a Computer Science student from Algeria, passionate about gaming, music, and digital creativity. I love building new things — from games to tech projects.',
+    about_skills:'🛠️ Skills & Interests',
+    about_contact:'🔗 Connect With Me',
+    skills_title:'🎨 Software Skills',
+    skill_photoshop_desc:'Professional photo & graphic editing and design',
+    skill_word_desc:'Editing and formatting text documents',
+    skill_excel_desc:'Spreadsheets and statistical analysis',
+    skill_ppt_desc:'Designing professional presentations',
+    skill_spss_desc:'Statistical data analysis',
+    chess_turnWhite:'Your turn (White)', chess_computerThinking:'Computer is thinking...',
+    chess_checkYourTurn:'⚠️ Check! Your turn', chess_checkComputer:'⚠️ Check on the computer',
+    chess_winComputer:'🏆 Checkmate! Black (Computer) wins', chess_winYou:'🏆 Checkmate! White (You) win 🎉',
+    chess_stalemate:'🤝 Draw (Stalemate)',
+    chess_difficulty:'Difficulty:', chess_easy:'Easy', chess_medium:'Medium', chess_hard:'Hard (Strongest)',
+    chess_undo:'↩️ Undo Move', chess_restart:'🔄 New Game', chess_history:'Move History',
+    chess_hint:'Click a piece to move it<br>then click a highlighted square',
+    contact_title:'📧 Send Feedback', contact_name:'Name', contact_email:'Email',
+    contact_subject:'Subject', contact_message:'Message', contact_namePh:'Your name',
+    contact_subjectPh:'Message subject', contact_messagePh:'Write your message here...',
+    contact_send:'📨 Send', contact_errorRequired:'⚠️ Please fill in at least your name, email, and message.',
+    contact_success:'✅ Your mail app has opened to send the message, Windows XP style.',
+    contact_disclaimer:'* This button opens your default mail app on your device (this static file has no real mail server attached).',
+    contact_notifyTitle:'📧 Send Feedback', contact_notifyBody:'Your message has been prepared for sending via your email',
+    rating_title:'⭐ Rate My Portfolio', rating_avg:'Average Rating', rating_count:'Number of Voters',
+    rating_already:'You already rated this site', rating_alreadyTail:'stars. Thank you! 🌟',
+    rating_thanks:'Thanks for rating! ⭐', rating_errorAlready:'⚠️ You already rated this site, you cannot vote twice.',
+    counter_title:'📊 Visitor Statistics', counter_total:'Total Visitors', counter_today:'Visitors Today',
+    counter_last:'Last Visit', counter_disclaimer:'* Local counter based on your browser (no real server is attached to this file).',
+    err_required:'⚠️ Please fill in all required fields.',
+    success_generic:'✅ Operation completed successfully.',
+    loading_app:'Loading Application...', loading_wait:'Please wait...',
+    explorer_empty:'This folder is empty', explorer_disk:'Local Disk (C:)',
+  },
+  fr:{
+    about_who:'👤 Qui suis-je ?',
+    about_bio:'Bonjour ! Je suis Mohamed, étudiant en informatique en Algérie, passionné de jeux vidéo, de musique et de créativité numérique. J\'aime créer de nouvelles choses — des jeux aux projets techniques.',
+    about_skills:'🛠️ Compétences et centres d\'intérêt',
+    about_contact:'🔗 Me contacter',
+    skills_title:'🎨 Software Skills',
+    skill_photoshop_desc:'Retouche photo et conception graphique professionnelle',
+    skill_word_desc:'Rédaction et mise en forme de documents texte',
+    skill_excel_desc:'Tableaux et analyse statistique',
+    skill_ppt_desc:'Conception de présentations professionnelles',
+    skill_spss_desc:'Analyse statistique de données',
+    chess_turnWhite:'À vous de jouer (Blancs)', chess_computerThinking:'L\'ordinateur réfléchit...',
+    chess_checkYourTurn:'⚠️ Échec ! À vous', chess_checkComputer:'⚠️ Échec à l\'ordinateur',
+    chess_winComputer:'🏆 Échec et mat ! Les Noirs (ordinateur) gagnent', chess_winYou:'🏆 Échec et mat ! Les Blancs (vous) gagnez 🎉',
+    chess_stalemate:'🤝 Pat (match nul)',
+    chess_difficulty:'Niveau de difficulté :', chess_easy:'Facile', chess_medium:'Moyen', chess_hard:'Difficile (le plus fort)',
+    chess_undo:'↩️ Annuler le coup', chess_restart:'🔄 Nouvelle partie', chess_history:'Historique des coups',
+    chess_hint:'Cliquez sur une pièce pour la déplacer<br>puis sur une case surlignée',
+    contact_title:'📧 Send Feedback', contact_name:'Nom', contact_email:'E-mail',
+    contact_subject:'Sujet', contact_message:'Message', contact_namePh:'Votre nom',
+    contact_subjectPh:'Sujet du message', contact_messagePh:'Écrivez votre message ici...',
+    contact_send:'📨 Envoyer', contact_errorRequired:'⚠️ Veuillez remplir au moins le nom, l\'e-mail et le message.',
+    contact_success:'✅ Votre application de messagerie s\'est ouverte pour envoyer le message, façon Windows XP.',
+    contact_disclaimer:'* Ce bouton ouvre votre application de messagerie par défaut (ce fichier statique n\'a pas de serveur de messagerie réel).',
+    contact_notifyTitle:'📧 Send Feedback', contact_notifyBody:'Votre message a été préparé pour l\'envoi via votre messagerie',
+    rating_title:'⭐ Rate My Portfolio', rating_avg:'Note moyenne', rating_count:'Nombre de votants',
+    rating_already:'Vous avez déjà noté ce site', rating_alreadyTail:'étoiles. Merci ! 🌟',
+    rating_thanks:'Merci pour votre note ! ⭐', rating_errorAlready:'⚠️ Vous avez déjà noté ce site, vote impossible deux fois.',
+    counter_title:'📊 Visitor Statistics', counter_total:'Total des visiteurs', counter_today:'Visiteurs aujourd\'hui',
+    counter_last:'Dernière visite', counter_disclaimer:'* Compteur local basé sur votre navigateur (aucun serveur réel n\'est connecté à ce fichier).',
+    err_required:'⚠️ Veuillez remplir tous les champs obligatoires.',
+    success_generic:'✅ Opération réussie.',
+    loading_app:'Chargement de l\'application...', loading_wait:'Veuillez patienter...',
+    explorer_empty:'Ce dossier est vide', explorer_disk:'Disque local (C:)',
+  },
+};
+function ct(key){ return (CONTENT_I18N[currentLang||'ar']||CONTENT_I18N.ar)[key] || key; }
+
+const SERVICES_I18N = {
+  ar:{
+    reports:{ name:'تقارير معاهد', desc:'إعداد تقارير أكاديمية ومهنية منسّقة بشكل احترافي وفق معايير المعهد أو الجامعة.', ex:['تقرير تدريب ميداني','تقرير نشاط فصلي','تقرير مشروع تخرج مصغّر'] },
+    bachelor:{ name:'مذكرات ليسانس', desc:'مساعدة في تنظيم وكتابة وتنسيق مذكرات نهاية دراسات الليسانس.', ex:['مذكرة تخصص علوم اقتصادية','مذكرة تخصص علوم إنسانية','تنسيق ومراجعة لغوية'] },
+    master:{ name:'مذكرات ماستر', desc:'مساعدة متقدمة في إعداد وتحليل وتنسيق مذكرات الماستر الأكاديمية.', ex:['تحليل بيانات الدراسة','تنسيق APA/Word احترافي','مراجعة الفصول والخاتمة'] },
+    ppt:{ name:'عروض بوربوينت', desc:'تصميم عروض تقديمية بصرية جذابة لأي مناسبة دراسية أو مهنية.', ex:['عرض مناقشة مذكرة','عرض تسويقي لمشروع','عرض تكوين/ورشة عمل'] },
+    spss:{ name:'تحليل بيانات SPSS', desc:'تحليل استبيانات وبيانات بحثية إحصائياً باستخدام برنامج SPSS مع تفسير النتائج.', ex:['تحليل استبيان بحث ميداني','اختبارات T وANOVA والارتباط','إخراج جداول ورسوم بيانية جاهزة'] },
+    excel:{ name:'تحليل بيانات Excel', desc:'تنظيم وتحليل البيانات وبناء جداول ولوحات بيانات (Dashboards) في Excel.', ex:['جدول حسابي لمشروع صغير','تحليل مبيعات شهرية','Dashboard تفاعلي بالرسوم البيانية'] },
+    webdev:{ name:'تطوير واجهات الويب', desc:'بناء صفحات وواجهات ويب حديثة وسريعة الاستجابة (HTML/CSS/JS).', ex:['موقع بورتفوليو شخصي','صفحة هبوط لمنتج','واجهة لوحة تحكم بسيطة'] },
+  },
+  en:{
+    reports:{ name:'Institute Reports', desc:'Professionally formatted academic and professional reports following institute or university standards.', ex:['Internship report','Quarterly activity report','Mini graduation project report'] },
+    bachelor:{ name:'Bachelor Thesis', desc:'Help organizing, writing, and formatting Bachelor\'s degree final theses.', ex:['Economics thesis','Humanities thesis','Formatting & proofreading'] },
+    master:{ name:'Master Thesis', desc:'Advanced help preparing, analyzing, and formatting academic Master\'s theses.', ex:['Study data analysis','Professional APA/Word formatting','Chapter & conclusion review'] },
+    ppt:{ name:'PowerPoint Presentations', desc:'Designing visually engaging presentations for any academic or professional occasion.', ex:['Thesis defense presentation','Project pitch deck','Training/workshop slides'] },
+    spss:{ name:'SPSS Data Analysis', desc:'Statistical analysis of surveys and research data using SPSS, with results interpretation.', ex:['Field survey analysis','T-tests, ANOVA, correlation','Ready-made tables & charts'] },
+    excel:{ name:'Excel Data Analysis', desc:'Organizing and analyzing data, building tables and dashboards in Excel.', ex:['Small project spreadsheet','Monthly sales analysis','Interactive chart dashboard'] },
+    webdev:{ name:'Front-End Website Development', desc:'Building modern, responsive web pages and interfaces (HTML/CSS/JS).', ex:['Personal portfolio website','Product landing page','Simple admin dashboard UI'] },
+  },
+  fr:{
+    reports:{ name:'Rapports d\'institut', desc:'Rapports académiques et professionnels mis en forme selon les normes de l\'institut ou de l\'université.', ex:['Rapport de stage','Rapport d\'activité trimestriel','Mini-rapport de projet de fin d\'études'] },
+    bachelor:{ name:'Mémoires de Licence', desc:'Aide à l\'organisation, la rédaction et la mise en forme des mémoires de fin de licence.', ex:['Mémoire en sciences économiques','Mémoire en sciences humaines','Mise en forme et relecture'] },
+    master:{ name:'Mémoires de Master', desc:'Aide avancée à la préparation, l\'analyse et la mise en forme des mémoires de Master.', ex:['Analyse des données de l\'étude','Mise en forme APA/Word professionnelle','Relecture des chapitres et conclusion'] },
+    ppt:{ name:'Présentations PowerPoint', desc:'Conception de présentations visuellement attrayantes pour toute occasion académique ou professionnelle.', ex:['Présentation de soutenance','Pitch deck de projet','Diapositives de formation/atelier'] },
+    spss:{ name:'Analyse de données SPSS', desc:'Analyse statistique d\'enquêtes et de données de recherche avec SPSS, et interprétation des résultats.', ex:['Analyse d\'enquête de terrain','Tests T, ANOVA, corrélation','Tableaux et graphiques prêts à l\'emploi'] },
+    excel:{ name:'Analyse de données Excel', desc:'Organisation et analyse de données, création de tableaux et tableaux de bord dans Excel.', ex:['Tableur de petit projet','Analyse des ventes mensuelles','Tableau de bord interactif'] },
+    webdev:{ name:'Développement Front-End', desc:'Création de pages et interfaces web modernes et adaptatives (HTML/CSS/JS).', ex:['Site portfolio personnel','Landing page produit','Interface simple de tableau de bord'] },
+  },
+};
+function st(key){ return (SERVICES_I18N[currentLang||'ar']||SERVICES_I18N.ar)[key]; }
+const SERVICE_KEYS=['reports','bachelor','master','ppt','spss','excel','webdev'];
+const SERVICE_EMOJI={reports:'📑',bachelor:'🎓',master:'🎓',ppt:'📽️',spss:'📈',excel:'📊',webdev:'🌐'};
+
+const PROJECTS_DATA = [
+  { key:'portfolio', emoji:'🖥️', tech:['HTML','CSS','JavaScript'], demo:'#', github:'#',
+    name:{ar:'بورتفوليو Windows XP',en:'Windows XP Portfolio',fr:'Portfolio Windows XP'},
+    desc:{ar:'هذا الموقع نفسه! بورتفوليو تفاعلي كامل بتصميم سطح مكتب Windows XP، يضم نوافذ، ألعاباً، ومحرك شطرنج خاص — كل ذلك في ملف HTML واحد.',
+          en:'This very site! A full interactive portfolio styled as a Windows XP desktop, featuring windows, games, and a custom chess engine — all in a single HTML file.',
+          fr:'Ce site lui-même ! Un portfolio interactif complet au style bureau Windows XP, avec fenêtres, jeux et un moteur d\'échecs personnalisé — tout dans un seul fichier HTML.'} },
+  { key:'placeholder1', emoji:'📦', tech:['—'], demo:'#', github:'#',
+    name:{ar:'مشروع قادم #1 (مثال)',en:'Upcoming Project #1 (placeholder)',fr:'Projet à venir #1 (exemple)'},
+    desc:{ar:'هذا مجلد نموذجي — استبدله بمشروعك الحقيقي (صورة، وصف، تقنيات، روابط).',
+          en:'This is a placeholder folder — replace it with your real project (screenshot, description, tech, links).',
+          fr:'Ceci est un dossier d\'exemple — remplacez-le par votre vrai projet (capture, description, technologies, liens).'} },
+  { key:'placeholder2', emoji:'📦', tech:['—'], demo:'#', github:'#',
+    name:{ar:'مشروع قادم #2 (مثال)',en:'Upcoming Project #2 (placeholder)',fr:'Projet à venir #2 (exemple)'},
+    desc:{ar:'مجلد نموذجي آخر بانتظار مشروعك الحقيقي التالي.',
+          en:'Another placeholder folder waiting for your next real project.',
+          fr:'Un autre dossier d\'exemple en attente de votre prochain vrai projet.'} },
+];
+const GALLERY_FOLDERS = [
+  { key:'photoshop', emoji:'🎨', name:{ar:'أعمال Photoshop',en:'Photoshop Work',fr:'Travaux Photoshop'}, count:3 },
+  { key:'ppt', emoji:'📽️', name:{ar:'تصاميم PowerPoint',en:'PowerPoint Designs',fr:'Designs PowerPoint'}, count:3 },
+  { key:'web', emoji:'🌐', name:{ar:'نماذج تصميم ويب',en:'Web Design Samples',fr:'Exemples de design web'}, count:2 },
+  { key:'academic', emoji:'🎓', name:{ar:'نماذج أعمال أكاديمية',en:'Academic Work Examples',fr:'Exemples de travaux académiques'}, count:2 },
+];
 function applyLanguage(lang){
   currentLang = lang;
   localStorage.setItem('xp_lang', lang);
@@ -923,6 +1215,8 @@ function applyLanguage(lang){
   const wpCancelBtn=document.getElementById('wp-cancel'); if(wpCancelBtn) wpCancelBtn.textContent=t('wpCancel');
   const wpColorLbl=document.querySelector('#wp-color-row span'); if(wpColorLbl) wpColorLbl.textContent=t('wpColor');
   const propsOkBtn=document.getElementById('props-ok'); if(propsOkBtn) propsOkBtn.textContent=t('propsOk');
+  const ictxOpenLbl=document.getElementById('ictx-open-label'); if(ictxOpenLbl) ictxOpenLbl.textContent=t('ictxOpen');
+  const ictxPropsLbl=document.getElementById('ictx-props-label'); if(ictxPropsLbl) ictxPropsLbl.textContent=t('ictxProps');
   const changeLangItem=document.querySelector('[data-action="changelang"]'); if(changeLangItem) changeLangItem.innerHTML='<span class="ctx-icon">🌐</span>'+t('changeLang');
   if(typeof buildDesktop==='function') buildDesktop();
   if(typeof buildStartMenu==='function') buildStartMenu();
@@ -1037,7 +1331,7 @@ function buildDesktop(){
     el.addEventListener('click', e=>{ e.stopPropagation(); if(el.dataset.justDragged) return; selectIcon(id); SFX.play('click'); });
     el.addEventListener('dblclick', e=>{ e.preventDefault(); e.stopPropagation(); openApp(id); deselectAll(); });
     el.addEventListener('contextmenu', e=>{ e.preventDefault(); e.stopPropagation(); selectIcon(id); showIconCtxMenu(e.clientX, e.clientY, id); });
-    el.addEventListener('mouseenter',()=>showTooltip(app.tooltip||app.label, el));
+    el.addEventListener('mouseenter',()=>showTooltip((currentLang&&currentLang!=='ar')?(appLabel(id)||app.tooltip||app.label):(app.tooltip||app.label), el));
     el.addEventListener('mouseleave',hideTooltip);
     makeIconDraggable(el,id);
     c.appendChild(el);
@@ -1121,7 +1415,7 @@ function createWindow({id,title,icon,w,h,content}){
   return win;
 }
 
-function openApp(id){
+function openApp(id, skipLoading){
   /* IE special */
   if(id==='ie'){
     const winId='ie';
@@ -1131,6 +1425,11 @@ function openApp(id){
   const app=APPS.find(a=>a.id===id);
   if(!app) return;
   const winId='win_'+id;
+  const heavyTypes=['chess','gallery','projects','resume'];
+  if(heavyTypes.includes(app.type) && !skipLoading && !document.getElementById(winId)){
+    showAppLoading(1100, ()=>openApp(id, true));
+    return;
+  }
   if(!document.getElementById(winId)){
     let content='';
     if(app.type==='social') content=buildSocialContent(app);
@@ -1150,8 +1449,12 @@ function openApp(id){
     else if(app.type==='rating') content=buildRatingContent();
     else if(app.type==='contact') content=buildContactContent();
     else if(app.type==='chess') content=buildChessContent();
+    else if(app.type==='services') content=buildServicesContent();
+    else if(app.type==='projects') content=buildProjectsContent();
+    else if(app.type==='gallery') content=buildGalleryContent();
+    else if(app.type==='resume') content=buildResumeContent();
     const titlePrefixMap={snake:'🐍 ',tetris:'🟦 ',chess:'♞ '};
-    const translatableTitleIds=['facebook','instagram','tiktok','spotify','steam','snake','tetris','chess','skills','counter','rating','contact','mycomp','calc','minesweeper','solitaire'];
+    const translatableTitleIds=['facebook','instagram','tiktok','spotify','steam','snake','tetris','chess','skills','counter','rating','contact','mycomp','calc','minesweeper','solitaire','services','projects','gallery','resume'];
     const translatedLabel = translatableTitleIds.includes(id) ? appLabel(id) : null;
     const winTitle = translatedLabel ? (titlePrefixMap[id]!==undefined ? titlePrefixMap[id]+translatedLabel : translatedLabel) : app.title;
     createWindow({id:winId,title:winTitle,icon:app.icon,w:app.w,h:app.h,content});
@@ -1169,6 +1472,10 @@ function openApp(id){
     if(app.type==='rating') initRating(winId);
     if(app.type==='contact') initContact(winId);
     if(app.type==='chess') initChess(winId);
+    if(app.type==='services') initServices(winId);
+    if(app.type==='projects') initProjects(winId);
+    if(app.type==='gallery') initGallery(winId);
+    if(app.type==='resume') initResume(winId);
     /* visit btn */
     const vb=document.getElementById(winId)&&document.getElementById(winId).querySelector('.btn-visit');
     if(vb) vb.addEventListener('click',e=>{e.stopPropagation();window.open(app.url,'_blank')});
@@ -1182,6 +1489,21 @@ function spawnRipple(x,y){
   r.style.left=x+'px'; r.style.top=y+'px';
   document.body.appendChild(r);
   setTimeout(()=>r.remove(),520);
+}
+function xpAlert(title,body,okText){
+  document.getElementById('xp-alert-title').textContent=title;
+  document.getElementById('xp-alert-body').innerHTML=body;
+  document.getElementById('xp-alert-ok').textContent=okText||t('xpAlertOk');
+  document.getElementById('xp-alert-picker').classList.add('show');
+  SFX.play('notify');
+}
+document.getElementById('xp-alert-ok').addEventListener('click',()=>document.getElementById('xp-alert-picker').classList.remove('show'));
+function showAppLoading(durationMs,onDone){
+  const picker=document.getElementById('app-loading-picker');
+  document.getElementById('app-loading-title').textContent=t('loadingTitle');
+  document.getElementById('app-loading-body').textContent=t('loadingBody');
+  picker.classList.add('show');
+  setTimeout(()=>{ picker.classList.remove('show'); if(onDone) onDone(); }, durationMs||1200);
 }
 function openWindow(id){
   const win=document.getElementById(id);
@@ -1457,9 +1779,9 @@ let iconCtxTarget=null;
 const iconCtxEl=document.createElement('div');
 iconCtxEl.style.cssText='position:fixed;z-index:99991;background:#ECE9D8;border:1px solid;border-color:#fff #9B9488 #9B9488 #fff;box-shadow:2px 2px 6px rgba(0,0,0,0.3);min-width:160px;display:none;direction:rtl;font-size:12px;font-family:Tahoma,"Tajawal",sans-serif';
 iconCtxEl.innerHTML=`
-  <div class="ctx-item" id="ictx-open"><span class="ctx-icon">📂</span>فتح</div>
+  <div class="ctx-item" id="ictx-open"><span class="ctx-icon">📂</span><span id="ictx-open-label">${t('ictxOpen')}</span></div>
   <div class="ctx-sep"></div>
-  <div class="ctx-item" id="ictx-props"><span class="ctx-icon">ℹ️</span>خصائص</div>`;
+  <div class="ctx-item" id="ictx-props"><span class="ctx-icon">ℹ️</span><span id="ictx-props-label">${t('ictxProps')}</span></div>`;
 document.body.appendChild(iconCtxEl);
 iconCtxEl.querySelector('#ictx-open').addEventListener('click',()=>{ if(iconCtxTarget)openApp(iconCtxTarget); hideIconCtxMenu(); });
 iconCtxEl.querySelector('#ictx-props').addEventListener('click',()=>{ if(iconCtxTarget) showProperties(iconCtxTarget); hideIconCtxMenu(); });
@@ -1473,13 +1795,13 @@ function showProperties(id){
   const date='2026/0'+(1+Math.floor(Math.random()*6))+'/1'+Math.floor(Math.random()*9);
   body.innerHTML=`
     <div style="display:flex;justify-content:center;margin-bottom:10px"><div style="width:48px;height:48px">${ICONS[app.icon]||ICONS.notepad}</div></div>
-    <div style="font-weight:700;font-family:Tajawal,Tahoma;margin-bottom:10px">${app.label}</div>
+    <div style="font-weight:700;font-family:Tajawal,Tahoma;margin-bottom:10px">${appLabel(id)||app.label}</div>
     <table style="width:100%;font-size:11px;font-family:Tahoma;text-align:right;border-collapse:collapse">
-      <tr><td style="color:#666;padding:3px 0">النوع:</td><td>${app.type}</td></tr>
-      <tr><td style="color:#666;padding:3px 0">الحجم:</td><td>${sizeKB} KB</td></tr>
-      <tr><td style="color:#666;padding:3px 0">الموقع:</td><td>C:\\Desktop</td></tr>
-      <tr><td style="color:#666;padding:3px 0">تاريخ الإنشاء:</td><td>${date}</td></tr>
-      <tr><td style="color:#666;padding:3px 0">الوصف:</td><td>${app.tooltip||app.label}</td></tr>
+      <tr><td style="color:#666;padding:3px 0">${t('propsType')}:</td><td>${app.type}</td></tr>
+      <tr><td style="color:#666;padding:3px 0">${t('propsSize')}:</td><td>${sizeKB} KB</td></tr>
+      <tr><td style="color:#666;padding:3px 0">${t('propsLoc')}:</td><td>C:\\Desktop</td></tr>
+      <tr><td style="color:#666;padding:3px 0">${t('propsDate')}:</td><td>${date}</td></tr>
+      <tr><td style="color:#666;padding:3px 0">${t('propsDesc')}:</td><td>${appLabel(id)||app.tooltip||app.label}</td></tr>
     </table>`;
   document.getElementById('props-picker').classList.add('show');
 }
@@ -1545,14 +1867,13 @@ function buildAboutContent(){
     </div>
     <div class="about-content">
       <div class="about-section">
-        <div class="about-section-title">👤 من أنا؟</div>
+        <div class="about-section-title">${ct('about_who')}</div>
         <div style="font-size:12px;font-family:'Tajawal',Tahoma;color:#333;line-height:1.8">
-          مرحباً! أنا محمد، طالب إعلام آلي من الجزائر، شغوف بالألعاب والموسيقى والإبداع الرقمي.
-          أحب بناء أشياء جديدة — من الألعاب إلى المشاريع التقنية.
+          ${ct('about_bio')}
         </div>
       </div>
       <div class="about-section">
-        <div class="about-section-title">🛠️ المهارات والاهتمامات</div>
+        <div class="about-section-title">${ct('about_skills')}</div>
         <div class="about-tags">
           <span class="about-tag">🎮 Game Dev</span>
           <span class="about-tag">💻 C / C++</span>
@@ -1565,11 +1886,11 @@ function buildAboutContent(){
         </div>
       </div>
       <div class="about-section">
-        <div class="about-section-title">🔗 تواصل معي</div>
+        <div class="about-section-title">${ct('about_contact')}</div>
         <div class="about-social-links">
-          <div class="about-social-link" onclick="openApp('facebook')"><span class="icon-dot" style="background:#1877F2"></span>فيسبوك — محمد زوبيد</div>
-          <div class="about-social-link" onclick="openApp('instagram')"><span class="icon-dot" style="background:#E1306C"></span>إنستغرام — @19_moha_20</div>
-          <div class="about-social-link" onclick="openApp('tiktok')"><span class="icon-dot" style="background:#010101"></span>تيك توك — @moha_bd1</div>
+          <div class="about-social-link" onclick="openApp('facebook')"><span class="icon-dot" style="background:#1877F2"></span>${appLabel('facebook')||'فيسبوك'} — محمد زوبيد</div>
+          <div class="about-social-link" onclick="openApp('instagram')"><span class="icon-dot" style="background:#E1306C"></span>${appLabel('instagram')||'إنستغرام'} — @19_moha_20</div>
+          <div class="about-social-link" onclick="openApp('tiktok')"><span class="icon-dot" style="background:#010101"></span>${appLabel('tiktok')||'تيك توك'} — @moha_bd1</div>
           <div class="about-social-link" onclick="openApp('spotify')"><span class="icon-dot" style="background:#1DB954"></span>Spotify — Midou</div>
           <div class="about-social-link" onclick="openApp('steam')"><span class="icon-dot" style="background:#1B2838"></span>Steam — Midou</div>
         </div>
@@ -1739,53 +2060,53 @@ function buildSkillsContent(){
 }
 function buildCounterContent(){
   return `<div class="cw-body" id="counter-body">
-    <div style="font-size:13px;font-weight:700;color:#1E50A0">📊 Visitor Statistics</div>
-    <div class="cw-stat"><span>إجمالي الزوار</span><b id="cnt-total">—</b></div>
-    <div class="cw-stat"><span>زوار اليوم</span><b id="cnt-today">—</b></div>
-    <div class="cw-stat"><span>آخر زيارة</span><b id="cnt-last">—</b></div>
-    <div style="font-size:9px;color:#999">* عداد محلي يعتمد على متصفحك (لا يوجد خادم حقيقي متصل بهذا الملف).</div>
+    <div style="font-size:13px;font-weight:700;color:#1E50A0">${ct('counter_title')}</div>
+    <div class="cw-stat"><span>${ct('counter_total')}</span><b id="cnt-total">—</b></div>
+    <div class="cw-stat"><span>${ct('counter_today')}</span><b id="cnt-today">—</b></div>
+    <div class="cw-stat"><span>${ct('counter_last')}</span><b id="cnt-last">—</b></div>
+    <div style="font-size:9px;color:#999">${ct('counter_disclaimer')}</div>
   </div>`;
 }
 function buildRatingContent(){
   return `<div class="cw-body" id="rating-body">
-    <div style="font-size:13px;font-weight:700;color:#1E50A0">⭐ Rate My Portfolio</div>
+    <div style="font-size:13px;font-weight:700;color:#1E50A0">${ct('rating_title')}</div>
     <div class="rate-stars" id="rate-stars">
       <span class="rate-star" data-v="1">★</span><span class="rate-star" data-v="2">★</span><span class="rate-star" data-v="3">★</span><span class="rate-star" data-v="4">★</span><span class="rate-star" data-v="5">★</span>
     </div>
-    <div class="cw-stat"><span>متوسط التقييم</span><b id="rate-avg">—</b></div>
-    <div class="cw-stat"><span>عدد المقيّمين</span><b id="rate-count">—</b></div>
+    <div class="cw-stat"><span>${ct('rating_avg')}</span><b id="rate-avg">—</b></div>
+    <div class="cw-stat"><span>${ct('rating_count')}</span><b id="rate-count">—</b></div>
     <div id="rate-msg" style="font-size:11px;color:#1E8A3C"></div>
   </div>`;
 }
 function buildContactContent(){
   return `<div class="contact-form" id="contact-form">
-    <div style="font-size:13px;font-weight:700;color:#1E50A0;margin-bottom:6px">📧 Send Feedback</div>
-    <div><label>الاسم</label><input type="text" id="cf-name" placeholder="اسمك"></div>
-    <div><label>البريد الإلكتروني</label><input type="email" id="cf-email" placeholder="example@email.com"></div>
-    <div><label>الموضوع</label><input type="text" id="cf-subject" placeholder="موضوع الرسالة"></div>
-    <div><label>الرسالة</label><textarea id="cf-message" placeholder="اكتب رسالتك هنا..."></textarea></div>
-    <button class="sol-btn" id="cf-send" style="margin-top:6px">📨 إرسال</button>
+    <div style="font-size:13px;font-weight:700;color:#1E50A0;margin-bottom:6px">${ct('contact_title')}</div>
+    <div><label>${ct('contact_name')}</label><input type="text" id="cf-name" placeholder="${ct('contact_namePh')}"></div>
+    <div><label>${ct('contact_email')}</label><input type="email" id="cf-email" placeholder="example@email.com"></div>
+    <div><label>${ct('contact_subject')}</label><input type="text" id="cf-subject" placeholder="${ct('contact_subjectPh')}"></div>
+    <div><label>${ct('contact_message')}</label><textarea id="cf-message" placeholder="${ct('contact_messagePh')}"></textarea></div>
+    <button class="sol-btn" id="cf-send" style="margin-top:6px">${ct('contact_send')}</button>
     <div id="cf-status" style="font-size:11px;color:#1E8A3C"></div>
-    <div style="font-size:9px;color:#999">* يفتح هذا الزر تطبيق البريد الافتراضي على جهازك (لا يوجد خادم بريد حقيقي متصل بهذا الملف الثابت).</div>
+    <div style="font-size:9px;color:#999">${ct('contact_disclaimer')}</div>
   </div>`;
 }
 function buildChessContent(){
   return `<div class="chess-body">
     <div class="chess-board-wrap">
       <div id="chess-board" class="chess-board"></div>
-      <div id="chess-status" class="chess-status">دورك (الأبيض)</div>
+      <div id="chess-status" class="chess-status">${ct('chess_turnWhite')}</div>
     </div>
     <div class="chess-side">
-      <label style="font-size:11px">مستوى الصعوبة:
+      <label style="font-size:11px">${ct('chess_difficulty')}
         <select id="chess-diff" class="chess-diff-select">
-          <option value="1">سهل</option>
-          <option value="2">متوسط</option>
-          <option value="3" selected>صعب (أقوى)</option>
+          <option value="1">${ct('chess_easy')}</option>
+          <option value="2">${ct('chess_medium')}</option>
+          <option value="3" selected>${ct('chess_hard')}</option>
         </select>
       </label>
-      <button class="sol-btn" id="chess-undo" style="margin:0">↩️ تراجع عن الحركة</button>
-      <button class="sol-btn" id="chess-restart" style="margin:0">🔄 إعادة اللعب</button>
-      <div style="font-weight:700">سجل النقلات</div>
+      <button class="sol-btn" id="chess-undo" style="margin:0">${ct('chess_undo')}</button>
+      <button class="sol-btn" id="chess-restart" style="margin:0">${ct('chess_restart')}</button>
+      <div style="font-weight:700">${ct('chess_history')}</div>
       <div id="chess-history" class="chess-history"></div>
     </div>
   </div>`;
@@ -1893,11 +2214,11 @@ const EXPLORER_FOLDERS = [
 function buildExplorerContent(){
   return `<div class="explorer-body">
     <div class="explorer-sidebar">
-      <div class="explorer-sidebar-title">📁 المجلدات</div>
+      <div class="explorer-sidebar-title">📁 ${currentLang==='en'?'Folders':currentLang==='fr'?'Dossiers':'المجلدات'}</div>
       <div id="explorer-side-list"></div>
     </div>
     <div class="explorer-main">
-      <div class="explorer-breadcrumb" id="explorer-breadcrumb">Local Disk (C:)</div>
+      <div class="explorer-breadcrumb" id="explorer-breadcrumb">${ct('explorer_disk')}</div>
       <div class="explorer-files" id="explorer-files"></div>
     </div>
   </div>`;
@@ -1910,9 +2231,9 @@ function initExplorer(winId){
   const crumb=w.querySelector('#explorer-breadcrumb');
   function openFolder(folder){
     sideList.querySelectorAll('.explorer-sidebar-item').forEach(i=>i.classList.toggle('active',i.dataset.id===folder.id));
-    crumb.textContent='Local Disk (C:) \u2192 '+folder.name;
+    crumb.textContent=ct('explorer_disk')+' \u2192 '+folder.name;
     filesEl.innerHTML='';
-    if(!folder.files.length){ filesEl.innerHTML='<div class="explorer-empty">المجلد فارغ</div>'; return; }
+    if(!folder.files.length){ filesEl.innerHTML=`<div class="explorer-empty">${ct('explorer_empty')}</div>`; return; }
     folder.files.forEach(f=>{
       const el=document.createElement('div');
       el.className='explorer-file';
@@ -1934,7 +2255,8 @@ function initExplorer(winId){
 function openExplorer(){
   const winId='win_explorer';
   if(!document.getElementById(winId)){
-    createWindow({id:winId,title:'مستكشف الملفات — Local Disk (C:)',icon:'mycomp',w:520,h:400,content:buildExplorerContent()});
+    const explTitle=(currentLang==='en'?'File Explorer':currentLang==='fr'?'Explorateur de fichiers':'مستكشف الملفات')+' — '+ct('explorer_disk');
+    createWindow({id:winId,title:explTitle,icon:'mycomp',w:520,h:400,content:buildExplorerContent()});
     initExplorer(winId);
   }
   openWindow(winId);
@@ -2732,16 +3054,16 @@ function initTetris(winId){
    SOFTWARE SKILLS
 ═══════════════════════════════════════════════ */
 const SKILLS_LIST = [
-  { name:'Adobe Photoshop', pct:85, color:'#31A8FF', emoji:'🎨', desc:'تصميم وتعديل الصور والرسومات الاحترافية' },
-  { name:'Microsoft Word',  pct:95, color:'#2B579A', emoji:'📄', desc:'تحرير وتنسيق المستندات النصية' },
-  { name:'Microsoft Excel', pct:90, color:'#217346', emoji:'📊', desc:'الجداول الحسابية والتحليل الإحصائي' },
-  { name:'Microsoft PowerPoint', pct:92, color:'#D24726', emoji:'📽️', desc:'تصميم العروض التقديمية الاحترافية' },
-  { name:'IBM SPSS Statistics', pct:80, color:'#052FAD', emoji:'📈', desc:'التحليل الإحصائي للبيانات' },
+  { key:'photoshop', name:'Adobe Photoshop', pct:85, color:'#31A8FF', emoji:'🎨' },
+  { key:'word',  name:'Microsoft Word',  pct:95, color:'#2B579A', emoji:'📄' },
+  { key:'excel', name:'Microsoft Excel', pct:90, color:'#217346', emoji:'📊' },
+  { key:'ppt', name:'Microsoft PowerPoint', pct:92, color:'#D24726', emoji:'📽️' },
+  { key:'spss', name:'IBM SPSS Statistics', pct:80, color:'#052FAD', emoji:'📈' },
 ];
 function initSkills(winId){
   const w=document.getElementById(winId); if(!w) return;
   const body=w.querySelector('#skills-body');
-  body.innerHTML=`<div style="font-size:14px;font-weight:700;color:#222;margin-bottom:14px">🎨 Software Skills</div>`;
+  body.innerHTML=`<div style="font-size:14px;font-weight:700;color:#222;margin-bottom:14px">${ct('skills_title')}</div>`;
   SKILLS_LIST.forEach((s,i)=>{
     const row=document.createElement('div');
     row.className='skill-row';
@@ -2749,7 +3071,7 @@ function initSkills(winId){
       <div class="skill-icon" style="background:${s.color}22">${s.emoji}</div>
       <div class="skill-info">
         <div class="skill-name">${s.name}</div>
-        <div class="skill-desc">${s.desc}</div>
+        <div class="skill-desc">${ct('skill_'+s.key+'_desc')}</div>
         <div class="skill-bar-wrap"><div class="skill-bar-fill" id="skill-bar-${i}" style="width:0%;background:${s.color}"></div></div>
         <div class="skill-pct">${s.pct}%</div>
       </div>`;
@@ -2797,7 +3119,7 @@ function initRating(winId){
     starsEl.querySelectorAll('.rate-star').forEach(st=>st.classList.toggle('active', parseInt(st.dataset.v)<=myVote));
   }
   refresh();
-  if(myVote) msgEl.textContent='لقد قيّمت هذا الموقع مسبقاً بـ '+myVote+' نجوم. شكراً لك! 🌟';
+  if(myVote) msgEl.textContent=ct('rating_already')+' '+myVote+' '+ct('rating_alreadyTail');
   starsEl.querySelectorAll('.rate-star').forEach(st=>{
     st.addEventListener('mouseenter',()=>{
       const v=parseInt(st.dataset.v);
@@ -2809,12 +3131,12 @@ function initRating(winId){
     st.addEventListener('click',()=>{
       const v=parseInt(st.dataset.v);
       const prevVote=parseInt(localStorage.getItem('xp_my_rating'))||0;
-      if(prevVote){ msgEl.textContent='⚠️ لقد قيّمت هذا الموقع مسبقاً، لا يمكن التصويت مرتين.'; SFX.play('error'); return; }
+      if(prevVote){ msgEl.textContent=ct('rating_errorAlready'); SFX.play('error'); return; }
       sum+=v; count++;
       localStorage.setItem('xp_rating_sum',sum);
       localStorage.setItem('xp_rating_count',count);
       localStorage.setItem('xp_my_rating',v);
-      msgEl.textContent='شكراً لتقييمك! ⭐';
+      msgEl.textContent=ct('rating_thanks');
       SFX.play('notify');
       const myV=v;
       starsEl.querySelectorAll('.rate-star').forEach(s2=>s2.classList.toggle('active', parseInt(s2.dataset.v)<=myV));
@@ -2837,18 +3159,248 @@ function initContact(winId){
     const message=w.querySelector('#cf-message').value.trim();
     if(!name||!email||!message){
       statusEl.style.color='#CC0000';
-      statusEl.textContent='⚠️ الرجاء تعبئة الاسم والبريد والرسالة على الأقل.';
+      statusEl.textContent=ct('contact_errorRequired');
       SFX.play('error');
       return;
     }
-    const body=encodeURIComponent(`الاسم: ${name}\nالبريد: ${email}\n\n${message}`);
-    const mailto=`mailto:contact@example.com?subject=${encodeURIComponent(subject||'رسالة من البورتفوليو')}&body=${body}`;
+    const body=encodeURIComponent(`${ct('contact_name')}: ${name}\n${ct('contact_email')}: ${email}\n\n${message}`);
+    const mailto=`mailto:mohzoubid@gmail.com?subject=${encodeURIComponent(subject||'Portfolio Contact')}&body=${body}`;
     window.open(mailto,'_blank');
     statusEl.style.color='#1E8A3C';
-    statusEl.textContent='✅ تم فتح تطبيق البريد لإرسال رسالتك بأسلوب Windows XP.';
+    statusEl.textContent=ct('contact_success');
     SFX.play('notify');
-    showNotification('📧 Send Feedback','تم تحضير رسالتك للإرسال عبر بريدك الإلكتروني');
+    showNotification(ct('contact_notifyTitle'),ct('contact_notifyBody'));
   });
+}
+
+/* ═══════════════════════════════════════════════
+   SERVICES + ORDER FORM
+═══════════════════════════════════════════════ */
+function buildServicesContent(){
+  let html=`<div class="services-body" id="services-body">
+    <div style="font-size:14px;font-weight:700;color:#1E50A0;margin-bottom:10px">${t('servicesTitle')}</div>`;
+  SERVICE_KEYS.forEach(key=>{
+    const s=st(key);
+    html+=`<div class="service-card">
+      <div class="service-card-head"><span class="service-emoji">${SERVICE_EMOJI[key]}</span><span class="service-name">${s.name}</span></div>
+      <div class="service-desc">${s.desc}</div>
+      <div class="service-examples"><b>${t('examplesLabel')}</b><ul>${s.ex.map(e=>`<li>${e}</li>`).join('')}</ul></div>
+      <button class="service-order-btn" data-key="${key}">${t('orderNow')}</button>
+    </div>`;
+  });
+  html+=`</div>`;
+  return html;
+}
+function initServices(winId){
+  const w=document.getElementById(winId); if(!w) return;
+  w.querySelectorAll('.service-order-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{ SFX.play('click'); openOrderForm(btn.dataset.key); });
+  });
+}
+function buildOrderFormContent(serviceName){
+  return `<div class="order-form-body" id="order-form-body" data-service="${serviceName}">
+    <div style="font-size:13px;font-weight:700;color:#1E50A0;margin-bottom:2px">${t('orderFormTitle')}</div>
+    <div style="font-size:11px;color:#555;margin-bottom:6px">${t('orderSubtitle')} <b>${serviceName}</b></div>
+    <div><label>${ct('contact_name')}</label><input type="text" id="of-name" placeholder="${ct('contact_namePh')}"></div>
+    <div><label>${ct('contact_email')}</label><input type="email" id="of-email" placeholder="example@email.com"></div>
+    <div><label>${ct('contact_message')}</label><textarea id="of-message" placeholder="${ct('contact_messagePh')}"></textarea></div>
+    <button class="sol-btn" id="of-send" style="margin-top:6px">${t('orderSend')}</button>
+    <div id="of-status" style="font-size:11px;color:#CC0000"></div>
+    <div style="font-size:9px;color:#999">${ct('contact_disclaimer')}</div>
+  </div>`;
+}
+let orderFormCounter=0;
+function openOrderForm(serviceKey){
+  const s=st(serviceKey);
+  const winId='win_order_'+serviceKey;
+  if(document.getElementById(winId)){ openWindow(winId); bringToFront(winId); return; }
+  createWindow({id:winId,title:t('orderFormTitle')+' — '+s.name,icon:'services',w:380,h:420,content:buildOrderFormContent(s.name)});
+  const w=document.getElementById(winId);
+  const statusEl=w.querySelector('#of-status');
+  w.querySelector('#of-send').addEventListener('click',()=>{
+    const name=w.querySelector('#of-name').value.trim();
+    const email=w.querySelector('#of-email').value.trim();
+    const message=w.querySelector('#of-message').value.trim();
+    if(!name||!email||!message){
+      statusEl.style.color='#CC0000';
+      statusEl.textContent=ct('contact_errorRequired');
+      SFX.play('error');
+      return;
+    }
+    const body=encodeURIComponent(`${ct('contact_name')}: ${name}\n${ct('contact_email')}: ${email}\n\n${message}`);
+    const mailto=`mailto:mohzoubid@gmail.com?subject=${encodeURIComponent('Order: '+s.name)}&body=${body}`;
+    window.open(mailto,'_blank');
+    SFX.play('notify');
+    xpAlert(t('orderSuccessTitle'), t('orderSuccessBody'));
+    closeWindow(winId);
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   PROJECTS (Explorer-style folders)
+═══════════════════════════════════════════════ */
+function buildProjectsContent(){
+  return `<div class="proj-body">
+    <div class="proj-list" id="proj-list"></div>
+    <div class="proj-detail" id="proj-detail"><div style="color:#999;font-size:12px;padding:20px;text-align:center">${t('projSelectHint')}</div></div>
+  </div>`;
+}
+function initProjects(winId){
+  const w=document.getElementById(winId); if(!w) return;
+  const listEl=w.querySelector('#proj-list');
+  const detailEl=w.querySelector('#proj-detail');
+  const lang=currentLang||'ar';
+  function showProject(p){
+    listEl.querySelectorAll('.proj-folder-item').forEach(it=>it.classList.toggle('active',it.dataset.key===p.key));
+    const linksHtml = (p.demo&&p.demo!=='#'?`<a class="proj-link-btn proj-link-demo" href="${p.demo}" target="_blank" rel="noopener">${t('projDemo')}</a>`:'')
+      + (p.github&&p.github!=='#'?`<a class="proj-link-btn proj-link-github" href="${p.github}" target="_blank" rel="noopener">${t('projGithub')}</a>`:'');
+    detailEl.innerHTML=`
+      <div class="proj-detail-title">${p.name[lang]||p.name.ar}</div>
+      <div class="proj-detail-shot">${p.emoji}</div>
+      <div class="proj-detail-desc">${p.desc[lang]||p.desc.ar}</div>
+      <div class="proj-tech-tags">${p.tech.map(tg=>`<span class="proj-tech-tag">${tg}</span>`).join('')}</div>
+      <div class="proj-links">${linksHtml||`<span style="font-size:10px;color:#999">${lang==='en'?'No links available yet':lang==='fr'?'Pas encore de liens disponibles':'لا توجد روابط متاحة حالياً'}</span>`}</div>
+    `;
+  }
+  PROJECTS_DATA.forEach((p,i)=>{
+    const el=document.createElement('div');
+    el.className='proj-folder-item';
+    el.dataset.key=p.key;
+    el.innerHTML=`<span class="proj-folder-icon">📁</span><span>${p.name[lang]||p.name.ar}</span>`;
+    el.addEventListener('click',()=>{ showProject(p); SFX.play('click'); });
+    listEl.appendChild(el);
+    if(i===0) showProject(p);
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   GALLERY (folders + thumbnails)
+═══════════════════════════════════════════════ */
+function buildGalleryContent(){
+  return `<div class="proj-body" style="position:relative">
+    <div class="proj-list" id="gallery-list"></div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+    <div class="gallery-viewer" id="gallery-viewer">
+      <div class="gallery-viewer-img" id="gallery-viewer-img"></div>
+      <div class="gallery-viewer-label" id="gallery-viewer-label"></div>
+      <div class="gallery-viewer-close" id="gallery-viewer-close">${t('galleryClose')}</div>
+    </div>
+  </div>`;
+}
+function initGallery(winId){
+  const w=document.getElementById(winId); if(!w) return;
+  const listEl=w.querySelector('#gallery-list');
+  const gridEl=w.querySelector('#gallery-grid');
+  const viewer=w.querySelector('#gallery-viewer');
+  const viewerImg=w.querySelector('#gallery-viewer-img');
+  const viewerLabel=w.querySelector('#gallery-viewer-label');
+  const lang=currentLang||'ar';
+  function openFolder(folder){
+    listEl.querySelectorAll('.proj-folder-item').forEach(it=>it.classList.toggle('active',it.dataset.key===folder.key));
+    gridEl.innerHTML='';
+    for(let i=1;i<=folder.count;i++){
+      const thumb=document.createElement('div');
+      thumb.className='gallery-thumb';
+      const label=(folder.name[lang]||folder.name.ar)+' #'+i;
+      thumb.innerHTML=`<div class="gallery-thumb-img">${folder.emoji}</div><div class="gallery-thumb-label">${label}</div>`;
+      thumb.addEventListener('click',()=>{
+        viewerImg.textContent=folder.emoji;
+        viewerLabel.textContent=label;
+        viewer.classList.add('show');
+        SFX.play('click');
+      });
+      gridEl.appendChild(thumb);
+    }
+  }
+  GALLERY_FOLDERS.forEach((f,i)=>{
+    const el=document.createElement('div');
+    el.className='proj-folder-item';
+    el.dataset.key=f.key;
+    el.innerHTML=`<span class="proj-folder-icon">📁</span><span>${f.name[lang]||f.name.ar}</span>`;
+    el.addEventListener('click',()=>{ openFolder(f); SFX.play('click'); });
+    listEl.appendChild(el);
+    if(i===0) openFolder(f);
+  });
+  w.querySelector('#gallery-viewer-close').addEventListener('click',()=>viewer.classList.remove('show'));
+}
+
+/* ═══════════════════════════════════════════════
+   RESUME / CV
+═══════════════════════════════════════════════ */
+function buildResumeContent(){
+  const lang=currentLang||'ar';
+  const L = lang==='en' ? {
+    title:'Mohamed Zoubid', sub:'Computer Science Student — Algeria',
+    secEdu:'Education', secSkills:'Skills', secLang:'Languages', secInterests:'Interests',
+    edu1:'<b>Computer Science</b> — currently studying, Algeria',
+    sk:'C / C++ • Web (HTML/CSS/JS) • Adobe Photoshop • MS Office (Word, Excel, PowerPoint) • IBM SPSS',
+    lng:'Arabic (native) • English (good) • French (good)',
+    interests:'Game development • Music • Digital design • AI & Machine Learning'
+  } : lang==='fr' ? {
+    title:'Mohamed Zoubid', sub:'Étudiant en informatique — Algérie',
+    secEdu:'Formation', secSkills:'Compétences', secLang:'Langues', secInterests:'Centres d\'intérêt',
+    edu1:'<b>Informatique</b> — études en cours, Algérie',
+    sk:'C / C++ • Web (HTML/CSS/JS) • Adobe Photoshop • MS Office (Word, Excel, PowerPoint) • IBM SPSS',
+    lng:'Arabe (langue maternelle) • Anglais (bon niveau) • Français (bon niveau)',
+    interests:'Développement de jeux • Musique • Design numérique • IA & Machine Learning'
+  } : {
+    title:'محمد زوبيد', sub:'طالب إعلام آلي — الجزائر',
+    secEdu:'التعليم', secSkills:'المهارات', secLang:'اللغات', secInterests:'الاهتمامات',
+    edu1:'<b>إعلام آلي</b> — طالب حالياً، الجزائر',
+    sk:'C / C++ • تطوير الويب (HTML/CSS/JS) • Adobe Photoshop • MS Office (Word, Excel, PowerPoint) • IBM SPSS',
+    lng:'العربية (لغة أم) • الإنجليزية (جيد) • الفرنسية (جيد)',
+    interests:'تطوير الألعاب • الموسيقى • التصميم الرقمي • الذكاء الاصطناعي والتعلم الآلي'
+  };
+  return `<div class="resume-body">
+    <div class="resume-toolbar">
+      <button class="sol-btn" id="resume-print" style="margin:0">${t('resumePrint')}</button>
+      <button class="sol-btn" id="resume-download" style="margin:0">${t('resumeDownload')}</button>
+      <span style="font-size:9px;color:#555;margin-inline-start:auto">${t('resumeDisclaimer')}</span>
+    </div>
+    <div class="resume-doc-wrap">
+      <div class="resume-doc" id="resume-doc">
+        <h1>${L.title}</h1>
+        <h2>${L.sub}</h2>
+        <div class="resume-doc-section">
+          <div class="resume-doc-section-title">🎓 ${L.secEdu}</div>
+          <div class="resume-doc-item">${L.edu1}</div>
+        </div>
+        <div class="resume-doc-section">
+          <div class="resume-doc-section-title">🛠️ ${L.secSkills}</div>
+          <div class="resume-doc-item">${L.sk}</div>
+        </div>
+        <div class="resume-doc-section">
+          <div class="resume-doc-section-title">🌍 ${L.secLang}</div>
+          <div class="resume-doc-item">${L.lng}</div>
+        </div>
+        <div class="resume-doc-section">
+          <div class="resume-doc-section-title">⭐ ${L.secInterests}</div>
+          <div class="resume-doc-item">${L.interests}</div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+function initResume(winId){
+  const w=document.getElementById(winId); if(!w) return;
+  function printDoc(){
+    const docHtml=w.querySelector('#resume-doc').outerHTML;
+    const iframe=document.createElement('iframe');
+    iframe.style.position='fixed'; iframe.style.right='0'; iframe.style.bottom='0';
+    iframe.style.width='0'; iframe.style.height='0'; iframe.style.border='0';
+    document.body.appendChild(iframe);
+    const doc=iframe.contentWindow.document;
+    doc.open();
+    doc.write(`<html><head><title>Resume</title><style>body{font-family:Tahoma,sans-serif;padding:20px}${document.querySelector('style')?document.querySelector('style').textContent:''}</style></head><body>${docHtml}</body></html>`);
+    doc.close();
+    setTimeout(()=>{
+      iframe.contentWindow.focus();
+      iframe.contentWindow.print();
+      setTimeout(()=>iframe.remove(),1000);
+    },300);
+  }
+  w.querySelector('#resume-print').addEventListener('click',()=>{ SFX.play('click'); printDoc(); });
+  w.querySelector('#resume-download').addEventListener('click',()=>{ SFX.play('click'); printDoc(); });
 }
 
 /* ═══════════════════════════════════════════════
@@ -3006,7 +3558,7 @@ function initChess(winId){
     ];
     turn='w'; selected=null; history=[]; undoStack=[]; gameOver=false;
     render(); renderHistory();
-    statusEl.textContent='دورك (الأبيض)';
+    statusEl.textContent=ct('chess_turnWhite');
   }
   function squareName(r,c){ return 'abcdefgh'[c]+(8-r); }
   function render(){
@@ -3037,14 +3589,14 @@ function initChess(winId){
     const moves=allLegalMoves(board,white);
     if(moves.length===0){
       gameOver=true;
-      if(inCheck(board,white)) statusEl.textContent = white ? '🏆 كش ملك! فاز الأسود (الكمبيوتر)' : '🏆 كش ملك! فاز الأبيض (أنت) 🎉';
-      else statusEl.textContent='🤝 تعادل (Stalemate)';
+      if(inCheck(board,white)) statusEl.textContent = white ? ct('chess_winComputer') : ct('chess_winYou');
+      else statusEl.textContent=ct('chess_stalemate');
       return;
     }
     gameOver=false;
     statusEl.textContent = inCheck(board,white)
-      ? (white?'⚠️ كش! دورك':'⚠️ كش على الكمبيوتر')
-      : (white?'دورك (الأبيض)':'الكمبيوتر يفكر...');
+      ? (white?ct('chess_checkYourTurn'):ct('chess_checkComputer'))
+      : (white?ct('chess_turnWhite'):ct('chess_computerThinking'));
   }
   function doMove(from,to){
     undoStack.push({board:board.map(row=>row.slice()), turn, historyLen:history.length});
@@ -3084,7 +3636,7 @@ function initChess(winId){
   }
   function aiTurn(){
     if(gameOver||turn!=='b') return;
-    statusEl.textContent='الكمبيوتر يفكر...';
+    statusEl.textContent=ct('chess_computerThinking');
     setTimeout(()=>{
       const depth=parseInt(diffSel.value)||3;
       const mv=getAIMove(board,depth);
@@ -3261,6 +3813,34 @@ const WALLPAPERS = [
       sky.innerHTML=content;
     },
     thumb:'radial-gradient(ellipse at 50% 50%,#1A0A40,#000010)'
+  },
+  {
+    name:'Matrix',
+    render(sky){
+      sky.innerHTML='';
+      sky.style.background='#000';
+      let cols='';
+      const chars='アイウエオカキクケコサシスセソ0123456789';
+      for(let i=0;i<40;i++){
+        const left=(i*2.5)+Math.random();
+        const dur=(3+Math.random()*5).toFixed(2);
+        const delay=(Math.random()*5).toFixed(2);
+        let str='';
+        for(let j=0;j<22;j++) str+=chars[Math.floor(Math.random()*chars.length)]+'<br>';
+        cols+=`<div style="position:absolute;left:${left}%;top:-30%;color:#00FF41;font-family:monospace;font-size:13px;line-height:1.1;opacity:${0.4+Math.random()*0.6};text-shadow:0 0 6px #00FF41;animation:matrixFall ${dur}s linear ${delay}s infinite">${str}</div>`;
+      }
+      sky.innerHTML=cols;
+    },
+    thumb:'linear-gradient(180deg,#000,#001a00 60%,#000)'
+  },
+  {
+    name:'Dark XP',
+    render(sky){
+      sky.innerHTML='';
+      sky.style.background='radial-gradient(ellipse at 50% 30%,#2A3A4A 0%,#15191E 55%,#05070A 100%)';
+      sky.innerHTML=`<div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(60,120,200,0.08),transparent 50%)"></div>`;
+    },
+    thumb:'radial-gradient(ellipse at 50% 30%,#2A3A4A 0%,#15191E 55%,#05070A 100%)'
   },
   {
     name:'لون خالص',
