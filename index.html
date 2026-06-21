@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MFLX9NKD');</script>
-<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Midou — Windows XP Portfolio</title>
@@ -26,6 +19,14 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
 ═══════════════════════════════════════════════ */
 #loading-screen{position:fixed;inset:0;z-index:99999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0}
 #loading-screen.hide{animation:fadeOut 1s ease forwards}
+#lang-screen{position:fixed;inset:0;z-index:100000;background:linear-gradient(180deg,#0A2A6E 0%,#1246BE 45%,#1A56D4 70%,#0A2A6E 100%);display:flex;align-items:center;justify-content:center}
+#lang-screen.hide{display:none}
+.lang-box{background:#ECE9D8;border:2px solid #0A246A;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,0.5);padding:28px 32px;text-align:center;max-width:420px}
+.lang-box-title{font-family:Tahoma,'Tajawal',sans-serif;font-size:13px;color:#222;font-weight:700;margin-bottom:20px;line-height:1.6}
+.lang-options{display:flex;flex-direction:column;gap:10px}
+.lang-opt{display:flex;align-items:center;gap:10px;justify-content:center;padding:10px 16px;background:linear-gradient(180deg,#fff,#D8E8FA);border:1px solid #6699CC;border-radius:5px;font-size:14px;font-family:Tahoma,'Tajawal',sans-serif;cursor:pointer;transition:transform .1s}
+.lang-opt:hover{background:linear-gradient(180deg,#E8F4FF,#BFDCF5);transform:translateY(-1px)}
+.lang-flag{font-size:18px}
 @keyframes fadeOut{to{opacity:0;pointer-events:none}}
 .load-logo{display:flex;align-items:center;gap:14px;margin-bottom:40px}
 .load-logo-icon{display:inline-grid;grid-template-columns:18px 18px;gap:3px}
@@ -256,6 +257,64 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
 .snake-overlay.hide{display:none}
 
 /* ═══════════════════════════════════════════════
+   TETRIS
+═══════════════════════════════════════════════ */
+.tetris-body{background:#0d0d12;height:100%;padding:10px;display:flex;gap:14px;justify-content:center;align-items:flex-start;font-family:Tahoma,'Tajawal',sans-serif}
+.tetris-board-wrap{position:relative;flex-shrink:0}
+#tetris-canvas{background:#000;border:2px solid #444;display:block}
+.tetris-side{display:flex;flex-direction:column;gap:8px;color:#fff;font-size:12px;align-items:center}
+#tetris-next{background:#000;border:2px solid #444}
+.tetris-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;background:rgba(0,0,0,0.68);text-align:center;font-size:13px;padding:10px;line-height:1.7}
+.tetris-overlay.hide{display:none}
+
+/* ═══════════════════════════════════════════════
+   SOFTWARE SKILLS
+═══════════════════════════════════════════════ */
+.skills-body{padding:14px;font-family:Tahoma,'Tajawal',sans-serif;height:100%;overflow:auto;background:#fff}
+.skill-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.skill-icon{width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;border-radius:4px}
+.skill-info{flex:1}
+.skill-name{font-size:12px;font-weight:700;color:#222;margin-bottom:2px}
+.skill-desc{font-size:10px;color:#777;margin-bottom:4px}
+.skill-bar-wrap{height:10px;background:#E0E0E0;border:1px solid #aaa;border-radius:3px;overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:2px}
+.skill-pct{font-size:10px;color:#444;margin-top:2px;text-align:left}
+
+/* ═══════════════════════════════════════════════
+   COUNTER / RATING / CONTACT
+═══════════════════════════════════════════════ */
+.cw-body{padding:18px;font-family:Tahoma,'Tajawal',sans-serif;height:100%;text-align:center;background:#fff;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.cw-stat{display:flex;justify-content:space-between;background:#F4F4F4;border:1px solid #ddd;border-radius:4px;padding:8px 12px;font-size:12px}
+.cw-stat b{color:#1E50A0}
+.rate-stars{font-size:32px;letter-spacing:4px;cursor:pointer;user-select:none}
+.rate-star{color:#ccc;transition:color .15s}
+.rate-star.active{color:#FFD700}
+.contact-form{padding:14px;font-family:Tahoma,'Tajawal',sans-serif;height:100%;overflow:auto;background:#fff;display:flex;flex-direction:column;gap:8px}
+.contact-form label{font-size:11px;color:#444;display:block;margin-bottom:2px}
+.contact-form input,.contact-form textarea{width:100%;box-sizing:border-box;font-family:Tahoma;font-size:12px;padding:5px 6px;border:1px solid #888;border-radius:2px}
+.contact-form textarea{resize:vertical;min-height:70px}
+
+/* ═══════════════════════════════════════════════
+   CHESS
+═══════════════════════════════════════════════ */
+.chess-body{display:flex;gap:14px;padding:10px;height:100%;background:#222;font-family:Tahoma,'Tajawal',sans-serif;overflow:auto}
+.chess-board-wrap{position:relative;flex-shrink:0}
+.chess-board{display:grid;grid-template-columns:repeat(8,40px);grid-template-rows:repeat(8,40px);border:3px solid #5b3a1e}
+.chess-sq{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;position:relative;user-select:none}
+.chess-sq.light{background:#EEDFC0}
+.chess-sq.dark{background:#7C5A3A}
+.chess-sq.selected{outline:3px solid #FFD700;outline-offset:-3px}
+.chess-sq.legal::after{content:'';position:absolute;width:12px;height:12px;border-radius:50%;background:rgba(0,150,0,0.55)}
+.chess-sq.legal-capture{outline:3px solid rgba(220,30,30,0.75);outline-offset:-3px}
+.chess-piece-w{color:#fdfdfd;text-shadow:0 0 2px #000,0 0 3px #000}
+.chess-piece-b{color:#0a0a0a}
+.chess-status{color:#fff;font-size:12px;text-align:center;margin-top:6px;min-height:16px}
+.chess-side{display:flex;flex-direction:column;gap:10px;color:#fff;font-size:11px;min-width:140px}
+.chess-history{flex:1;background:#111;border:1px solid #444;border-radius:3px;padding:6px;overflow:auto;font-size:11px;max-height:260px;direction:ltr;text-align:left}
+.chess-history div{padding:2px 0;border-bottom:1px solid #2a2a2a}
+.chess-diff-select{font-family:Tahoma;font-size:11px;padding:3px;width:100%}
+
+/* ═══════════════════════════════════════════════
    RECYCLE BIN WINDOW
 ═══════════════════════════════════════════════ */
 .recycle-body{background:#fff;height:100%;direction:rtl;display:flex;flex-direction:column}
@@ -392,6 +451,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
 .tray-icons{display:flex;align-items:center;gap:3px;padding:0 6px;border-right:1px solid rgba(255,255,255,0.15)}
 .tray-icon{font-size:14px;cursor:default;opacity:0.85;padding:0 2px}
 .tray-icon:hover{opacity:1}
+.vol-popup{position:fixed;bottom:34px;right:6px;background:#ECE9D8;border:1px solid #888;border-radius:4px;box-shadow:2px 2px 8px rgba(0,0,0,0.4);padding:10px;z-index:9999;display:none;flex-direction:column;gap:8px}
+.vol-popup.show{display:flex}
+.vol-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
 #tb-clock{color:#fff;font-size:11px;font-family:Tahoma,sans-serif;padding:2px 6px;white-space:nowrap;direction:ltr;text-align:center;line-height:1.35;cursor:default;border-radius:2px}
 #tb-clock:hover{background:rgba(255,255,255,0.12)}
 
@@ -417,6 +479,25 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
 .mycomp-drive-name{font-size:11px;font-family:Tahoma,'Tajawal',sans-serif;text-align:center;color:#222}
 .mycomp-drive-bar{width:68px;height:6px;background:#C0C0C0;border:1px solid #888;border-radius:1px;margin-top:3px;overflow:hidden}
 .mycomp-drive-bar-fill{height:100%;border-radius:1px}
+.explorer-body{display:flex;height:100%;background:#fff;font-family:Tahoma,'Tajawal',sans-serif}
+.explorer-sidebar{width:140px;background:#ECE9D8;border-left:1px solid #b8b4a8;padding:6px;flex-shrink:0;overflow:auto}
+.explorer-sidebar-title{font-size:11px;color:#555;padding:4px 6px;font-weight:700}
+.explorer-sidebar-item{padding:6px 8px;cursor:pointer;border-radius:3px;display:flex;align-items:center;gap:6px;font-size:12px}
+.explorer-sidebar-item .icon-img{width:18px;height:18px;flex-shrink:0}
+.explorer-sidebar-item .icon-img svg{width:18px;height:18px}
+.explorer-sidebar-item:hover{background:#D8E8FA}
+.explorer-sidebar-item.active{background:#B8D8F8}
+.explorer-main{flex:1;display:flex;flex-direction:column;min-width:0}
+.explorer-breadcrumb{padding:6px 10px;font-size:11px;color:#555;background:#F4F4F4;border-bottom:1px solid #ddd}
+.explorer-files{flex:1;padding:10px;display:flex;flex-wrap:wrap;gap:12px;align-content:flex-start;overflow:auto}
+.explorer-file{display:flex;flex-direction:column;align-items:center;width:72px;cursor:pointer;padding:6px 2px;border-radius:4px}
+.explorer-file:hover{background:#D8E8FA}
+.explorer-file .icon-img{width:32px;height:32px}
+.explorer-file .icon-img svg{width:32px;height:32px}
+.explorer-file-label{font-size:10px;text-align:center;margin-top:4px;word-break:break-word}
+.explorer-empty{color:#999;font-size:12px;padding:20px;text-align:center;width:100%}
+.ripple-effect{position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,rgba(120,180,255,0.55),rgba(120,180,255,0) 70%);pointer-events:none;z-index:99997;animation:rippleAnim .5s ease-out forwards}
+@keyframes rippleAnim{0%{opacity:0.8;transform:translate(-50%,-50%) scale(0.2)}100%{opacity:0;transform:translate(-50%,-50%) scale(22)}}
 .mycomp-specs{display:flex;flex-direction:column;gap:4px}
 .mycomp-spec-row{display:flex;gap:8px;font-size:11px;font-family:Tahoma,'Tajawal',sans-serif;align-items:center}
 .mycomp-spec-label{color:#666;min-width:130px;text-align:right}
@@ -462,10 +543,19 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Tahoma,'Tajawal',sa
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFLX9NKD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
+<!-- ── LANGUAGE SELECTION SCREEN ──────────── -->
+<div id="lang-screen">
+  <div class="lang-box">
+    <div class="lang-box-title">🌐 Choose your language / اختر اللغة / Choisissez la langue</div>
+    <div class="lang-options">
+      <button class="lang-opt" data-lang="en"><span class="lang-flag">🇺🇸</span><span>English</span></button>
+      <button class="lang-opt" data-lang="ar"><span class="lang-flag">🇩🇿</span><span>العربية</span></button>
+      <button class="lang-opt" data-lang="fr"><span class="lang-flag">🇫🇷</span><span>Français</span></button>
+    </div>
+  </div>
+</div>
+
 <!-- ── LOADING SCREEN ─────────────────────── -->
 <div id="loading-screen">
   <div class="load-logo">
@@ -480,12 +570,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ── WELCOME SCREEN ────────────────────── -->
 <div id="welcome-screen">
-  <div class="welcome-title">مرحباً بك</div>
+  <div class="welcome-title" id="welcome-title">مرحباً بك</div>
   <div class="welcome-divider"></div>
   <div class="welcome-user">
     <div class="welcome-avatar">🎮</div>
     <div class="welcome-name">Midou</div>
-    <div class="welcome-hint">انقر في أي مكان للمتابعة</div>
+    <div class="welcome-hint" id="welcome-hint">انقر في أي مكان للمتابعة</div>
   </div>
 </div>
 
@@ -525,6 +615,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="ctx-item" data-action="size-lg"><span class="ctx-icon">🔶</span>أيقونات كبيرة</div>
   <div class="ctx-sep"></div>
   <div class="ctx-item" data-action="wallpaper"><span class="ctx-icon">🖼️</span>خصائص الشاشة</div>
+  <div class="ctx-item" data-action="changelang"><span class="ctx-icon">🌐</span>تغيير اللغة</div>
   <div class="ctx-sep"></div>
   <div class="ctx-item" data-action="about"><span class="ctx-icon">ℹ️</span>حول هذا الحاسوب</div>
 </div>
@@ -587,6 +678,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="tb-clock"></div>
   </div>
 </div>
+<div id="vol-popup" class="vol-popup">
+  <div class="vol-row">
+    <button id="vol-mute-btn" class="sol-btn" style="margin:0;padding:3px 8px">🔇 كتم</button>
+    <span id="vol-pct" style="font-size:11px;font-family:Tahoma">70%</span>
+  </div>
+  <input type="range" id="vol-slider" min="0" max="100" value="70" style="width:140px">
+</div>
 
 <!-- ── TOOLTIP ────────────────────────────── -->
 <div id="tooltip"></div>
@@ -612,7 +710,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
+<!-- ── PROPERTIES DIALOG ──────────────────── -->
+<div class="wp-picker" id="props-picker">
+  <div class="wp-box" style="width:300px">
+    <div class="wp-titlebar" id="props-title">خصائص</div>
+    <div class="wp-body" id="props-body" style="text-align:center"></div>
+    <div class="wp-buttons" style="padding:0 14px 14px">
+      <button class="wp-btn" id="props-ok">موافق</button>
+    </div>
+  </div>
+</div>
+
 <script>
+/* ═══════════════════════════════════════════════
+   SOUND ENGINE (defined first — used everywhere below)
+═══════════════════════════════════════════════ */
+const SFX = {
+  muted: localStorage.getItem('xp_sound_muted')==='1',
+  volume: parseFloat(localStorage.getItem('xp_sound_volume')||'0.7'),
+  setMuted(v){ this.muted=v; localStorage.setItem('xp_sound_muted', v?'1':'0'); },
+  setVolume(v){ this.volume=v; localStorage.setItem('xp_sound_volume', String(v)); },
+  play(type){
+    if(this.muted || this.volume<=0) return;
+    const vol=this.volume;
+    try{
+      const ctx = new (window.AudioContext||window.webkitAudioContext)();
+      const cfg = {
+        open:    [{f:880,t:0,d:0.06,g:0.3},{f:1100,t:0.06,d:0.08,g:0.25}],
+        close:   [{f:660,t:0,d:0.05,g:0.2},{f:440,t:0.05,d:0.08,g:0.15}],
+        click:   [{f:1200,t:0,d:0.04,g:0.15}],
+        error:   [{f:200,t:0,d:0.1,g:0.4},{f:150,t:0.1,d:0.15,g:0.3}],
+        startup: [{f:523,t:0,d:0.15,g:0.2},{f:659,t:0.12,d:0.15,g:0.2},{f:784,t:0.24,d:0.15,g:0.2},{f:1047,t:0.36,d:0.25,g:0.25}],
+        notify:  [{f:1047,t:0,d:0.08,g:0.2},{f:880,t:0.08,d:0.1,g:0.15}],
+        delete:  [{f:520,t:0,d:0.08,g:0.25},{f:300,t:0.08,d:0.12,g:0.2},{f:180,t:0.18,d:0.14,g:0.18}],
+      }[type]||[];
+      cfg.forEach(({f,t,d,g})=>{
+        const o=ctx.createOscillator(), gain=ctx.createGain();
+        o.type='sine'; o.frequency.setValueAtTime(f, ctx.currentTime+t);
+        gain.gain.setValueAtTime(g*vol, ctx.currentTime+t);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+t+d);
+        o.connect(gain); gain.connect(ctx.destination);
+        o.start(ctx.currentTime+t); o.stop(ctx.currentTime+t+d+0.01);
+      });
+    }catch(e){}
+  }
+};
 'use strict';
 /* ═══════════════════════════════════════════════
    SVG ICON LIBRARY
@@ -640,6 +782,12 @@ const ICONS = {
   controlpanel: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="8" fill="#FF6B6B" opacity="0.9"/><circle cx="33" cy="15" r="8" fill="#4ECDC4" opacity="0.9"/><circle cx="15" cy="33" r="8" fill="#FFE66D" opacity="0.9"/><circle cx="33" cy="33" r="8" fill="#6BCB77" opacity="0.9"/></svg>`,
   globe:`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="none" stroke="#1E90FF" stroke-width="2"/><ellipse cx="12" cy="12" rx="4" ry="10" fill="none" stroke="#1E90FF" stroke-width="1.5"/><line x1="2" y1="9" x2="22" y2="9" stroke="#1E90FF" stroke-width="1.5"/><line x1="2" y1="15" x2="22" y2="15" stroke="#1E90FF" stroke-width="1.5"/></svg>`,
   snake: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="8" fill="#0A2A0A"/><path d="M10 36c0-6 8-4 8-10s-8-4-8-10 8-4 8-10" fill="none" stroke="#3CB043" stroke-width="6" stroke-linecap="round"/><circle cx="10" cy="36" r="4" fill="#7CFC00"/><circle cx="36" cy="14" r="3.5" fill="#FF4040"/></svg>`,
+  tetris: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="8" fill="#101018"/><rect x="6" y="26" width="9" height="9" fill="#3C5CE8"/><rect x="15" y="26" width="9" height="9" fill="#3C5CE8"/><rect x="24" y="26" width="9" height="9" fill="#3C5CE8"/><rect x="24" y="17" width="9" height="9" fill="#3C5CE8"/><rect x="15" y="8" width="9" height="9" fill="#E8D000"/><rect x="24" y="8" width="9" height="9" fill="#E8D000"/><rect x="15" y="17" width="9" height="9" fill="#E8D000"/><rect x="33" y="35" width="9" height="9" fill="#E83C3C"/></svg>`,
+  skills: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="40" height="36" rx="3" fill="#fff" stroke="#888" stroke-width="1.5"/><rect x="8" y="12" width="32" height="4" fill="#E8901C"/><rect x="8" y="20" width="24" height="4" fill="#3C5CE8"/><rect x="8" y="28" width="28" height="4" fill="#3CB043"/><rect x="8" y="36" width="18" height="3" fill="#A335EE"/></svg>`,
+  counter: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="10" width="40" height="28" rx="3" fill="#101018" stroke="#444" stroke-width="1.5"/><text x="24" y="30" font-family="monospace" font-size="14" fill="#3CD63C" text-anchor="middle">0042</text></svg>`,
+  rating: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><polygon points="24,4 30,18 45,19 33,29 37,44 24,35 11,44 15,29 3,19 18,18" fill="#FFD700" stroke="#C8A000" stroke-width="1.2"/></svg>`,
+  contact: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="10" width="40" height="28" rx="3" fill="#fff" stroke="#3C5CE8" stroke-width="2"/><path d="M5 12l19 15 19-15" fill="none" stroke="#3C5CE8" stroke-width="2"/></svg>`,
+  chess: `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="8" fill="#3a2a18"/><rect x="6" y="30" width="9" height="9" fill="#EEDFC0"/><rect x="15" y="21" width="9" height="9" fill="#7C5A3A"/><rect x="24" y="30" width="9" height="9" fill="#EEDFC0"/><rect x="33" y="21" width="9" height="9" fill="#7C5A3A"/><text x="24" y="18" font-size="14" text-anchor="middle" fill="#fff">♞</text></svg>`,
 };
 
 /* ═══════════════════════════════════════════════
@@ -660,6 +808,12 @@ const APPS = [
   { id:'recycle',   label:'سلة المهملات',icon:'recycle',     type:'recycle',title:'سلة المهملات',           desc:'', url:'', w:420, h:300, tooltip:'Recycle Bin' },
   { id:'mediaplayer',label:'ميديا بلاير',icon:'mediaplayer', type:'mediaplayer',title:'Windows Media Player',desc:'', url:'', w:360, h:320, tooltip:'Media Player' },
   { id:'snake',     label:'Snake',       icon:'snake',       type:'snake',  title:'🐍 Snake',                desc:'', url:'', w:420, h:500, tooltip:'Snake' },
+  { id:'tetris',    label:'Tetris',      icon:'tetris',      type:'tetris', title:'🟦 Tetris',               desc:'', url:'', w:400, h:560, tooltip:'Tetris' },
+  { id:'skills',    label:'Software Skills', icon:'skills',  type:'skills', title:'Software Skills',         desc:'', url:'', w:420, h:440, tooltip:'مهاراتي البرمجية' },
+  { id:'counter',   label:'عداد الزوار', icon:'counter',     type:'counter',title:'Visitor Statistics',       desc:'', url:'', w:340, h:300, tooltip:'إحصائيات الزوار' },
+  { id:'rating',    label:'تقييم الموقع', icon:'rating',     type:'rating', title:'Rate My Portfolio',        desc:'', url:'', w:340, h:300, tooltip:'قيّم البورتفوليو' },
+  { id:'contact',   label:'التواصل',     icon:'contact',     type:'contact',title:'Send Feedback',            desc:'', url:'', w:380, h:440, tooltip:'تواصل معي' },
+  { id:'chess',     label:'الشطرنج',     icon:'chess',       type:'chess',  title:'♞ شطرنج XP',               desc:'', url:'', w:560, h:480, tooltip:'لعب الشطرنج ضد الكمبيوتر' },
 ];
 
 /* start menu items */
@@ -671,6 +825,12 @@ const SM_LEFT = [
   { id:'minesweeper',name:'ألغام',        sub:'لعبة الألغام',    icon:'minesweeper' },
   { id:'solitaire',name:'سوليتير',       sub:'لعبة الورق',       icon:'solitaire' },
   { id:'snake',name:'Snake',            sub:'لعبة الثعبان',      icon:'snake' },
+  { id:'tetris',name:'Tetris',          sub:'لعبة تيتريس',       icon:'tetris' },
+  { id:'chess',name:'الشطرنج',          sub:'العب ضد الكمبيوتر',  icon:'chess' },
+  { id:'skills',name:'Software Skills', sub:'مهاراتي البرمجية',   icon:'skills' },
+  { id:'counter',name:'عداد الزوار',    sub:'Visitor Statistics', icon:'counter' },
+  { id:'rating',name:'تقييم الموقع',    sub:'Rate My Portfolio',  icon:'rating' },
+  { id:'contact',name:'التواصل',        sub:'Send Feedback',      icon:'contact' },
 ];
 const SM_RIGHT = [
   { id:'mycomp', name:'My Computer',    icon:'mycomp' },
@@ -698,12 +858,92 @@ let mpProgress = 35;
 let mpTimer;
 let desktopIconOrder = null;
 let iconSizePref = localStorage.getItem('xp_icon_size')||'md';
-const DESKTOP_APP_IDS = ['facebook','instagram','tiktok','spotify','steam','about','mycomp','calc','paint','minesweeper','solitaire','snake','recycle','mediaplayer'];
+const DESKTOP_APP_IDS = ['facebook','instagram','tiktok','spotify','steam','about','mycomp','calc','paint','minesweeper','solitaire','snake','tetris','chess','skills','counter','rating','contact','recycle','mediaplayer'];
+
+/* ═══════════════════════════════════════════════
+   i18n — MULTI-LANGUAGE SYSTEM
+═══════════════════════════════════════════════ */
+const APP_I18N = {
+  ar:{ facebook:'فيسبوك', instagram:'إنستغرام', tiktok:'تيك توك', spotify:'Spotify', steam:'Steam',
+       about:'نبذة عني.txt', mycomp:'My Computer', calc:'الآلة الحاسبة', paint:'الرسام', minesweeper:'ألغام',
+       solitaire:'سوليتير', recycle:'سلة المهملات', mediaplayer:'ميديا بلاير', snake:'Snake', tetris:'Tetris',
+       skills:'Software Skills', counter:'عداد الزوار', rating:'تقييم الموقع', contact:'التواصل', chess:'الشطرنج' },
+  en:{ facebook:'Facebook', instagram:'Instagram', tiktok:'TikTok', spotify:'Spotify', steam:'Steam',
+       about:'About Me.txt', mycomp:'My Computer', calc:'Calculator', paint:'Paint', minesweeper:'Minesweeper',
+       solitaire:'Solitaire', recycle:'Recycle Bin', mediaplayer:'Media Player', snake:'Snake', tetris:'Tetris',
+       skills:'Software Skills', counter:'Visitor Counter', rating:'Rate My Site', contact:'Contact', chess:'Chess' },
+  fr:{ facebook:'Facebook', instagram:'Instagram', tiktok:'TikTok', spotify:'Spotify', steam:'Steam',
+       about:'À propos.txt', mycomp:'Poste de travail', calc:'Calculatrice', paint:'Paint', minesweeper:'Démineur',
+       solitaire:'Solitaire', recycle:'Corbeille', mediaplayer:'Lecteur multimédia', snake:'Snake', tetris:'Tetris',
+       skills:'Software Skills', counter:'Compteur de visites', rating:'Noter mon site', contact:'Contact', chess:'Échecs' },
+};
+const UI_I18N = {
+  ar:{ start:'أبدأ', arrange:'ترتيب تلقائي', refresh:'تحديث', sizeSm:'أيقونات صغيرة', sizeMd:'أيقونات متوسطة', sizeLg:'أيقونات كبيرة',
+       wallpaper:'خصائص الشاشة', aboutComp:'حول هذا الحاسوب', wpTitle:'خصائص الشاشة — خلفية سطح المكتب', wpChoose:'اختر خلفية:',
+       wpApply:'تطبيق', wpCancel:'إلغاء', wpColor:'اختر اللون:', welcomeTitle:'مرحباً بك', welcomeHint:'انقر في أي مكان للمتابعة',
+       loadCopy:'Microsoft Corporation', notifyWelcomeTitle:'🖥️ مرحباً بك Midou!', notifyWelcomeBody:'سطح المكتب جاهز — انقر مرتين على الأيقونات لفتحها',
+       notifyTenSecTitle:'💬 New Message', notifyTenSecBody:'مرحباً بك في بورتفوليو Midou — Welcome to my Portfolio',
+       changeLang:'🌐 تغيير اللغة', propsOk:'موافق' },
+  en:{ start:'Start', arrange:'Auto Arrange', refresh:'Refresh', sizeSm:'Small Icons', sizeMd:'Medium Icons', sizeLg:'Large Icons',
+       wallpaper:'Display Properties', aboutComp:'About This Computer', wpTitle:'Display Properties — Desktop Background', wpChoose:'Choose a background:',
+       wpApply:'Apply', wpCancel:'Cancel', wpColor:'Pick a color:', welcomeTitle:'Welcome', welcomeHint:'Click anywhere to continue',
+       loadCopy:'Microsoft Corporation', notifyWelcomeTitle:'🖥️ Welcome, Midou!', notifyWelcomeBody:'Desktop ready — double-click icons to open them',
+       notifyTenSecTitle:'💬 New Message', notifyTenSecBody:'Welcome to my Portfolio',
+       changeLang:'🌐 Change Language', propsOk:'OK' },
+  fr:{ start:'Démarrer', arrange:'Réorganiser auto', refresh:'Actualiser', sizeSm:'Petites icônes', sizeMd:'Icônes moyennes', sizeLg:'Grandes icônes',
+       wallpaper:'Propriétés d\'affichage', aboutComp:'À propos de cet ordinateur', wpTitle:'Propriétés d\'affichage — Arrière-plan', wpChoose:'Choisissez un fond :',
+       wpApply:'Appliquer', wpCancel:'Annuler', wpColor:'Choisir la couleur :', welcomeTitle:'Bienvenue', welcomeHint:'Cliquez n\'importe où pour continuer',
+       loadCopy:'Microsoft Corporation', notifyWelcomeTitle:'🖥️ Bienvenue, Midou !', notifyWelcomeBody:'Bureau prêt — double-cliquez sur les icônes pour les ouvrir',
+       notifyTenSecTitle:'💬 Nouveau message', notifyTenSecBody:'Bienvenue sur mon Portfolio',
+       changeLang:'🌐 Changer de langue', propsOk:'OK' },
+};
+let currentLang = localStorage.getItem('xp_lang') || null;
+function t(key){ return (UI_I18N[currentLang||'ar']||UI_I18N.ar)[key] || key; }
+function appLabel(id){ return (APP_I18N[currentLang||'ar']||APP_I18N.ar)[id]; }
+function applyLanguage(lang){
+  currentLang = lang;
+  localStorage.setItem('xp_lang', lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang==='ar' ? 'rtl' : 'ltr';
+  document.body.classList.toggle('lang-ltr', lang!=='ar');
+  const startLabel=document.querySelector('.start-label'); if(startLabel) startLabel.textContent=t('start');
+  const welcomeTitle=document.getElementById('welcome-title'); if(welcomeTitle) welcomeTitle.textContent=t('welcomeTitle');
+  const welcomeHint=document.getElementById('welcome-hint'); if(welcomeHint) welcomeHint.textContent=t('welcomeHint');
+  const loadCopy=document.querySelector('.load-copy'); if(loadCopy) loadCopy.textContent=t('loadCopy');
+  const ictxArrange=document.querySelector('[data-action="arrange"]'); if(ictxArrange) ictxArrange.innerHTML='<span class="ctx-icon">🗂️</span>'+t('arrange');
+  const ictxRefresh=document.querySelector('[data-action="refresh"]'); if(ictxRefresh) ictxRefresh.innerHTML='<span class="ctx-icon">🔄</span>'+t('refresh');
+  const ictxSm=document.querySelector('[data-action="size-sm"]'); if(ictxSm) ictxSm.innerHTML='<span class="ctx-icon">🔹</span>'+t('sizeSm');
+  const ictxMd=document.querySelector('[data-action="size-md"]'); if(ictxMd) ictxMd.innerHTML='<span class="ctx-icon">🔸</span>'+t('sizeMd');
+  const ictxLg=document.querySelector('[data-action="size-lg"]'); if(ictxLg) ictxLg.innerHTML='<span class="ctx-icon">🔶</span>'+t('sizeLg');
+  const ictxWp=document.querySelector('[data-action="wallpaper"]'); if(ictxWp) ictxWp.innerHTML='<span class="ctx-icon">🖼️</span>'+t('wallpaper');
+  const ictxAbout=document.querySelector('[data-action="about"]'); if(ictxAbout) ictxAbout.innerHTML='<span class="ctx-icon">ℹ️</span>'+t('aboutComp');
+  const wpTitleEl=document.querySelector('.wp-titlebar'); if(wpTitleEl) wpTitleEl.textContent=t('wpTitle');
+  const wpChooseEl=document.querySelector('#wp-picker .wp-body > div'); if(wpChooseEl) wpChooseEl.textContent=t('wpChoose');
+  const wpApplyBtn=document.getElementById('wp-apply'); if(wpApplyBtn) wpApplyBtn.textContent=t('wpApply');
+  const wpCancelBtn=document.getElementById('wp-cancel'); if(wpCancelBtn) wpCancelBtn.textContent=t('wpCancel');
+  const wpColorLbl=document.querySelector('#wp-color-row span'); if(wpColorLbl) wpColorLbl.textContent=t('wpColor');
+  const propsOkBtn=document.getElementById('props-ok'); if(propsOkBtn) propsOkBtn.textContent=t('propsOk');
+  const changeLangItem=document.querySelector('[data-action="changelang"]'); if(changeLangItem) changeLangItem.innerHTML='<span class="ctx-icon">🌐</span>'+t('changeLang');
+  if(typeof buildDesktop==='function') buildDesktop();
+  if(typeof buildStartMenu==='function') buildStartMenu();
+  if(typeof updateClock==='function') updateClock();
+}
+function showLangScreen(onDone){
+  const ls=document.getElementById('lang-screen');
+  ls.classList.remove('hide');
+  ls.querySelectorAll('.lang-opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      applyLanguage(btn.dataset.lang);
+      ls.classList.add('hide');
+      if(onDone) onDone();
+    },{once:true});
+  });
+}
 
 /* ═══════════════════════════════════════════════
    LOADING & WELCOME
 ═══════════════════════════════════════════════ */
-(function bootSequence(){
+function runBootSequence(){
   const bar = document.getElementById('load-bar');
   let pct = 0;
   const iv = setInterval(()=>{
@@ -712,7 +952,18 @@ const DESKTOP_APP_IDS = ['facebook','instagram','tiktok','spotify','steam','abou
     bar.style.width = Math.min(pct,100)+'%';
     if(pct>=100) setTimeout(showWelcome, 400);
   }, 200);
-})();
+}
+if(currentLang){
+  applyLanguage(currentLang);
+  document.getElementById('lang-screen').classList.add('hide');
+  runBootSequence();
+} else {
+  document.getElementById('loading-screen').style.display='none';
+  showLangScreen(()=>{
+    document.getElementById('loading-screen').style.display='flex';
+    runBootSequence();
+  });
+}
 function showWelcome(){
   const ls = document.getElementById('loading-screen');
   ls.classList.add('hide');
@@ -724,7 +975,7 @@ function startDesktop(){
   ws.classList.add('hide');
   SFX.play('startup');
   setTimeout(()=>{ ws.style.display='none'; },800);
-  setTimeout(()=>{ showNotification('🖥️ مرحباً بك Midou!','سطح المكتب جاهز — انقر مرتين على الأيقونات لفتحها'); },1500);
+  setTimeout(()=>{ showNotification(t('notifyWelcomeTitle'),t('notifyWelcomeBody')); },1500);
 }
 
 /* ═══════════════════════════════════════════════
@@ -779,7 +1030,7 @@ function buildDesktop(){
     const el=document.createElement('div');
     el.className='icon size-'+iconSizePref;
     el.dataset.id=id;
-    el.innerHTML=`<div class="icon-img">${ICONS[app.icon]||ICONS.notepad}</div><div class="icon-label">${app.label}</div>`;
+    el.innerHTML=`<div class="icon-img">${ICONS[app.icon]||ICONS.notepad}</div><div class="icon-label">${appLabel(id)||app.label}</div>`;
     const pos=positions[id]||defaultIconPos(i);
     el.style.left=pos.left+'px';
     el.style.top=pos.top+'px';
@@ -801,11 +1052,12 @@ function deselectAll(){ document.querySelectorAll('.icon').forEach(i=>i.classLis
 function buildStartMenu(){
   const left=document.getElementById('sm-left');
   const right=document.getElementById('sm-right');
-  left.innerHTML='<div class="sm-section-title">البرامج</div>';
+  const progLabel = currentLang==='en' ? 'Programs' : currentLang==='fr' ? 'Programmes' : 'البرامج';
+  left.innerHTML=`<div class="sm-section-title">${progLabel}</div>`;
   SM_LEFT.forEach(item=>{
     const el=document.createElement('div');
     el.className='sm-item';
-    el.innerHTML=`<div class="sm-item-icon">${ICONS[item.icon]||''}</div><div class="sm-item-texts"><div class="sm-item-name">${item.name}</div><div class="sm-item-sub">${item.sub}</div></div>`;
+    el.innerHTML=`<div class="sm-item-icon">${ICONS[item.icon]||''}</div><div class="sm-item-texts"><div class="sm-item-name">${appLabel(item.id)||item.name}</div><div class="sm-item-sub">${item.sub}</div></div>`;
     el.addEventListener('click',()=>{ openApp(item.id); closeStartMenu(); });
     left.appendChild(el);
   });
@@ -813,7 +1065,7 @@ function buildStartMenu(){
   SM_RIGHT.forEach(item=>{
     const el=document.createElement('div');
     el.className='sm-item';
-    el.innerHTML=`<div class="sm-item-icon">${ICONS[item.icon]||''}</div><div class="sm-item-texts"><div class="sm-item-name">${item.name}</div></div>`;
+    el.innerHTML=`<div class="sm-item-icon">${ICONS[item.icon]||''}</div><div class="sm-item-texts"><div class="sm-item-name">${appLabel(item.id)||item.name}</div></div>`;
     el.addEventListener('click',()=>{ handleSMRight(item.id); closeStartMenu(); });
     right.appendChild(el);
   });
@@ -892,7 +1144,17 @@ function openApp(id){
     else if(app.type==='recycle') content=buildRecycleContent();
     else if(app.type==='mediaplayer') content=buildMPContent();
     else if(app.type==='snake') content=buildSnakeContent();
-    createWindow({id:winId,title:app.title,icon:app.icon,w:app.w,h:app.h,content});
+    else if(app.type==='tetris') content=buildTetrisContent();
+    else if(app.type==='skills') content=buildSkillsContent();
+    else if(app.type==='counter') content=buildCounterContent();
+    else if(app.type==='rating') content=buildRatingContent();
+    else if(app.type==='contact') content=buildContactContent();
+    else if(app.type==='chess') content=buildChessContent();
+    const titlePrefixMap={snake:'🐍 ',tetris:'🟦 ',chess:'♞ '};
+    const translatableTitleIds=['facebook','instagram','tiktok','spotify','steam','snake','tetris','chess','skills','counter','rating','contact','mycomp','calc','minesweeper','solitaire'];
+    const translatedLabel = translatableTitleIds.includes(id) ? appLabel(id) : null;
+    const winTitle = translatedLabel ? (titlePrefixMap[id]!==undefined ? titlePrefixMap[id]+translatedLabel : translatedLabel) : app.title;
+    createWindow({id:winId,title:winTitle,icon:app.icon,w:app.w,h:app.h,content});
     /* post-init */
     if(app.type==='calc') initCalc(winId);
     if(app.type==='mycomp') initMyComp(winId);
@@ -901,6 +1163,12 @@ function openApp(id){
     if(app.type==='solitaire') initSolitaire(winId);
     if(app.type==='mediaplayer') initMediaPlayer(winId);
     if(app.type==='snake') initSnake(winId);
+    if(app.type==='tetris') initTetris(winId);
+    if(app.type==='skills') initSkills(winId);
+    if(app.type==='counter') initCounter(winId);
+    if(app.type==='rating') initRating(winId);
+    if(app.type==='contact') initContact(winId);
+    if(app.type==='chess') initChess(winId);
     /* visit btn */
     const vb=document.getElementById(winId)&&document.getElementById(winId).querySelector('.btn-visit');
     if(vb) vb.addEventListener('click',e=>{e.stopPropagation();window.open(app.url,'_blank')});
@@ -908,6 +1176,13 @@ function openApp(id){
   openWindow(winId);
 }
 
+function spawnRipple(x,y){
+  const r=document.createElement('div');
+  r.className='ripple-effect';
+  r.style.left=x+'px'; r.style.top=y+'px';
+  document.body.appendChild(r);
+  setTimeout(()=>r.remove(),520);
+}
 function openWindow(id){
   const win=document.getElementById(id);
   if(!win) return;
@@ -925,6 +1200,7 @@ function openWindow(id){
   win.style.display='block';
   win.classList.add('opening');
   win.addEventListener('animationend',()=>win.classList.remove('opening'),{once:true});
+  spawnRipple(l+W/2,t+H/2);
   SFX.play('open');
   if(!openWindows.includes(id)) openWindows.push(id);
   bringToFront(id);
@@ -1086,14 +1362,29 @@ function updateTaskbar(){
 function updateClock(){
   const n=new Date();
   const h=n.getHours(),m=n.getMinutes(),s=n.getSeconds();
-  const p=h>=12?'مساءً':'صباحاً';
-  const h12=h%12||12;
-  const days=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
-  const months=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
   const clk=document.getElementById('tb-clock');
-  clk.innerHTML=`${String(h12).padStart(2,'0')}:${String(m).padStart(2,'0')}<br>${p}`;
-  const dateStr=`${days[n.getDay()]}، ${n.getDate()} ${months[n.getMonth()]} ${n.getFullYear()}`;
-  clk.title=dateStr;
+  const lang=currentLang||'ar';
+  const daysAr=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+  const monthsAr=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  const daysEn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const monthsEn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const daysFr=['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+  const monthsFr=['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];
+  let timeStr, dateStr;
+  if(lang==='fr'){
+    timeStr = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    dateStr = `${daysFr[n.getDay()]} ${n.getDate()} ${monthsFr[n.getMonth()]}`;
+  } else if(lang==='en'){
+    const p=h>=12?'PM':'AM'; const h12=h%12||12;
+    timeStr = `${String(h12).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} ${p}`;
+    dateStr = `${daysEn[n.getDay()]}, ${monthsEn[n.getMonth()]} ${n.getDate()}`;
+  } else {
+    const p=h>=12?'مساءً':'صباحاً'; const h12=h%12||12;
+    timeStr = `${String(h12).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} ${p}`;
+    dateStr = `${daysAr[n.getDay()]}، ${n.getDate()} ${monthsAr[n.getMonth()]}`;
+  }
+  clk.innerHTML = `${timeStr}<br><span style="font-size:9px;opacity:.85">${dateStr}</span>`;
+  clk.title = dateStr+' — '+n.getFullYear();
 }
 updateClock();
 setInterval(updateClock,1000);
@@ -1171,7 +1462,28 @@ iconCtxEl.innerHTML=`
   <div class="ctx-item" id="ictx-props"><span class="ctx-icon">ℹ️</span>خصائص</div>`;
 document.body.appendChild(iconCtxEl);
 iconCtxEl.querySelector('#ictx-open').addEventListener('click',()=>{ if(iconCtxTarget)openApp(iconCtxTarget); hideIconCtxMenu(); });
-iconCtxEl.querySelector('#ictx-props').addEventListener('click',()=>{ if(iconCtxTarget){ const app=APPS.find(a=>a.id===iconCtxTarget); showNotification('ℹ️ خصائص',app?app.tooltip||app.label:'—'); } hideIconCtxMenu(); });
+iconCtxEl.querySelector('#ictx-props').addEventListener('click',()=>{ if(iconCtxTarget) showProperties(iconCtxTarget); hideIconCtxMenu(); });
+function showProperties(id){
+  const app=APPS.find(a=>a.id===id);
+  if(!app) return;
+  const title=document.getElementById('props-title');
+  const body=document.getElementById('props-body');
+  title.textContent='خصائص — '+app.label;
+  const sizeKB=(800+Math.floor(Math.random()*4000));
+  const date='2026/0'+(1+Math.floor(Math.random()*6))+'/1'+Math.floor(Math.random()*9);
+  body.innerHTML=`
+    <div style="display:flex;justify-content:center;margin-bottom:10px"><div style="width:48px;height:48px">${ICONS[app.icon]||ICONS.notepad}</div></div>
+    <div style="font-weight:700;font-family:Tajawal,Tahoma;margin-bottom:10px">${app.label}</div>
+    <table style="width:100%;font-size:11px;font-family:Tahoma;text-align:right;border-collapse:collapse">
+      <tr><td style="color:#666;padding:3px 0">النوع:</td><td>${app.type}</td></tr>
+      <tr><td style="color:#666;padding:3px 0">الحجم:</td><td>${sizeKB} KB</td></tr>
+      <tr><td style="color:#666;padding:3px 0">الموقع:</td><td>C:\\Desktop</td></tr>
+      <tr><td style="color:#666;padding:3px 0">تاريخ الإنشاء:</td><td>${date}</td></tr>
+      <tr><td style="color:#666;padding:3px 0">الوصف:</td><td>${app.tooltip||app.label}</td></tr>
+    </table>`;
+  document.getElementById('props-picker').classList.add('show');
+}
+document.getElementById('props-ok').addEventListener('click',()=>document.getElementById('props-picker').classList.remove('show'));
 function showIconCtxMenu(x,y,id){
   iconCtxTarget=id;
   iconCtxEl.style.left=Math.min(x,window.innerWidth-180)+'px';
@@ -1190,6 +1502,7 @@ document.querySelectorAll('.ctx-item').forEach(item=>{
     if(a==='size-sm') setIconSize('sm');
     if(a==='size-md') setIconSize('md');
     if(a==='size-lg') setIconSize('lg');
+    if(a==='changelang'){ showLangScreen(); }
   });
 });
 
@@ -1404,6 +1717,79 @@ function buildSnakeContent(){
     </div>
   </div>`;
 }
+function buildTetrisContent(){
+  return `<div class="tetris-body">
+    <div class="tetris-board-wrap">
+      <canvas id="tetris-canvas" width="240" height="480"></canvas>
+      <div id="tetris-overlay" class="tetris-overlay">اضغط مسافة للبدء<br>← → للحركة، ↑ للتدوير<br>↓ نزول سريع، Space سقوط فوري</div>
+    </div>
+    <div class="tetris-side">
+      <div>التالي</div>
+      <canvas id="tetris-next" width="96" height="96"></canvas>
+      <div class="sol-stat">النقاط: <span id="tetris-score">0</span></div>
+      <div class="sol-stat">الخطوط: <span id="tetris-lines">0</span></div>
+      <div class="sol-stat">المستوى: <span id="tetris-level">1</span></div>
+      <div class="sol-stat">أعلى نتيجة: <span id="tetris-high">0</span></div>
+      <button class="sol-btn" id="tetris-restart" style="margin:0">🔄 إعادة</button>
+    </div>
+  </div>`;
+}
+function buildSkillsContent(){
+  return `<div class="skills-body" id="skills-body"></div>`;
+}
+function buildCounterContent(){
+  return `<div class="cw-body" id="counter-body">
+    <div style="font-size:13px;font-weight:700;color:#1E50A0">📊 Visitor Statistics</div>
+    <div class="cw-stat"><span>إجمالي الزوار</span><b id="cnt-total">—</b></div>
+    <div class="cw-stat"><span>زوار اليوم</span><b id="cnt-today">—</b></div>
+    <div class="cw-stat"><span>آخر زيارة</span><b id="cnt-last">—</b></div>
+    <div style="font-size:9px;color:#999">* عداد محلي يعتمد على متصفحك (لا يوجد خادم حقيقي متصل بهذا الملف).</div>
+  </div>`;
+}
+function buildRatingContent(){
+  return `<div class="cw-body" id="rating-body">
+    <div style="font-size:13px;font-weight:700;color:#1E50A0">⭐ Rate My Portfolio</div>
+    <div class="rate-stars" id="rate-stars">
+      <span class="rate-star" data-v="1">★</span><span class="rate-star" data-v="2">★</span><span class="rate-star" data-v="3">★</span><span class="rate-star" data-v="4">★</span><span class="rate-star" data-v="5">★</span>
+    </div>
+    <div class="cw-stat"><span>متوسط التقييم</span><b id="rate-avg">—</b></div>
+    <div class="cw-stat"><span>عدد المقيّمين</span><b id="rate-count">—</b></div>
+    <div id="rate-msg" style="font-size:11px;color:#1E8A3C"></div>
+  </div>`;
+}
+function buildContactContent(){
+  return `<div class="contact-form" id="contact-form">
+    <div style="font-size:13px;font-weight:700;color:#1E50A0;margin-bottom:6px">📧 Send Feedback</div>
+    <div><label>الاسم</label><input type="text" id="cf-name" placeholder="اسمك"></div>
+    <div><label>البريد الإلكتروني</label><input type="email" id="cf-email" placeholder="example@email.com"></div>
+    <div><label>الموضوع</label><input type="text" id="cf-subject" placeholder="موضوع الرسالة"></div>
+    <div><label>الرسالة</label><textarea id="cf-message" placeholder="اكتب رسالتك هنا..."></textarea></div>
+    <button class="sol-btn" id="cf-send" style="margin-top:6px">📨 إرسال</button>
+    <div id="cf-status" style="font-size:11px;color:#1E8A3C"></div>
+    <div style="font-size:9px;color:#999">* يفتح هذا الزر تطبيق البريد الافتراضي على جهازك (لا يوجد خادم بريد حقيقي متصل بهذا الملف الثابت).</div>
+  </div>`;
+}
+function buildChessContent(){
+  return `<div class="chess-body">
+    <div class="chess-board-wrap">
+      <div id="chess-board" class="chess-board"></div>
+      <div id="chess-status" class="chess-status">دورك (الأبيض)</div>
+    </div>
+    <div class="chess-side">
+      <label style="font-size:11px">مستوى الصعوبة:
+        <select id="chess-diff" class="chess-diff-select">
+          <option value="1">سهل</option>
+          <option value="2">متوسط</option>
+          <option value="3" selected>صعب (أقوى)</option>
+        </select>
+      </label>
+      <button class="sol-btn" id="chess-undo" style="margin:0">↩️ تراجع عن الحركة</button>
+      <button class="sol-btn" id="chess-restart" style="margin:0">🔄 إعادة اللعب</button>
+      <div style="font-weight:700">سجل النقلات</div>
+      <div id="chess-history" class="chess-history"></div>
+    </div>
+  </div>`;
+}
 function buildMPContent(){
   const bars=Array.from({length:14},(_,i)=>`<div class="mp-bar" style="animation-delay:${i*0.07}s"></div>`).join('');
   return `<div class="mp-body">
@@ -1467,7 +1853,10 @@ function initMyComp(winId){
       <div class="mycomp-drive-name">${d.name}</div>
       <div class="mycomp-drive-bar"><div class="mycomp-drive-bar-fill" style="width:${pct}%;background:${pct>85?'#CC0000':d.color}"></div></div>
       <div style="font-size:9px;color:#666;font-family:Tahoma;margin-top:2px">${d.used.toFixed(1)} GB / ${d.total} GB</div>`;
-    el.addEventListener('dblclick',()=>showNotification('💿 '+d.name,'لا يمكن الوصول إلى هذا القرص في الوقت الحالي'));
+    el.addEventListener('dblclick',()=>{
+      if(d.name.includes('C:')) openExplorer();
+      else showNotification('💿 '+d.name,'لا يمكن الوصول إلى هذا القرص في الوقت الحالي');
+    });
     drivesEl.appendChild(el);
   });
   const specs=[
@@ -1484,6 +1873,71 @@ function initMyComp(winId){
     row.innerHTML=`<span class="mycomp-spec-label">${label}:</span><span class="mycomp-spec-val">${val}</span>`;
     specsEl.appendChild(row);
   });
+}
+
+/* ═══════════════════════════════════════════════
+   FILE EXPLORER (Local Disk C:)
+═══════════════════════════════════════════════ */
+const EXPLORER_FOLDERS = [
+  { id:'desktop',   name:'Desktop',   icon:'mycomp', files:[
+    {name:'نبذة عني.txt',icon:'notepad'},{name:'سلة المهملات',icon:'recycle'} ] },
+  { id:'documents', name:'Documents', icon:'myDoc', files:[
+    {name:'سيرتي الذاتية.docx',icon:'myDoc'},{name:'ملاحظات.txt',icon:'notepad'},{name:'مشروع التخرج.pdf',icon:'myDoc'} ] },
+  { id:'pictures',  name:'Pictures',  icon:'myPic', files:[
+    {name:'صورة1.png',icon:'myPic'},{name:'صورة2.jpg',icon:'myPic'},{name:'خلفية.png',icon:'myPic'} ] },
+  { id:'music',     name:'Music',     icon:'mediaplayer', files:[
+    {name:'Track1.mp3',icon:'mediaplayer'},{name:'Track2.mp3',icon:'mediaplayer'},{name:'Chill Mix.mp3',icon:'mediaplayer'} ] },
+  { id:'games',     name:'Games',     icon:'minesweeper', files:[
+    {name:'Solitaire.exe',icon:'solitaire'},{name:'Minesweeper.exe',icon:'minesweeper'},{name:'Snake.exe',icon:'snake'} ] },
+];
+function buildExplorerContent(){
+  return `<div class="explorer-body">
+    <div class="explorer-sidebar">
+      <div class="explorer-sidebar-title">📁 المجلدات</div>
+      <div id="explorer-side-list"></div>
+    </div>
+    <div class="explorer-main">
+      <div class="explorer-breadcrumb" id="explorer-breadcrumb">Local Disk (C:)</div>
+      <div class="explorer-files" id="explorer-files"></div>
+    </div>
+  </div>`;
+}
+function initExplorer(winId){
+  const w=document.getElementById(winId);
+  if(!w) return;
+  const sideList=w.querySelector('#explorer-side-list');
+  const filesEl=w.querySelector('#explorer-files');
+  const crumb=w.querySelector('#explorer-breadcrumb');
+  function openFolder(folder){
+    sideList.querySelectorAll('.explorer-sidebar-item').forEach(i=>i.classList.toggle('active',i.dataset.id===folder.id));
+    crumb.textContent='Local Disk (C:) \u2192 '+folder.name;
+    filesEl.innerHTML='';
+    if(!folder.files.length){ filesEl.innerHTML='<div class="explorer-empty">المجلد فارغ</div>'; return; }
+    folder.files.forEach(f=>{
+      const el=document.createElement('div');
+      el.className='explorer-file';
+      el.innerHTML=`<div class="icon-img">${ICONS[f.icon]||ICONS.notepad}</div><div class="explorer-file-label">${f.name}</div>`;
+      el.addEventListener('dblclick',()=>showNotification('📄 '+f.name,'هذا ملف وهمي لعرض المحتوى فقط داخل البورتفوليو.'));
+      filesEl.appendChild(el);
+    });
+  }
+  EXPLORER_FOLDERS.forEach(folder=>{
+    const item=document.createElement('div');
+    item.className='explorer-sidebar-item';
+    item.dataset.id=folder.id;
+    item.innerHTML=`<div class="icon-img">${ICONS[folder.icon]||ICONS.myDoc}</div><span>${folder.name}</span>`;
+    item.addEventListener('click',()=>openFolder(folder));
+    sideList.appendChild(item);
+  });
+  openFolder(EXPLORER_FOLDERS[0]);
+}
+function openExplorer(){
+  const winId='win_explorer';
+  if(!document.getElementById(winId)){
+    createWindow({id:winId,title:'مستكشف الملفات — Local Disk (C:)',icon:'mycomp',w:520,h:400,content:buildExplorerContent()});
+    initExplorer(winId);
+  }
+  openWindow(winId);
 }
 
 /* ═══════════════════════════════════════════════
@@ -2090,6 +2544,567 @@ function initSnake(winId){
 }
 
 /* ═══════════════════════════════════════════════
+   TETRIS — FULL GAME
+═══════════════════════════════════════════════ */
+function initTetris(winId){
+  const w=document.getElementById(winId);
+  if(!w) return;
+  const cell=24, cols=10, rows=20;
+  const canvas=w.querySelector('#tetris-canvas'); const ctx=canvas.getContext('2d');
+  const nextCanvas=w.querySelector('#tetris-next'); const nctx=nextCanvas.getContext('2d');
+  const scoreEl=w.querySelector('#tetris-score'), linesEl=w.querySelector('#tetris-lines');
+  const levelEl=w.querySelector('#tetris-level'), highEl=w.querySelector('#tetris-high');
+  const overlay=w.querySelector('#tetris-overlay');
+  let high=parseInt(localStorage.getItem('xp_tetris_high'))||0;
+  highEl.textContent=high;
+
+  const PIECES={
+    I:{color:'#00C2DE',m:[[0,0,0,0],[1,1,1,1],[0,0,0,0],[0,0,0,0]]},
+    O:{color:'#E8D000',m:[[0,0,0,0],[0,1,1,0],[0,1,1,0],[0,0,0,0]]},
+    T:{color:'#A335EE',m:[[0,0,0,0],[0,1,0,0],[1,1,1,0],[0,0,0,0]]},
+    S:{color:'#3CD63C',m:[[0,0,0,0],[0,1,1,0],[1,1,0,0],[0,0,0,0]]},
+    Z:{color:'#E83C3C',m:[[0,0,0,0],[1,1,0,0],[0,1,1,0],[0,0,0,0]]},
+    J:{color:'#3C5CE8',m:[[0,0,0,0],[1,0,0,0],[1,1,1,0],[0,0,0,0]]},
+    L:{color:'#E8901C',m:[[0,0,0,0],[0,0,1,0],[1,1,1,0],[0,0,0,0]]},
+  };
+  const KEYS=Object.keys(PIECES);
+  function rotateMatrix(m){
+    const res=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
+    for(let r=0;r<4;r++) for(let c=0;c<4;c++) res[c][3-r]=m[r][c];
+    return res;
+  }
+  function cloneM(m){ return m.map(r=>r.slice()); }
+
+  let board, cur, curKey, nextKey, x, y, score, lines, level, dropIv, running=false, gameOver=false, paused=false;
+
+  function newBoard(){ return Array.from({length:rows},()=>Array(cols).fill(null)); }
+  function randomKey(){ return KEYS[Math.floor(Math.random()*KEYS.length)]; }
+  function spawn(){
+    curKey=nextKey||randomKey();
+    nextKey=randomKey();
+    cur=cloneM(PIECES[curKey].m);
+    x=3; y=0;
+    drawNext();
+    if(collide(cur,x,y)){ endGame(); }
+  }
+  function collide(m,px,py){
+    for(let r=0;r<4;r++) for(let c=0;c<4;c++){
+      if(!m[r][c]) continue;
+      const bx=px+c, by=py+r;
+      if(bx<0||bx>=cols||by>=rows) return true;
+      if(by>=0 && board[by][bx]) return true;
+    }
+    return false;
+  }
+  function merge(){
+    for(let r=0;r<4;r++) for(let c=0;c<4;c++){
+      if(cur[r][c]){
+        const bx=x+c, by=y+r;
+        if(by>=0) board[by][bx]=PIECES[curKey].color;
+      }
+    }
+  }
+  function clearLines(){
+    let cleared=0;
+    for(let r=rows-1;r>=0;r--){
+      if(board[r].every(cell=>cell)){
+        board.splice(r,1);
+        board.unshift(Array(cols).fill(null));
+        cleared++; r++;
+      }
+    }
+    if(cleared){
+      const pts=[0,40,100,300,1200][cleared]*(level+1);
+      score+=pts; lines+=cleared;
+      const newLevel=Math.floor(lines/10);
+      if(newLevel>level){ level=newLevel; restartLoop(); }
+      scoreEl.textContent=score; linesEl.textContent=lines; levelEl.textContent=level+1;
+      SFX.play('open');
+    }
+  }
+  function restartLoop(){
+    clearInterval(dropIv);
+    const speed=Math.max(100,800-level*60);
+    dropIv=setInterval(()=>softDrop(false),speed);
+  }
+  function softDrop(manual){
+    if(gameOver||paused) return;
+    if(!collide(cur,x,y+1)){ y++; if(manual){ score++; scoreEl.textContent=score; } draw(); }
+    else { lockPiece(); }
+  }
+  function lockPiece(){
+    merge();
+    clearLines();
+    spawn();
+    draw();
+  }
+  function hardDrop(){
+    if(gameOver||paused) return;
+    while(!collide(cur,x,y+1)) y++;
+    SFX.play('click');
+    lockPiece();
+  }
+  function move(dx){
+    if(gameOver||paused) return;
+    if(!collide(cur,x+dx,y)){ x+=dx; SFX.play('click'); draw(); }
+  }
+  function rotate(){
+    if(gameOver||paused) return;
+    const rotated=rotateMatrix(cur);
+    if(!collide(rotated,x,y)){ cur=rotated; SFX.play('click'); draw(); }
+    else if(!collide(rotated,x-1,y)){ cur=rotated; x-=1; draw(); }
+    else if(!collide(rotated,x+1,y)){ cur=rotated; x+=1; draw(); }
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let r=0;r<rows;r++) for(let c=0;c<cols;c++){
+      if(board[r][c]){ ctx.fillStyle=board[r][c]; ctx.fillRect(c*cell+1,r*cell+1,cell-2,cell-2); }
+    }
+    ctx.fillStyle=PIECES[curKey].color;
+    for(let r=0;r<4;r++) for(let c=0;c<4;c++){
+      if(cur[r][c]){
+        const by=y+r;
+        if(by>=0) ctx.fillRect((x+c)*cell+1,by*cell+1,cell-2,cell-2);
+      }
+    }
+  }
+  function drawNext(){
+    nctx.clearRect(0,0,96,96);
+    const m=PIECES[nextKey].m;
+    nctx.fillStyle=PIECES[nextKey].color;
+    for(let r=0;r<4;r++) for(let c=0;c<4;c++){
+      if(m[r][c]) nctx.fillRect(c*20+4,r*20+4,18,18);
+    }
+  }
+  function reset(){
+    board=newBoard();
+    score=0; lines=0; level=0; gameOver=false; running=false; paused=false;
+    nextKey=randomKey();
+    spawn();
+    scoreEl.textContent=score; linesEl.textContent=lines; levelEl.textContent=level+1;
+    draw();
+    clearInterval(dropIv);
+    overlay.classList.remove('hide');
+    overlay.innerHTML='اضغط مسافة للبدء<br>← → للحركة، ↑ للتدوير<br>↓ نزول سريع، Space سقوط فوري';
+  }
+  function start(){
+    if(running) return;
+    running=true; paused=false;
+    overlay.classList.add('hide');
+    restartLoop();
+  }
+  function endGame(){
+    running=false; gameOver=true; clearInterval(dropIv);
+    SFX.play('error');
+    if(score>high){ high=score; localStorage.setItem('xp_tetris_high',high); highEl.textContent=high; }
+    overlay.classList.remove('hide');
+    overlay.innerHTML='💀 انتهت اللعبة<br>النقاط: '+score+'<br>(اضغط مسافة لإعادة المحاولة)';
+  }
+  function togglePause(){
+    if(!running||gameOver) return;
+    paused=!paused;
+    if(paused){ clearInterval(dropIv); overlay.classList.remove('hide'); overlay.innerHTML='⏸️ توقف مؤقت<br>(اضغط P للاستمرار)'; }
+    else { overlay.classList.add('hide'); restartLoop(); }
+  }
+  function onKey(e){
+    if(!w.classList.contains('active-window')) return;
+    if(e.key==='p'||e.key==='P'){ e.preventDefault(); togglePause(); return; }
+    if(e.key===' '){
+      e.preventDefault();
+      if(!running && !gameOver) start();
+      else if(gameOver){ reset(); start(); }
+      else hardDrop();
+      return;
+    }
+    if(!running||paused||gameOver) return;
+    if(e.key==='ArrowLeft'){ e.preventDefault(); move(-1); }
+    else if(e.key==='ArrowRight'){ e.preventDefault(); move(1); }
+    else if(e.key==='ArrowUp'){ e.preventDefault(); rotate(); }
+    else if(e.key==='ArrowDown'){ e.preventDefault(); softDrop(true); }
+  }
+  document.addEventListener('keydown',onKey);
+  w.querySelector('#tetris-restart').addEventListener('click',()=>{ reset(); });
+  w.querySelector('.win-btn-close').addEventListener('click',()=>{ clearInterval(dropIv); document.removeEventListener('keydown',onKey); },{once:true});
+  reset();
+}
+
+/* ═══════════════════════════════════════════════
+   SOFTWARE SKILLS
+═══════════════════════════════════════════════ */
+const SKILLS_LIST = [
+  { name:'Adobe Photoshop', pct:85, color:'#31A8FF', emoji:'🎨', desc:'تصميم وتعديل الصور والرسومات الاحترافية' },
+  { name:'Microsoft Word',  pct:95, color:'#2B579A', emoji:'📄', desc:'تحرير وتنسيق المستندات النصية' },
+  { name:'Microsoft Excel', pct:90, color:'#217346', emoji:'📊', desc:'الجداول الحسابية والتحليل الإحصائي' },
+  { name:'Microsoft PowerPoint', pct:92, color:'#D24726', emoji:'📽️', desc:'تصميم العروض التقديمية الاحترافية' },
+  { name:'IBM SPSS Statistics', pct:80, color:'#052FAD', emoji:'📈', desc:'التحليل الإحصائي للبيانات' },
+];
+function initSkills(winId){
+  const w=document.getElementById(winId); if(!w) return;
+  const body=w.querySelector('#skills-body');
+  body.innerHTML=`<div style="font-size:14px;font-weight:700;color:#222;margin-bottom:14px">🎨 Software Skills</div>`;
+  SKILLS_LIST.forEach((s,i)=>{
+    const row=document.createElement('div');
+    row.className='skill-row';
+    row.innerHTML=`
+      <div class="skill-icon" style="background:${s.color}22">${s.emoji}</div>
+      <div class="skill-info">
+        <div class="skill-name">${s.name}</div>
+        <div class="skill-desc">${s.desc}</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-fill" id="skill-bar-${i}" style="width:0%;background:${s.color}"></div></div>
+        <div class="skill-pct">${s.pct}%</div>
+      </div>`;
+    body.appendChild(row);
+    setTimeout(()=>{ const fill=document.getElementById('skill-bar-'+i); if(fill) fill.style.transition='width 0.8s ease'; if(fill) fill.style.width=s.pct+'%'; },60+i*120);
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   VISITOR COUNTER (local — no real backend)
+═══════════════════════════════════════════════ */
+function initCounter(winId){
+  const w=document.getElementById(winId); if(!w) return;
+  const todayKey='xp_visits_'+new Date().toISOString().slice(0,10);
+  let total=parseInt(localStorage.getItem('xp_visits_total'))||0;
+  let today=parseInt(localStorage.getItem(todayKey))||0;
+  if(!sessionStorage.getItem('xp_counted_this_session')){
+    total++; today++;
+    localStorage.setItem('xp_visits_total',total);
+    localStorage.setItem(todayKey,today);
+    sessionStorage.setItem('xp_counted_this_session','1');
+  }
+  const last=localStorage.getItem('xp_last_visit')||'—';
+  localStorage.setItem('xp_last_visit', new Date().toLocaleString('ar'));
+  w.querySelector('#cnt-total').textContent=total;
+  w.querySelector('#cnt-today').textContent=today;
+  w.querySelector('#cnt-last').textContent=last;
+}
+
+/* ═══════════════════════════════════════════════
+   SITE RATING (local — prevents repeat voting on this browser)
+═══════════════════════════════════════════════ */
+function initRating(winId){
+  const w=document.getElementById(winId); if(!w) return;
+  const starsEl=w.querySelector('#rate-stars');
+  const avgEl=w.querySelector('#rate-avg');
+  const countEl=w.querySelector('#rate-count');
+  const msgEl=w.querySelector('#rate-msg');
+  let sum=parseInt(localStorage.getItem('xp_rating_sum'))||0;
+  let count=parseInt(localStorage.getItem('xp_rating_count'))||0;
+  const myVote=parseInt(localStorage.getItem('xp_my_rating'))||0;
+  function refresh(){
+    avgEl.textContent = count? (sum/count).toFixed(1)+' / 5' : '— ';
+    countEl.textContent = count;
+    starsEl.querySelectorAll('.rate-star').forEach(st=>st.classList.toggle('active', parseInt(st.dataset.v)<=myVote));
+  }
+  refresh();
+  if(myVote) msgEl.textContent='لقد قيّمت هذا الموقع مسبقاً بـ '+myVote+' نجوم. شكراً لك! 🌟';
+  starsEl.querySelectorAll('.rate-star').forEach(st=>{
+    st.addEventListener('mouseenter',()=>{
+      const v=parseInt(st.dataset.v);
+      starsEl.querySelectorAll('.rate-star').forEach(s2=>s2.classList.toggle('active', parseInt(s2.dataset.v)<=v));
+    });
+    st.addEventListener('mouseleave',()=>{
+      starsEl.querySelectorAll('.rate-star').forEach(s2=>s2.classList.toggle('active', parseInt(s2.dataset.v)<=myVote));
+    });
+    st.addEventListener('click',()=>{
+      const v=parseInt(st.dataset.v);
+      const prevVote=parseInt(localStorage.getItem('xp_my_rating'))||0;
+      if(prevVote){ msgEl.textContent='⚠️ لقد قيّمت هذا الموقع مسبقاً، لا يمكن التصويت مرتين.'; SFX.play('error'); return; }
+      sum+=v; count++;
+      localStorage.setItem('xp_rating_sum',sum);
+      localStorage.setItem('xp_rating_count',count);
+      localStorage.setItem('xp_my_rating',v);
+      msgEl.textContent='شكراً لتقييمك! ⭐';
+      SFX.play('notify');
+      const myV=v;
+      starsEl.querySelectorAll('.rate-star').forEach(s2=>s2.classList.toggle('active', parseInt(s2.dataset.v)<=myV));
+      refresh();
+      localStorage.setItem('xp_my_rating',v);
+    });
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   CONTACT FORM (mailto — no real mail server)
+═══════════════════════════════════════════════ */
+function initContact(winId){
+  const w=document.getElementById(winId); if(!w) return;
+  const statusEl=w.querySelector('#cf-status');
+  w.querySelector('#cf-send').addEventListener('click',()=>{
+    const name=w.querySelector('#cf-name').value.trim();
+    const email=w.querySelector('#cf-email').value.trim();
+    const subject=w.querySelector('#cf-subject').value.trim();
+    const message=w.querySelector('#cf-message').value.trim();
+    if(!name||!email||!message){
+      statusEl.style.color='#CC0000';
+      statusEl.textContent='⚠️ الرجاء تعبئة الاسم والبريد والرسالة على الأقل.';
+      SFX.play('error');
+      return;
+    }
+    const body=encodeURIComponent(`الاسم: ${name}\nالبريد: ${email}\n\n${message}`);
+    const mailto=`mailto:contact@example.com?subject=${encodeURIComponent(subject||'رسالة من البورتفوليو')}&body=${body}`;
+    window.open(mailto,'_blank');
+    statusEl.style.color='#1E8A3C';
+    statusEl.textContent='✅ تم فتح تطبيق البريد لإرسال رسالتك بأسلوب Windows XP.';
+    SFX.play('notify');
+    showNotification('📧 Send Feedback','تم تحضير رسالتك للإرسال عبر بريدك الإلكتروني');
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   CHESS — custom JS engine (minimax + alpha-beta)
+   ملاحظة: محرك مكتوب بالكامل بجافاسكريبت الخالصة ضمن
+   ملف واحد (لا Stockfish ولا أي ملف WASM خارجي)، يدعم
+   كل قواعد الحركة الأساسية + الكش + الكش مات + التعادل.
+   لا يدعم التبييت (Castling) أو En Passant حالياً.
+═══════════════════════════════════════════════ */
+function initChess(winId){
+  const w=document.getElementById(winId); if(!w) return;
+  const boardEl=w.querySelector('#chess-board');
+  const statusEl=w.querySelector('#chess-status');
+  const histEl=w.querySelector('#chess-history');
+  const diffSel=w.querySelector('#chess-diff');
+  const PIECE_CHAR={P:'♙',N:'♘',B:'♗',R:'♖',Q:'♕',K:'♔',p:'♟',n:'♞',b:'♝',r:'♜',q:'♛',k:'♚'};
+  const VALUES={P:100,N:320,B:330,R:500,Q:900,K:20000};
+
+  function isWhite(p){ return !!p && p===p.toUpperCase(); }
+  function inBounds(r,c){ return r>=0&&r<8&&c>=0&&c<8; }
+
+  function pieceMoves(b,r,c){
+    const p=b[r][c]; if(!p) return [];
+    const white=isWhite(p), type=p.toUpperCase();
+    const moves=[];
+    if(type==='P'){
+      const dir=white?-1:1, startRow=white?6:1;
+      if(inBounds(r+dir,c) && !b[r+dir][c]){
+        moves.push([r+dir,c]);
+        if(r===startRow && !b[r+2*dir][c]) moves.push([r+2*dir,c]);
+      }
+      [[r+dir,c-1],[r+dir,c+1]].forEach(([nr,nc])=>{
+        if(inBounds(nr,nc) && b[nr][nc] && isWhite(b[nr][nc])!==white) moves.push([nr,nc]);
+      });
+    } else if(type==='N'){
+      [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]].forEach(([dr,dc])=>{
+        const nr=r+dr,nc=c+dc;
+        if(inBounds(nr,nc) && (!b[nr][nc]||isWhite(b[nr][nc])!==white)) moves.push([nr,nc]);
+      });
+    } else if(type==='K'){
+      for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){
+        if(dr===0&&dc===0) continue;
+        const nr=r+dr,nc=c+dc;
+        if(inBounds(nr,nc) && (!b[nr][nc]||isWhite(b[nr][nc])!==white)) moves.push([nr,nc]);
+      }
+    } else {
+      let dirs=[];
+      if(type==='B') dirs=[[-1,-1],[-1,1],[1,-1],[1,1]];
+      if(type==='R') dirs=[[-1,0],[1,0],[0,-1],[0,1]];
+      if(type==='Q') dirs=[[-1,-1],[-1,1],[1,-1],[1,1],[-1,0],[1,0],[0,-1],[0,1]];
+      dirs.forEach(([dr,dc])=>{
+        let nr=r+dr,nc=c+dc;
+        while(inBounds(nr,nc)){
+          if(!b[nr][nc]){ moves.push([nr,nc]); }
+          else { if(isWhite(b[nr][nc])!==white) moves.push([nr,nc]); break; }
+          nr+=dr; nc+=dc;
+        }
+      });
+    }
+    return moves;
+  }
+  function findKing(b,white){
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++) if(b[r][c]===(white?'K':'k')) return [r,c];
+    return null;
+  }
+  function isAttacked(b,r,c,byWhite){
+    for(let rr=0;rr<8;rr++)for(let cc=0;cc<8;cc++){
+      const p=b[rr][cc];
+      if(p && isWhite(p)===byWhite && pieceMoves(b,rr,cc).some(([mr,mc])=>mr===r&&mc===c)) return true;
+    }
+    return false;
+  }
+  function inCheck(b,white){
+    const k=findKing(b,white); if(!k) return false;
+    return isAttacked(b,k[0],k[1],!white);
+  }
+  function legalMoves(b,r,c){
+    const p=b[r][c]; if(!p) return [];
+    const white=isWhite(p);
+    return pieceMoves(b,r,c).filter(([nr,nc])=>{
+      const b2=b.map(row=>row.slice());
+      b2[nr][nc]=b2[r][c]; b2[r][c]=null;
+      return !inCheck(b2,white);
+    });
+  }
+  function allLegalMoves(b,white){
+    const all=[];
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++){
+      const p=b[r][c];
+      if(p && isWhite(p)===white) legalMoves(b,r,c).forEach(([nr,nc])=>all.push({from:[r,c],to:[nr,nc]}));
+    }
+    return all;
+  }
+  function applyMoveSim(b,mv){
+    const b2=b.map(row=>row.slice());
+    const [fr,fc]=mv.from,[tr,tc]=mv.to;
+    let piece=b2[fr][fc];
+    if(piece.toUpperCase()==='P' && (tr===0||tr===7)) piece=isWhite(piece)?'Q':'q';
+    b2[tr][tc]=piece; b2[fr][fc]=null;
+    return b2;
+  }
+  function evaluate(b){
+    let score=0;
+    const centerBonus=[0,1,2,2,2,2,1,0];
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++){
+      const p=b[r][c]; if(!p) continue;
+      let val=VALUES[p.toUpperCase()] + centerBonus[r]+centerBonus[c];
+      score += isWhite(p)? val : -val;
+    }
+    return score;
+  }
+  function minimax(b,depth,alpha,beta,maximizing){
+    if(depth===0) return evaluate(b);
+    const moves=allLegalMoves(b,maximizing);
+    if(moves.length===0) return inCheck(b,maximizing) ? (maximizing?-99999-depth:99999+depth) : 0;
+    if(maximizing){
+      let best=-Infinity;
+      for(const mv of moves){
+        best=Math.max(best, minimax(applyMoveSim(b,mv),depth-1,alpha,beta,false));
+        alpha=Math.max(alpha,best);
+        if(alpha>=beta) break;
+      }
+      return best;
+    } else {
+      let best=Infinity;
+      for(const mv of moves){
+        best=Math.min(best, minimax(applyMoveSim(b,mv),depth-1,alpha,beta,true));
+        beta=Math.min(beta,best);
+        if(alpha>=beta) break;
+      }
+      return best;
+    }
+  }
+  function getAIMove(b,depth){
+    const moves=allLegalMoves(b,false).sort(()=>Math.random()-0.5);
+    let bestMove=null,bestVal=Infinity;
+    for(const mv of moves){
+      const val=minimax(applyMoveSim(b,mv),depth-1,-Infinity,Infinity,true);
+      if(val<bestVal){ bestVal=val; bestMove=mv; }
+    }
+    return bestMove;
+  }
+
+  let board,turn,selected,history,undoStack,gameOver;
+  function setup(){
+    board=[
+      ['r','n','b','q','k','b','n','r'],
+      ['p','p','p','p','p','p','p','p'],
+      [null,null,null,null,null,null,null,null],
+      [null,null,null,null,null,null,null,null],
+      [null,null,null,null,null,null,null,null],
+      [null,null,null,null,null,null,null,null],
+      ['P','P','P','P','P','P','P','P'],
+      ['R','N','B','Q','K','B','N','R'],
+    ];
+    turn='w'; selected=null; history=[]; undoStack=[]; gameOver=false;
+    render(); renderHistory();
+    statusEl.textContent='دورك (الأبيض)';
+  }
+  function squareName(r,c){ return 'abcdefgh'[c]+(8-r); }
+  function render(){
+    boardEl.innerHTML='';
+    const legal = (selected && !gameOver) ? legalMoves(board,selected[0],selected[1]) : [];
+    for(let r=0;r<8;r++) for(let c=0;c<8;c++){
+      const sq=document.createElement('div');
+      sq.className='chess-sq '+((r+c)%2===0?'light':'dark');
+      const p=board[r][c];
+      if(p) sq.innerHTML=`<span class="${isWhite(p)?'chess-piece-w':'chess-piece-b'}">${PIECE_CHAR[p]}</span>`;
+      if(selected && selected[0]===r && selected[1]===c) sq.classList.add('selected');
+      if(legal.some(([lr,lc])=>lr===r&&lc===c)) sq.classList.add(board[r][c]?'legal-capture':'legal');
+      sq.addEventListener('click',()=>onSquareClick(r,c));
+      boardEl.appendChild(sq);
+    }
+  }
+  function renderHistory(){
+    histEl.innerHTML='';
+    history.forEach((h,i)=>{
+      const row=document.createElement('div');
+      row.textContent=(i+1)+'. '+h;
+      histEl.appendChild(row);
+    });
+    histEl.scrollTop=histEl.scrollHeight;
+  }
+  function checkGameEnd(){
+    const white = turn==='w';
+    const moves=allLegalMoves(board,white);
+    if(moves.length===0){
+      gameOver=true;
+      if(inCheck(board,white)) statusEl.textContent = white ? '🏆 كش ملك! فاز الأسود (الكمبيوتر)' : '🏆 كش ملك! فاز الأبيض (أنت) 🎉';
+      else statusEl.textContent='🤝 تعادل (Stalemate)';
+      return;
+    }
+    gameOver=false;
+    statusEl.textContent = inCheck(board,white)
+      ? (white?'⚠️ كش! دورك':'⚠️ كش على الكمبيوتر')
+      : (white?'دورك (الأبيض)':'الكمبيوتر يفكر...');
+  }
+  function doMove(from,to){
+    undoStack.push({board:board.map(row=>row.slice()), turn, historyLen:history.length});
+    const [fr,fc]=from,[tr,tc]=to;
+    let piece=board[fr][fc];
+    const captured=board[tr][tc];
+    let promoted=false;
+    if(piece.toUpperCase()==='P' && (tr===0||tr===7)){ piece=isWhite(piece)?'Q':'q'; promoted=true; }
+    board[tr][tc]=piece; board[fr][fc]=null;
+    SFX.play(captured?'error':'click');
+    turn = turn==='w' ? 'b':'w';
+    const white=turn==='w';
+    const oppMoves=allLegalMoves(board,white);
+    let suffix='';
+    if(inCheck(board,white)) suffix = oppMoves.length===0 ? '#':'+';
+    history.push(squareName(fr,fc)+(captured?'x':'-')+squareName(tr,tc)+(promoted?'=Q':'')+suffix);
+    renderHistory();
+    checkGameEnd();
+  }
+  function onSquareClick(r,c){
+    if(gameOver || turn!=='w') return;
+    const p=board[r][c];
+    if(selected){
+      const legal=legalMoves(board,selected[0],selected[1]);
+      if(legal.some(([lr,lc])=>lr===r&&lc===c)){
+        doMove(selected,[r,c]);
+        selected=null;
+        render();
+        if(!gameOver) setTimeout(aiTurn,300);
+        return;
+      }
+      selected = (p && isWhite(p)) ? [r,c] : null;
+      render();
+      return;
+    }
+    if(p && isWhite(p)){ selected=[r,c]; render(); }
+  }
+  function aiTurn(){
+    if(gameOver||turn!=='b') return;
+    statusEl.textContent='الكمبيوتر يفكر...';
+    setTimeout(()=>{
+      const depth=parseInt(diffSel.value)||3;
+      const mv=getAIMove(board,depth);
+      if(mv) doMove(mv.from,mv.to);
+      render();
+    },80);
+  }
+  w.querySelector('#chess-undo').addEventListener('click',()=>{
+    if(!undoStack.length) return;
+    const prev=undoStack.pop();
+    board=prev.board; turn=prev.turn; history.length=prev.historyLen;
+    selected=null;
+    render(); renderHistory(); checkGameEnd();
+    SFX.play('click');
+  });
+  w.querySelector('#chess-restart').addEventListener('click',()=>{ setup(); SFX.play('click'); });
+  setup();
+}
+
+/* ═══════════════════════════════════════════════
    MEDIA PLAYER LOGIC
 ═══════════════════════════════════════════════ */
 const TRACKS=['🎵 Midou\'s Playlist — Track 1','🎵 Gaming Vibes — Track 2','🎵 Chill Mix — Track 3','🎵 Late Night — Track 4'];
@@ -2119,9 +3134,24 @@ function initMediaPlayer(winId){
 }
 
 /* Tray interactions */
-document.getElementById('tray-vol').addEventListener('click',()=>{
-  showNotification('🔊 مستوى الصوت','انقر مع السحب لضبط مستوى الصوت');
-});
+const volPopup=document.getElementById('vol-popup');
+const volSlider=document.getElementById('vol-slider');
+const volPct=document.getElementById('vol-pct');
+const volMuteBtn=document.getElementById('vol-mute-btn');
+const trayVolIcon=document.getElementById('tray-vol');
+function refreshVolUI(){
+  const pct=Math.round(SFX.volume*100);
+  volSlider.value=pct;
+  volPct.textContent=pct+'%';
+  volMuteBtn.textContent = SFX.muted ? '🔈 إلغاء الكتم' : '🔇 كتم';
+  trayVolIcon.textContent = SFX.muted||SFX.volume<=0 ? '🔇' : (SFX.volume<0.4?'🔉':'🔊');
+}
+refreshVolUI();
+document.getElementById('tray-vol').addEventListener('click',e=>{ e.stopPropagation(); volPopup.classList.toggle('show'); });
+volSlider.addEventListener('input',e=>{ SFX.setVolume(parseInt(e.target.value)/100); if(SFX.volume>0) SFX.setMuted(false); refreshVolUI(); });
+volSlider.addEventListener('change',()=>SFX.play('click'));
+volMuteBtn.addEventListener('click',()=>{ SFX.setMuted(!SFX.muted); refreshVolUI(); });
+document.addEventListener('click',e=>{ if(!volPopup.contains(e.target) && e.target.id!=='tray-vol') volPopup.classList.remove('show'); });
 
 /* ═══════════════════════════════════════════════
    KEYBOARD SHORTCUTS
@@ -2129,7 +3159,21 @@ document.getElementById('tray-vol').addEventListener('click',()=>{
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){ closeStartMenu(); hideCtxMenu(); document.getElementById('shutdown-dialog').classList.remove('show'); }
   if(e.ctrlKey&&e.key==='d'){ e.preventDefault(); openApp('about'); }
+  if(e.key==='Tab' && e.altKey){
+    e.preventDefault();
+    const wins=[...document.querySelectorAll('.window')].filter(w=>w.style.display!=='none');
+    if(wins.length<2) return;
+    const activeIdx=wins.findIndex(w=>w.classList.contains('active-window'));
+    const nextIdx=(activeIdx+1)%wins.length;
+    bringToFront(wins[nextIdx].id);
+  }
 });
+
+/* Welcome notification after 10s */
+setTimeout(()=>{
+  showNotification(t('notifyTenSecTitle'),t('notifyTenSecBody'));
+  SFX.play('notify');
+},10000);
 
 /* ═══════════════════════════════════════════════
    INIT
@@ -2137,30 +3181,6 @@ document.addEventListener('keydown',e=>{
 /* ═══════════════════════════════════════════════
    XP SOUND ENGINE (Web Audio API)
 ═══════════════════════════════════════════════ */
-const SFX = {
-  play(type){
-    try{
-      const ctx = new (window.AudioContext||window.webkitAudioContext)();
-      const cfg = {
-        open:    [{f:880,t:0,d:0.06,g:0.3},{f:1100,t:0.06,d:0.08,g:0.25}],
-        close:   [{f:660,t:0,d:0.05,g:0.2},{f:440,t:0.05,d:0.08,g:0.15}],
-        click:   [{f:1200,t:0,d:0.04,g:0.15}],
-        error:   [{f:200,t:0,d:0.1,g:0.4},{f:150,t:0.1,d:0.15,g:0.3}],
-        startup: [{f:523,t:0,d:0.15,g:0.2},{f:659,t:0.12,d:0.15,g:0.2},{f:784,t:0.24,d:0.15,g:0.2},{f:1047,t:0.36,d:0.25,g:0.25}],
-        notify:  [{f:1047,t:0,d:0.08,g:0.2},{f:880,t:0.08,d:0.1,g:0.15}],
-      }[type]||[];
-      cfg.forEach(({f,t,d,g})=>{
-        const o=ctx.createOscillator(), gain=ctx.createGain();
-        o.type='sine'; o.frequency.setValueAtTime(f, ctx.currentTime+t);
-        gain.gain.setValueAtTime(g, ctx.currentTime+t);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+t+d);
-        o.connect(gain); gain.connect(ctx.destination);
-        o.start(ctx.currentTime+t); o.stop(ctx.currentTime+t+d+0.01);
-      });
-    }catch(e){}
-  }
-};
-
 /* ═══════════════════════════════════════════════
    WALLPAPER SYSTEM
 ═══════════════════════════════════════════════ */
